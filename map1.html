@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-<<<<<<< HEAD
-=======
-
->>>>>>> 94fd1e1120e7107af01718be40d90b6eeadc1e36
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
     <style>
-    <style>
-  		html, body {
-  			height: 100%;
-  			margin: 0;
-  		}
-  		.leaflet-container {
-  			height: 300px;
-  			width: 100%;
-  			max-width: 100%;
-  			max-height: 100%;
-  		}
-  	</style>
+    		html, body {
+    			height: 100%;
+    			margin: 0;
+    		}
+    		.leaflet-container {
+    			height: 400px;
+    			width: 600px;
+    			max-width: 100%;
+    			max-height: 100%;
+    		}
+    	</style>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-<<<<<<< HEAD
     <div id="map" style="width: 600px; height: 400px;"></div>
 <!-- ...js-->
-=======
-    <div id="map" style="width: 100%; height: 300px;"></div>
-<! ...js>
->>>>>>> 94fd1e1120e7107af01718be40d90b6eeadc1e36
 
   <script>
     //Initialisation
@@ -60,8 +50,9 @@
   googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
       maxZoom: 20,
       subdomains:['mt0','mt1','mt2','mt3']
-  });
 
+  });
+//googleHybrid.addTo(map);
 
 
 
