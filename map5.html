@@ -32,6 +32,8 @@
     height: 400px;
 }
 
+/*popup taple css */
+
 table{
     border:1px solid black;
     border-collapse: collapse;
@@ -49,17 +51,45 @@ td{
 
 
 <script >
+//popup table
+var template =
+'<div class="panel-body">\
+  <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />\
+</div>\
+<table class="table table-hover" id="dev-table">\
+  <thead>\
+    <tr>\
+      <th>#</th>\
+      <th>First Name</th>\
+      <th>Last Name</th>\
+      <th>Username</th>\
+    </tr>\
+  </thead>\
+  <tbody>\
+    <tr>\
+      <td>1</td>\
+      <td>Kilgore</td>\
+      <td>Trout</td>\
+      <td>kilgore</td>\
+    </tr>\
+    <tr>\
+      <td>2</td>\
+      <td>Bob</td>\
+      <td>Loblaw</td>\
+      <td>boblahblah</td>\
+    </tr>\
+    <tr>\
+      <td>3</td>\
+      <td>Holden</td>\
+      <td>Caulfield</td>\
+      <td>penceyreject</td>\
+    </tr>\
+  </tbody>\
+</table>\
+</form>';
 
 
   var map = L.map('map').setView([21.651644, 39.716137], 19);
-  L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=UOAVnMepAripxs73k1iH', {
-      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
-      maxZoom: 20,
-      id: 'mapbox/streets-v11',
-      tileSize: 512,
-      zoomOffset: -1,
-      accessToken: 'your.mapbox.access.token'
-  }).addTo(map);
 
   googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
     maxZoom: 20,
@@ -68,15 +98,19 @@ td{
 googleSat.addTo(map);
 
 //if()
+//if(building == "A"){
 //marker1
 var singleMarker = L.marker([21.651690, 39.716594]);
-var popup =singleMarker.bindPopup ("building B" ).openPopup()
+var popup =singleMarker.bindPopup(template);
 popup.addTo(map);
+//}
 
+//else if(building == "B"){
 //marker2
 var singleMarker = L.marker([21.651846, 39.715863]);
-var popup =singleMarker.bindPopup("<table><tr><td>Cell 1</td><td>Cell 2</td></tr></table>");
-
+//popup with taple
+var popup =singleMarker.bindPopup(template);
+//}
 popup.addTo(map);
 </script>
 
