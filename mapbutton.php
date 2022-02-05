@@ -19,18 +19,19 @@
 </form>
     <?php
     // connect mysql, php
-    $conn = new mysqli("localhost","root","","test");
+    $conn = new mysqli("localhost","root","","muqu");
     // get posts table
-    $stm = $conn->prepare("select * from posts");
+    $stm = $conn->prepare("select * from worker");
     $stm->execute();
     $result=$stm->get_result();
     while ($row = $result->fetch_assoc()) {
-//select st-name row from database
-      echo $row ["st-name"];
+//select  row from database
+      echo $row ["userName"]."</br>";
     }
 
-    function php_fun(){
-echo "Hi evreyone <3 ";
+    function php_fun()
+    {
+      echo " HI ";
 
     }
     ?>
