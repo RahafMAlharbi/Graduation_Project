@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 
 
 <html lang="en" dir="ltr">
@@ -57,8 +57,6 @@ td{
 
 
 
-
-
 <script >
 //popup table
 var template =
@@ -97,6 +95,15 @@ var template =
 </table>\
 </form>';
 
+var romeNumberpopup =
+'<form class="row g-3 needs-validation" novalidate>\
+<div class="col-md-3">\
+  <label for="validationCustom04" class="form-label">Room Number</label>\
+  <select class="form-select" id="validationCustom04" required>\
+  </div>\
+  </form>\
+  ';
+
 
   var map = L.map('map').setView([21.651644, 39.716137], 19);
 
@@ -110,7 +117,7 @@ googleSat.addTo(map);
 //if(building == "A"){
 //marker1
 var singleMarker = L.marker([21.651690, 39.716594]);
-var popup =singleMarker.bindPopup(template);
+var popup =singleMarker.bindPopup(romeNumbermap);
 popup.addTo(map);
 //}
 
@@ -125,3 +132,37 @@ popup.addTo(map);
 
   </body>
 </html>
+
+
+
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "muqu";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+?>
+
+<?php
+ $romNumerquery = mysqli_query($conn,"select roomNumber from classroom");
+ $rowcount=mysqli_num_rows($romNumerquery);
+?>
+<form class="row g-3 needs-validation" novalidate>
+<div class="col-md-3">
+  <label for="validationCustom04" class="form-label">Room Number</label>
+  <select class="form-select" id="validationCustom04" required>
+    <?php
+      for($i=1;$i<=$rowcount;$i++){
+      $row=mysqli_fetch_array($romNumerquery);
+     ?>
+    <option value="<?php echo $row["roomNumber"]?>"> <?php echo $row["roomNumber"]?> </option>
+
+
+    <?php
+  }
+     ?>
