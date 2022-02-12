@@ -111,14 +111,7 @@ function showMenu(e){
 //
 //
 // }
-$('body').on('click', function (e) {
-            // hide any open popovers when the anywhere else in the body is clicked
-            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.menu-element').has(e.target).length === 0 && $(this).is(":visible")) {
-                var target=$("#flyoutMenu).hide();
-            }
 
-
-    });
   </script>
 </body>
 
