@@ -55,7 +55,7 @@ $sql="SELECT * FROM classroom WHERE building = '".$a."'";
          padding-top:60px;
          position:absolute;
          right:0;
-         
+
          top:0;transition:.5s;width:0;z-index:1000;}
          .sidenav a,.sidenavR2 a{color:#818181;display:block;font-size:25px;padding:8px 8px 8px 32px;text-decoration:none;transition:.3s;}
          .sidenav a:hover,.offcanvas a:focus,.sidenavR2 a:hover,.offcanvas a:focus{color:#f1f1f1;}
@@ -106,7 +106,7 @@ $sql="SELECT * FROM classroom WHERE building = '".$a."'";
             <div class="col-sm-12">
                <div id="map"></div>
                <!-- side nav bar -->
-
+                  <!-- A -->
                <div id="mySidenavR" class="sidenavR">
                  <div id="complaint">
                    <h2>Let AJAX change this text</h2>
@@ -174,6 +174,7 @@ $sql="SELECT * FROM classroom WHERE building = '".$a."'";
 
          </div>
          /////////////
+         <!-- B -->
          <div id="mySidenavR2" class="sidenavR2">
            <div id="complaint">
              <h2>Let AJAX change this text</h2>
@@ -183,9 +184,8 @@ $sql="SELECT * FROM classroom WHERE building = '".$a."'";
             <h3>Room</h3>
             <form class="form-inline" action="/action_page.php">
                <div class="form-group">
-                  <!-- <label for="sel1">Room will be loaded after choosing building</label> -->
                   <div id="sel1"></div>
-                  <select id="roomN" onchange="renderHTMLComlaint()" >
+                  <select id="roomN1" onchange="renderHTMLComlaint1()" >
 
                     <?php
 
@@ -236,7 +236,7 @@ $sql="SELECT * FROM classroom WHERE building = '".$a."'";
 
                         </tr>
                       </thead>
-                      <tbody id="Ctable">
+                      <tbody id="Ctable1">
                </tbody>
                       </tbody>
                     </table>
@@ -244,12 +244,6 @@ $sql="SELECT * FROM classroom WHERE building = '".$a."'";
             </form>
          </div>
       </div>
-
-
-
-
-
-
    </div>
       </div>
     </div>
@@ -274,93 +268,88 @@ $sql="SELECT * FROM classroom WHERE building = '".$a."'";
          function closeNavR2() {
          document.getElementById("mySidenavR2").style.width = "0";
          }
+
+         // A
          function LoadA(e)
          {
          openNavR();
-            var roomNumberInList = "";
-            var roomNumber="";
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET","getRoom.php?q=A",true);
-            xmlhttp.onreadystatechange = function() {
-             if (this.readyState == 4 && this.status == 200) {
-
-                 // document.getElementById("sel1").innerHTML = this.responseText;
-                 roomNumber = JSON.parse(xmlhttp.responseText);
-                 // document.getElementById("sel1").innerHTML =roomNumber;
-
-                callroomoption(roomNumber);
-                }
-             //    for( var i=0; i < roomNumber.length; i++){
-             //      roomNumberInList="<option value = roomNumber[i][0]>"+roomNumber[i][0]+" </option>";
-             //      // document.getElementById("roomN").insertAdjacentHTML('beforeend',roomNumberInList);
-             //      // document.getElementById("sel1").innerHTML =roomNumber;
-             // }
-               // document.getElementById("roomN").insertAdjacentHTML('beforeend',roomNumberInList);
-               // document.getElementById("sel1").innerHTML =roomNumber;
-            // return roomNumber;
-
-
-            };
-
-            xmlhttp.send();
+            // var roomNumberInList = "";
+            // var roomNumber="";
+            // var xmlhttp = new XMLHttpRequest();
+            // xmlhttp.open("GET","getRoom.php?q=A",true);
+            // xmlhttp.onreadystatechange = function() {
+            //  if (this.readyState == 4 && this.status == 200) {
+            //      roomNumber = JSON.parse(xmlhttp.responseText);
+            //     callroomoption();
+            //     }
+            // };
+            // xmlhttp.send();
 }
 
-          // praint complain table from json dat
+          // praint complain table "A" from json data using AJAX
           function renderHTMLComlaint() {
-            // var roomN= openNavR();
-
-
                const xhttp1 = new XMLHttpRequest();
                xhttp1.open("GET", "getComplaint.php", true);
                xhttp1.onload = function() {
-                  var result = JSON.parse(xhttp1.responseText);
+               var result = JSON.parse(xhttp1.responseText);
 
             var complaintTable = "";
             for( var i=0; i < result.length; i++){
               complaintTable= "<tr><td>" + result[i][0] + "</td>"+"<td>"+ result[i][1]+ "</td>"+"<td>" + result[i][2]+ "</td>"+"<td>" + result[i][3]+"</td>"+"<td>" + result[i][4]+"</td></tr>";
 
+              // for get the complain in specific Room
               var select = document.getElementById('roomN');
               var value = select.options[select.selectedIndex].value;
-
           if (value == result[i][5]){
             document.getElementById("Ctable").insertAdjacentHTML('beforeend',complaintTable);
  }}
-         // document.getElementById("Ctable").insertAdjacentHTML('beforeend',complaintTable);
-//          for( var i=0; i < result.length; i++){
-//          if (document.getElementById("roomN").value == result[i][5]){
-//            document.getElementById("Ctable").insertAdjacentHTML('beforeend',complaintTable);
-// }}
          }
                 xhttp1.send();
               }
+              // praint complain table "B" from json data using AJAX
+              function renderHTMLComlaint1() {
+                   const xhttp1 = new XMLHttpRequest();
+                   xhttp1.open("GET", "getComplaint.php", true);
+                   xhttp1.onload = function() {
+                   var result = JSON.parse(xhttp1.responseText);
 
-              function callroomoption(roomNumber) {
+                var complaintTable = "";
+                for( var i=0; i < result.length; i++){
+                  complaintTable= "<tr><td>" + result[i][0] + "</td>"+"<td>"+ result[i][1]+ "</td>"+"<td>" + result[i][2]+ "</td>"+"<td>" + result[i][3]+"</td>"+"<td>" + result[i][4]+"</td></tr>";
 
-              for( var i=0; i < roomNumber.length; i++){
+                  // for get the complain in specific Room
+                  var select = document.getElementById('roomN1');
+                  var value = select.options[select.selectedIndex].value;
+              if (value == result[i][5]){
+                document.getElementById("Ctable1").insertAdjacentHTML('beforeend',complaintTable);
+     }}
+             }
+                    xhttp1.send();
+                  }
 
-                roomNumberInList="<option value = roomNumber[i][0]>"+roomNumber[i][0]+" </option>";
-
-// roomNumberInList=“<option value=‘“+roomNumber[i][0]+”’>”+roomNumber[i][0]+”</option>”;
-                // roomNumberInList=“<option value=‘“+roomNumber[i][0]+”’>”+roomNumber[i][0]+”</option>”;
-                document.getElementById("roomN").insertAdjacentHTML('beforeend',roomNumberInList);
-                // document.getElementById("sel1").innerHTML =roomNumber;
-           }}
+              // praint room number in dropdown list
+           //    function callroomoption(roomNumber) {
+           //    for( var i=0; i < roomNumber.length; i++){
+           //      roomNumberInList="<option value = roomNumber[i][0]>"+roomNumber[i][0]+" </option>";
+           //      document.getElementById("roomN").insertAdjacentHTML('beforeend',roomNumberInList);
+           // }}
 
 
          // get bullding B room
          function LoadB(e)
          {
          openNavR2();
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-             if (this.readyState == 4 && this.status == 200) {
-                 document.getElementById("sel1").innerHTML = this.responseText;
-                }
-            };
-             xmlhttp.open("GET","getRoom.php?q=B",true);
-            xmlhttp.send();
+            // var xmlhttp = new XMLHttpRequest();
+            // xmlhttp.onreadystatechange = function() {
+            //  if (this.readyState == 4 && this.status == 200) {
+            //      document.getElementById("sel1").innerHTML = this.responseText;
+            //     }
+            // };
+            //  xmlhttp.open("GET","getRoom.php?q=B",true);
+            // xmlhttp.send();
          }
 
+         //leaflet map
          var map = L.map('map').setView([21.651644, 39.716137], 19);
 
            googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
@@ -369,13 +358,12 @@ $sql="SELECT * FROM classroom WHERE building = '".$a."'";
          });
          googleSat.addTo(map);
 
-
+         //marker B
          var singleMarkerB = L.marker([21.651690, 39.716594]).on('click', LoadB);
          singleMarkerB.addTo(map);
 
-
+         //marker A
          var singleMarkerA = L.marker([21.651846, 39.715863]).on('click', LoadA);
-
          singleMarkerA.addTo(map);
       </script>
    </body>
