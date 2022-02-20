@@ -1,34 +1,32 @@
-<?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "muqu";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
 
-    $sql = mysqli_query($conn,"select * from complaint");
-// "SELECT * FROM complaint"
-    // $sql = mysqli_query($conn,"select userId ,userName FROM manager");
-    // echo var_dump($sql);
-     $rows = array();
 
-    while($r = mysqli_fetch_assoc($sql)) {
-        $rows[] = $r;
+  <?php
 
-    }
+ $servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbname = "muqu";
 
-    $indexed = array_map('array_values', $rows);
-    //  $array = array_filter($indexed);
+ $con = mysqli_connect($servername, $username, $password, $dbname);
+ if (!$con) {
+   die('Could not connect: ' . mysqli_error($con));
+ }
+ $q=$_GET['q'];
+ mysqli_select_db($con,$dbname);
+ $sql="SELECT * FROM complaint WHERE roomNum = '".$q."'";
 
-    echo json_encode($indexed);
-    $a = json_encode($indexed);
-    // $s=JSON.parse($a);
-    // echo "$s.status";
-    if (!$rows) {
-        return null;
-    }
 
-    $conn->close();
+ $result = mysqli_query($con,$sql);
  ?>
+ <?php
+ while($rows = mysqli_fetch_array($result)) {
+   ?>
+   <tr>
+     <td> <?php echo  $rows["complaintId"]; ?> </td>
+   <td> <?php echo  $rows["date"]; ?> </td>
+ <td> <?php echo  $rows["category"]; ?> </td>
+<td> <?php echo  $rows["status"]; ?> </td></tr>
+
+  <?php
+   }
+  ?>

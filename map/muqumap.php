@@ -1,389 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+         crossorigin=""/>
+      <!-- Make sure you put this AFTER Leaflet's CSS -->
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+         crossorigin=""></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-    <!DOCTYPE html>
-    <html lang="en" dir="ltr">
-      <head>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-          crossorigin=""/>
+      <meta charset="utf-8">
+      <title>Map</title>
+      <style >
+         .sidenavR{background-color:#fff;
+         height:400px;
+         overflow-x:hidden;
+         padding-top:60px;
+         position:absolute;
+         right:0;
+         top:0;transition:.5s;width:0;z-index:1000;}
+         .sidenav a,.sidenavR a{color:#818181;display:block;font-size:25px;padding:8px 8px 8px 32px;text-decoration:none;transition:.3s;}
+         .sidenav a:hover,.offcanvas a:focus,.sidenavR a:hover,.offcanvas a:focus{color:#f1f1f1;}
+         .sidenav .closebtn,.sidenavR .closebtn{font-size:36px;margin-left:50px;position:absolute;right:25px;top:0;}
+         @media screen and max-height 450px {
+         .sidenav,.sidenavR{padding-top:15px;}
+         .sidenav a,.sidenavR a{font-size:18px;}
+         }
+         .navbar {
+         margin-bottom: 0px;
+         }
+         #map { 		height: 400px;
+         width: 1200px;
+         max-width: 100%;
+         max-height: 100%;
+         }
+         /*popup taple css */
+         table{
+         border:1px solid black;
+         border-collapse: collapse;
+         }
+         td{
+         border:1px solid black;
+         }
+         #paneltb{
+           /* display: none; */
+         }
+      </style>
+   </head>
+   <body>
+      <nav class="navbar navbar-default">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="#">map</a>
+            </div>
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="#">Home</a></li>
+               <li><a href="#">Page 1</a></li>
+               <li><a href="#">Page 2</a></li>
+               <li><a href="#">Page 3</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="jumbotron text-center">
+         <h1>Main page </h1>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <div id="map"></div>
+               <!-- side nav bar -->
 
-          <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""></script>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+               <div id="mySidenavR" class="sidenavR">
+                 <div id="complaint">
+                   <h2>View Complaint</h2>
+                 </div>
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNavR()">×</a>
+                  <form class="form-inline" action="/action_page.php">
+                     <div class="form-group" >
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+                        <label for="sel1"></label>
+                        <div id="sel1"></div>
+                        <h5>Select Classroom Number</h5>
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+                        <select id="roomN" onchange="selectRoomNum(this.value)" >
+                        </select>
+                        <div class="tablCLASS" id="tablP">
 
-        <meta charset="utf-8">
-        <title></title>
-      </head>
-      <body>
-          <div id="map"></div>
+                        </div>
+                        <div class="panel panel-primary table-wrapper-scroll-y my-custom-scrollbar" id="paneltb">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">Complaint</h3>
+                            <div class="pull-right">
+                              <!-- <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body"> -->
+                                <i class="glyphicon glyphicon-filter"></i>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="panel-body">
+                            <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+                          </div>
+                          <table class="table table-hover table table-bordered table-striped mb-0" id="dev-table">
+                            <thead>
+                              <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Status</th>
 
-                  <div class="container ">
-                      <!-- <h1><small>(<i class="glyphicon glyphicon-filter"></i>)</small></h1> -->
-                      	<div class="row">
-                  			<div class="col-md-6">
-                  				<div class="panel panel-primary table-wrapper-scroll-y my-custom-scrollbar">
-                  					<div class="panel-heading">
-                  						<h3 class="panel-title">Complaint</h3>
-                  						<div class="pull-right">
-                  							<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-                  								<i class="glyphicon glyphicon-filter"></i>
-                  							</span>
-                  						</div>
-                  					</div>
-                  					<div class="panel-body">
-                  						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
-                  					</div>
-                  					<table class="table table-hover table table-bordered table-striped mb-0" id="dev-table">
-                  						<thead>
-                  							<tr>
-                  								<th>ID</th>
-                  								<th>Date</th>
-                  								<th>Category</th>
-                  								<th>Status</th>
-                  							</tr>
-                  						</thead>
-                  						<tbody>
-                                <?php
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "";
-                                $dbname = "muqu";
-                                $conn = new mysqli($servername, $username, $password, $dbname);
-                                if ($conn->connect_error) {
-                                  die("Connection failed: " . $conn->connect_error);
-                                }
+                              </tr>
+                            </thead>
+                            <tbody id="Ctable">
+                     </tbody>
+                          </table>
+                     </div>
+                  </form>
+                  <div id="noComplaint">
+                    <h2>There is no complaint</h2>
+                  </div>
+               </div>
+            </div>
 
+         </div>
+      </div>
+    </div>
+      <div class="panel panel-default" style="margin-bottom:0px">
+         <div class="panel-footer">Panel Footer</div>
+      </div>
+      <script >
 
-                                ?>
+         function openNav() {
+         document.getElementById("mySidenav").style.width = "250px";
+         }
 
-                                <?php
-                                $qury = mysqli_query($conn,"select complaintId ,date,category,status,description,roomNum from complaint");
-                                 $romNumerquery = mysqli_query($conn,"select roomNumber from classroom");
-                                 //$result = $conn->query($sql);
-                                 if ($qury-> num_rows >0){
-                                   while ($row = $qury-> fetch_assoc()) {
-                                     echo "<tr><td>".$row["complaintId"]."</td>"."<td>".$row["date"]."</td>"."<td>".$row["category"]."</td>"."<td>".$row["status"]."</td></tr>";
-                                   }
-                                   echo "</tbody>";
+         function closeNav() {
+         document.getElementById("mySidenav").style.width = "0";
+         }
 
-                                 }
-                                 else {
+         function openNavR() {
+         document.getElementById("mySidenavR").style.width = "400px";
 
-                                   echo "no result";
-                                 }
-                                 $conn->close();
-                                 ?>
+         }
 
-                  						</tbody>
-                  					</table>
-                  				</div>
-                  			</div>
+         function closeNavR() {
+         document.getElementById("mySidenavR").style.width = "0";
+         }
 
-
-<style >
-  #map { 		height: 400px;
-    			width: 600px;
-    			max-width: 100%;
-    			max-height: 100%;
-    		 }
+         function LoadA(e)
          {
-    height: 400px;
+         openNavR();
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("roomN").innerHTML = this.responseText;
+                }
+            };
+             xmlhttp.open("GET","getRoom.php?q=A",true);
+            xmlhttp.send();
+
+         }
+         function LoadB(e)
+         {
+         openNavR();
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("roomN").innerHTML = this.responseText;
+                }
+            };
+             xmlhttp.open("GET","getRoom.php?q=B",true);
+            xmlhttp.send();
+
+         }
+
+function selectRoomNum(str){
+  openNavR();
+
+    if (str=="") {
+  document.getElementById("paneltb").innerHTML="";
+  return;
+}
+var xmlhttp=new XMLHttpRequest();
+xmlhttp.onreadystatechange=function() {
+  if (this.readyState==4 && this.status==200) {
+    document.getElementById("Ctable").innerHTML=this.responseText;
+    document.getElementById("paneltb").style.display="block";
+
+  };
+
 }
 
-/*taple css */
+xmlhttp.open("GET","getComplaint.php?q="+str,true);
+xmlhttp.send();
 
-.my-custom-scrollbar {
-position: relative;
-height: 250px;
-overflow: auto;
-}
-.table-wrapper-scroll-y {
-display: block;
-}
-
-table{
-    border:1px solid black;
-    border-collapse: collapse;
-}
-
-td{
-    border:1px solid black;
 }
 
 
 
-</style>
+
+         var map = L.map('map').setView([21.651644, 39.716137], 19);
+
+           googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+             maxZoom: 20,
+             subdomains:['mt0','mt1','mt2','mt3']
+         });
+
+         googleSat.addTo(map);
 
 
+         var singleMarkerB = L.marker([21.651690, 39.716594]).on('click', LoadB);
+         singleMarkerB.addTo(map);
 
 
-<script >
-// table js
-(function(){
-  'use strict';
-var $ = jQuery;
-$.fn.extend({
-  filterTable: function(){
-    return this.each(function(){
-      $(this).on('keyup', function(e){
-        $('.filterTable_no_results').remove();
-        var $this = $(this),
-                      search = $this.val().toLowerCase(),
-                      target = $this.attr('data-filters'),
-                      $target = $(target),
-                      $rows = $target.find('tbody tr');
+         var singleMarkerA = L.marker([21.651846, 39.715863]).on('click', LoadA);
 
-        if(search == '') {
-          $rows.show();
-        } else {
-          $rows.each(function(){
-            var $this = $(this);
-            $this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
-          })
-          if($target.find('tbody tr:visible').size() === 0) {
-            var col_count = $target.find('tr').first().find('td').size();
-            var no_results = $('<tr class="filterTable_no_results"><td colspan="'+col_count+'">No results found</td></tr>')
-            $target.find('tbody').append(no_results);
-          }
-        }
-      });
-    });
-  }
-});
-$('[data-action="filter"]').filterTable();
-})(jQuery);
-
-$(function(){
-  // attach table filter plugin to inputs
-$('[data-action="filter"]').filterTable();
-
-$('.container').on('click', '.panel-heading span.filter', function(e){
-  var $this = $(this),
-    $panel = $this.parents('.panel');
-
-  $panel.find('.panel-body').slideToggle();
-  if($this.css('display') != 'none') {
-    $panel.find('.panel-body input').focus();
-  }
-});
-$('[data-toggle="tooltip"]').tooltip();
-})
-//popup table
-var template =
-'<div class="panel-body">\
-  <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />\
-</div>\
-<table class="table table-hover" id="dev-table">\
-  <thead>\
-    <tr>\
-      <th>#</th>\
-      <th>First Name</th>\
-      <th>Last Name</th>\
-      <th>Username</th>\
-    </tr>\
-  </thead>\
-  <tbody>\
-    <tr>\
-      <td>1</td>\
-      <td>Kilgore</td>\
-      <td>Trout</td>\
-      <td>kilgore</td>\
-    </tr>\
-    <tr>\
-      <td>2</td>\
-      <td>Bob</td>\
-      <td>Loblaw</td>\
-      <td>boblahblah</td>\
-    </tr>\
-    <tr>\
-      <td>3</td>\
-      <td>Holden</td>\
-      <td>Caulfield</td>\
-      <td>penceyreject</td>\
-    </tr>\
-  </tbody>\
-</table>\
-</form>';
-
-var romeNumberpopup =
-'<form class="row g-3 needs-validation" novalidate>\
-<div class="col-md-3">\
-  <label for="validationCustom04" class="form-label">Room Number</label>\
-  <select class="form-select" id="validationCustom04" required>\
-  </div>\
-  </form>\
-  ';
-
-
-  var map = L.map('map').setView([21.651644, 39.716137], 19);
-
-  googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-    maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
-});
-googleSat.addTo(map);
-
-//if()
-//if(building == "A"){
-//marker1
-var singleMarker = L.marker([21.651690, 39.716594]);
-var popup =singleMarker.bindPopup(romeNumbermap);
-popup.addTo(map);
-//}
-
-//else if(building == "B"){
-//marker2
-var singleMarker = L.marker([21.651846, 39.715863]);
-//popup with taple
-var popup =singleMarker.bindPopup(template);
-//}
-popup.addTo(map);
-//////////////
-
-// (function(){
-//     'use strict';
-// 	var $ = jQuery;
-// 	$.fn.extend({
-// 		filterTable: function(){
-// 			return this.each(function(){
-// 				$(this).on('keyup', function(e){
-// 					$('.filterTable_no_results').remove();
-// 					var $this = $(this),
-//                         search = $this.val().toLowerCase(),
-//                         target = $this.attr('data-filters'),
-//                         $target = $(target),
-//                         $rows = $target.find('tbody tr');
-//
-// 					if(search == '') {
-// 						$rows.show();
-// 					} else {
-// 						$rows.each(function(){
-// 							var $this = $(this);
-// 							$this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
-// 						})
-// 						if($target.find('tbody tr:visible').size() === 0) {
-// 							var col_count = $target.find('tr').first().find('td').size();
-// 							var no_results = $('<tr class="filterTable_no_results"><td colspan="'+col_count+'">No results found</td></tr>')
-// 							$target.find('tbody').append(no_results);
-// 						}
-// 					}
-// 				});
-// 			});
-// 		}
-// 	});
-// 	$('[data-action="filter"]').filterTable();
-// })(jQuery);
-//
-// $(function(){
-//     // attach table filter plugin to inputs
-// 	$('[data-action="filter"]').filterTable();
-//
-// 	$('.container').on('click', '.panel-heading span.filter', function(e){
-// 		var $this = $(this),
-// 			$panel = $this.parents('.panel');
-//
-// 		$panel.find('.panel-body').slideToggle();
-// 		if($this.css('display') != 'none') {
-// 			$panel.find('.panel-body input').focus();
-// 		}
-// 	});
-// 	$('[data-toggle="tooltip"]').tooltip();
-// })
-// (function(){
-//   'use strict';
-// var $ = jQuery;
-// $.fn.extend({
-//   filterTable: function(){
-//     return this.each(function(){
-//       $(this).on('keyup', function(e){
-//         $('.filterTable_no_results').remove();
-//         var $this = $(this),
-//                       search = $this.val().toLowerCase(),
-//                       target = $this.attr('data-filters'),
-//                       $target = $(target),
-//                       $rows = $target.find('tbody tr');
-//
-//         if(search == '') {
-//           $rows.show();
-//         } else {
-//           $rows.each(function(){
-//             var $this = $(this);
-//             $this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
-//           })
-//           if($target.find('tbody tr:visible').size() === 0) {
-//             var col_count = $target.find('tr').first().find('td').size();
-//             var no_results = $('<tr class="filterTable_no_results"><td colspan="'+col_count+'">No results found</td></tr>')
-//             $target.find('tbody').append(no_results);
-//           }
-//         }
-//       });
-//     });
-//   }
-// });
-// $('[data-action="filter"]').filterTable();
-// })(jQuery);
-//
-// $(function(){
-//   // attach table filter plugin to inputs
-// $('[data-action="filter"]').filterTable();
-//
-// $('.container').on('click', '.panel-heading span.filter', function(e){
-//   var $this = $(this),
-//     $panel = $this.parents('.panel');
-//
-//   $panel.find('.panel-body').slideToggle();
-//   if($this.css('display') != 'none') {
-//     $panel.find('.panel-body input').focus();
-//   }
-// });
-// $('[data-toggle="tooltip"]').tooltip();
-// })
-// table filter
-
-</script>
-
-  </body>
+         singleMarkerA.addTo(map);
+      </script>
+   </body>
 </html>
-
-
-
-<?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "muqu";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-?>
-
-<?php
- $romNumerquery = mysqli_query($conn,"select roomNumber from classroom");
- $rowcount=mysqli_num_rows($romNumerquery);
-?>
-<form class="row g-3 needs-validation" novalidate>
-<div class="col-md-3">
-  <label for="validationCustom04" class="form-label">Room Number</label>
-  <select class="form-select" id="validationCustom04" required>
-    <?php
-      for($i=1;$i<=$rowcount;$i++){
-      $row=mysqli_fetch_array($romNumerquery);
-     ?>
-    <option value="<?php echo $row["roomNumber"]?>"> <?php echo $row["roomNumber"]?> </option>
-
-
-    <?php
- }
-     ?>
