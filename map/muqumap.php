@@ -200,7 +200,7 @@ xmlhttp.send();
 
 }
 
-
+//
 
 
          var map = L.map('map').setView([21.651644, 39.716137], 19);
