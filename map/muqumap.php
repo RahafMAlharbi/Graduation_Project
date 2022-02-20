@@ -227,7 +227,7 @@ xmlhttp.send();
          // reload table in menue
          $(document).ready(function() {
 
-           // reload table in A
+           // reload table in B
             function RefreshTable() {
                 $( "#complaintTable" ).load( "map8.php #complaintTable" );
             }
