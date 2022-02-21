@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -48,13 +50,13 @@
          td{
          border:1px solid black;
          }
-         #paneltb{
+         #complaintTable{
            /* display: none; */
          }
       </style>
    </head>
    <body>
-      <nav class="navbar navbar-default">
+      <!-- <nav class="navbar navbar-default">
          <div class="container-fluid">
             <div class="navbar-header">
                <a class="navbar-brand" href="#">map</a>
@@ -66,7 +68,7 @@
                <li><a href="#">Page 3</a></li>
             </ul>
          </div>
-      </nav>
+      </nav> -->
       <div class="jumbotron text-center">
          <h1>Main page </h1>
       </div>
@@ -119,9 +121,9 @@
                           </table>
                      </div>
                   </form>
-                  <div id="noComplaint">
+                  <!-- <div id="noComplaint">
                     <h2>There is no complaint</h2>
-                  </div>
+                  </div> -->
                </div>
                </div>
             </div>
@@ -129,9 +131,9 @@
          </div>
       </div>
     </div>
-      <div class="panel panel-default" style="margin-bottom:0px">
+      <!-- <div class="panel panel-default" style="margin-bottom:0px">
          <div class="panel-footer">Panel Footer</div>
-      </div>
+      </div> -->
       <script >
 
          function openNav() {
@@ -183,14 +185,14 @@ function selectRoomNum(str){
 
 
     if (str=="") {
-  document.getElementById("paneltb").innerHTML="";
+  document.getElementById("complaintTable").innerHTML="";
   return;
 }
 var xmlhttp=new XMLHttpRequest();
 xmlhttp.onreadystatechange=function() {
   if (this.readyState==4 && this.status==200) {
     document.getElementById("Ctable").innerHTML=this.responseText;
-    document.getElementById("paneltb").style.display="block";
+    document.getElementById("complaintTable").style.display="block";
 
   };
 
