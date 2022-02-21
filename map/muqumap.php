@@ -90,9 +90,8 @@
 
                         <select id="roomN" onchange="selectRoomNum(this.value)" >
                         </select>
-                        <div class="tablCLASS" id="tablP">
 
-                        </div>
+                        <div id = "complaintTable">
                         <div class="panel panel-primary table-wrapper-scroll-y my-custom-scrollbar" id="paneltb">
                           <div class="panel-heading">
                             <h3 class="panel-title">Complaint</h3>
@@ -123,6 +122,7 @@
                   <div id="noComplaint">
                     <h2>There is no complaint</h2>
                   </div>
+               </div>
                </div>
             </div>
 
@@ -166,6 +166,7 @@
          }
          function LoadB(e)
          {
+
          openNavR();
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -179,7 +180,7 @@
          }
 
 function selectRoomNum(str){
-  openNavR();
+
 
     if (str=="") {
   document.getElementById("paneltb").innerHTML="";
@@ -200,7 +201,8 @@ xmlhttp.send();
 
 }
 
-//
+
+
 
 
          var map = L.map('map').setView([21.651644, 39.716137], 19);
@@ -220,6 +222,24 @@ xmlhttp.send();
          var singleMarkerA = L.marker([21.651846, 39.715863]).on('click', LoadA);
 
          singleMarkerA.addTo(map);
+
+
+         // reload table in menue
+         $(document).ready(function() {
+
+           // reload table in B
+            function RefreshTable() {
+                $( "#complaintTable" ).load( "map8.php #complaintTable" );
+            }
+            singleMarkerB.on("click", RefreshTable);
+            // reload table in A
+            function RefreshTable() {
+                $( "#complaintTable" ).load( "map8.php #complaintTable" );
+            }
+            singleMarkerA.on("click", RefreshTable);
+
+
+         });
       </script>
    </body>
 </html>
