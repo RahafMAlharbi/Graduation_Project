@@ -19,7 +19,10 @@
  $result = mysqli_query($con,$sql);
  ?>
  <?php
+ $i = 0;
  while($rows = mysqli_fetch_array($result)) {
+   $i++;
+
    ?>
    <tr>
      <td> <?php echo  $rows["complaintId"]; ?> </td>
@@ -29,5 +32,9 @@
 
   <?php
    }
+   if ($i <1) {
+?>
+<tr><td colspan="11">There are no complaint</td></tr>
+<?php
+}
   ?>
-/
