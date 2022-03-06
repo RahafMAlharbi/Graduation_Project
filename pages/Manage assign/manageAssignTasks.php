@@ -1,9 +1,3 @@
-$sql = "SELECT complaint.complaintid , complaint.date , complaint.category , assign.compliantId , worker.userId,worker.userName
-         FROM complaint INNER JOIN assign
-         ON complaint.complaintid=assign.complaintid
-         INNER JOIN worker
-         ON worker.userId=assign.userId
-         WHERE complaint.status='Under Processing';"
 
          <link href="bootstrap5/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
          <script src="bootstrap5/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -35,7 +29,13 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
          .yellow {
            background-color: #F4F6F6;
          }
+         body {
+             background: #eee
+         }
 
+         .height {
+             height: 100vh
+         }
          </style>
            <?php
            $servername = "localhost";
@@ -73,7 +73,7 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
          				<h2> Assign Emploess Complain</h2>
          			  </div>
          			  <div class="card-body">
-         				 <form  id="form" name ="myFormName" action ="setEmployeeForAssign.php" method="POST" class="row g-3 needs-validation" novalidate>
+         				 <form  id="form" name ="myFormName" action ="setStatusSolved.php" method="POST" class="row g-3 needs-validation" novalidate>
          									<div class="col col-md-12">
          				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for complaint id.." >
          				<br/>
@@ -96,13 +96,25 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
                  // $sql1 = "SELECT userId,userName FROM worker,assign WHERE worker.userId==assign.userId";
 
          				//$rowcount1=mysqli_num_rows($result1);
-
+// $modal="modal";
+// $exampleModal="'#'exampleModal";
          					while($row=$result->fetch_assoc()){
          						// $result1 = $conn->query($sql1);
          						echo"<tr>";
-         						echo"<td> <input type='checkbox'  class='box' name='box_".$row["complaintId"]."' id='box_".$row["complaintId"]."' onchange='callFunction()' onclick='enable(this);chk(this)' /></td>";
-         						echo"<td name='name_".$row["complaintId"]."'>".$row["complaintId"]."</td>";
-         						echo"<td>".$row["date"]."</td>";
+         						echo"<td> <input type='checkbox'  class='box' name='box_".$row["complaintId"]."' id='box_".$row["complaintId"]."' onchange='callFunction();callFunction1()' onclick='enable(this);chk(this)' /></td>";
+                    //button for info window
+                    // $val="'.$row["complaintId"].'";
+                     echo'
+                      <td name=name_"'.$row["complaintId"].'">
+                      <button id="YourID" type="button" name='.$row["complaintId"].' value='.$row["complaintId"].'
+                       class="btn btn-primary"data-toggle="modal" data-target="#exampleModal"
+                        onclick="selectRoomNum(this)">
+                      '.$row["complaintId"].'</button></td>';
+
+
+
+
+                  	echo"<td>".$row["date"]."</td>";
          						// echo"<td>".$row["category"]."</td>";
                     echo"<td>".$row["userName"]."</td>";
                     echo"<td>".$row["completeness"]."</td>";
@@ -122,9 +134,9 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
          				  ?>
          				  </tbody>
          				  </table>
-         					<input type="submit" value="Assign" class="btn btn-primary" disabled id="Assign" onclick="validateMyForm(event);">
-                  <input type="button" value="Reassign" class="btn btn-primary" disabled id=""  data-target="#exampleModal">
-                  <input type="submit" value="Assign" class="btn btn-primary" disabled id="Assign" onclick="validateMyForm(event);">
+         					<input type="submit" value="Confirm" class="btn btn-primary" disabled id="Assign">
+                  <input type="button" value="Reassign" class="btn btn-primary" disabled id=""  data-target="#exampleModal" >
+                  <!-- <input type="submit" value="Assign" class="btn btn-primary" disabled id="Assign" onclick="validateMyForm(event);"> -->
 
 
                 </div>
@@ -135,100 +147,72 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
          			</div>
          		</div>
          	</div>
-          <!-- reassign -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header float-right">
-                <h5>User details</h5>
-                <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
-            </div>
-            <div class="modal-body">
-                <div>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Samso</td>
-                                <td>Natto</td>
-                                <td>@samso</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Tinor</td>
-                                <td>Horton</td>
-                                <td>@tinor_har</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Mythor</td>
-                                <td>Bully</td>
-                                <td>@myth_tobo</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button> </div>
-        </div>
-    </div>
-</div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header float-right">
-                <h5>User details</h5>
-                <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
-            </div>
-            <div class="modal-body">
-                <div>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Samso</td>
-                                <td>Natto</td>
-                                <td>@samso</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Tinor</td>
-                                <td>Horton</td>
-                                <td>@tinor_har</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Mythor</td>
-                                <td>Bully</td>
-                                <td>@myth_tobo</td>
-                            </tr>
-                        </tbody>
-                    </table>
+          <!-- reassign window -->
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header float-right">
+                            <h5>User details</h5>
+                            <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Category</th>
+                                            <th scope="col">Status</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody id="Ctable">
+                                        <tr>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button> </div>
+                    </div>
                 </div>
             </div>
-            <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button> </div>
-        </div>
-    </div>
-</div>
 </body>
             <script>
+//             $(document).on("click", "#YourID", function() {
+//               function selectRoomNum(str){
+//
+//
+//
+//               }
+// });
+// ajax for get c
+            function selectRoomNum(strq){
+              var str= strq.value;
+
+                if (str=="") {
+              document.getElementById("exampleModal").innerHTML="";
+              return;
+            }
+            var xmlhttp=new XMLHttpRequest();
+            xmlhttp.onreadystatechange=function() {
+              if (this.readyState==4 && this.status==200) {
+
+
+                document.getElementById("Ctable").innerHTML=this.responseText;
+
+              };
+            }
+            xmlhttp.open("GET","getComplaint.php?q="+str,true);
+            xmlhttp.send();
+
+            }
+
+// ما يضغط لين سلكت
          			function validateMyForm(event)
                      {
          				var allCheckedBox =document.querySelectorAll('input[type="checkbox"]:checked');
@@ -310,7 +294,7 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
 
          */
 
-
+         // search
          function myFunction() {
            var input, filter, table, tr, td, i, txtValue;
            input = document.getElementById("myInput");
@@ -331,7 +315,7 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
          }
 
 
-
+         // for enable button
          function callFunction() {
            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
            var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
@@ -341,9 +325,19 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
            }	else
              document.querySelectorAll('input[type="submit"]')[0].disabled = true;
          }
+        // for enable button2
+         function callFunction1() {
+           var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+           var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+
+           if (checkedOne) {
+             document.querySelectorAll('input[type="button"]')[0].disabled = false;
+           }	else
+             document.querySelectorAll('input[type="button"]')[0].disabled = true;
+         }
 
 
-
+       // dropdown enabled when row checked
            function enable(boxx) {
 
          	   var ourbox = boxx.id;
@@ -357,7 +351,6 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
          		}else {
 
          			 ds.value = 0 ;
-
          		}
          		var checkboxes = document. querySelectorAll('input[type="checkbox"]:checked');
 
@@ -373,7 +366,7 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
 
 
 
-
+        // coloring checked row
          function chk(result){
            if(result.checked){
              result.parentNode.parentNode.style.backgroundColor="#D7D0D0";
@@ -383,13 +376,15 @@ $sql = "SELECT complaint.complaintid , complaint.date , complaint.category , ass
              result.parentNode.parentNode.style.color="";
            }
          }
-
+        // select all
            function toggle(source) {
             var  checkboxes = document.getElementsByName('foo');
              for(var i=0, n=checkboxes.length;i<n;i++) {
                checkboxes[i].checked = source.checked;
+
                chk(checkboxes[i]);
                enable(checkboxes[i]);
+               //enable button
                callFunction();
              }
            }
