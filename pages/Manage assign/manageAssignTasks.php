@@ -212,7 +212,7 @@
 
             }
 
-// ما يضغط لين سلكت
+//
          			function validateMyForm(event)
                      {
          				var allCheckedBox =document.querySelectorAll('input[type="checkbox"]:checked');
