@@ -215,7 +215,7 @@
                                        ?>
 
                                        </div>
-<input type="text" readonly class="form-control-plaintext" value="" name="ClassroomN" id="compalintIDreassign"></input>
+<input type="hidden" readonly class="form-control-plaintext" value="" name="ClassroomN" id="compalintIDreassign"></input>
 
                                 </div>
                                 <div class="modal-footer">
@@ -242,23 +242,8 @@
                             <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
                         </div>
                         <div class="modal-body">
-                            <div>
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Category</th>
-                                            <th scope="col">Status</th>
+                            <div id="Ctable">
 
-                                        </tr>
-                                    </thead>
-                                    <tbody id="Ctable">
-                                        <tr>
-
-                                        </tr>
-                                    </tbody>
-                                </table>
                             </div>
                         </div>
                         <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button> </div>
@@ -453,10 +438,6 @@ function idcomp(){
     var ourBoxId = ourbox.replace(/\D+/,"");
     // alert(ourBoxId);
     document.getElementById("compalintIDreassign").value= ourBoxId;
-    // d=document.getElementById("compalintIDreassign").name= ourBoxId;
-
-
-
 
 }}
 
@@ -658,7 +639,7 @@ function idcomp(){
          xhr.open("POST", "setStatusSolved.php");
          xhr.send(data);
 
-//post form1
+//post form1 ajax
          function ajaxpost() {
   // (A) GET FORM DATA
   var form = document.getElementById("form");
@@ -675,7 +656,7 @@ function idcomp(){
   return false;
 }
 
-//post Reassign form
+//post Reassign form2 ajax
 function ajaxpostReassign(){
 var form1 = document.getElementById("formReassign");
 var data1 = new FormData(form1);
