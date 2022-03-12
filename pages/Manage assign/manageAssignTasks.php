@@ -82,7 +82,7 @@
          				<h2> Assign Emploess Complain</h2>
          			  </div>
          			  <div class="card-body">
-         				 <form  id="form" name ="myFormName" action ="anothercopyassign.php" method="POST" class="row g-3 needs-validation" novalidate>
+         				 <form  id="form" name ="myFormName" action ="" onsubmit="ajaxpost()" method="POST" class="row g-3 needs-validation" novalidate>
          									<div class="col col-md-12">
          				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for complaint id.." >
          				<br/>
@@ -146,7 +146,7 @@
          				  </tbody>
          				  </table>
          					<input type="submit" value="Confirm" class="btn btn-primary" disabled id="Assign">
-                  <input type="button" value="Reassign" class="btn btn-primary" disabled id=""  data-toggle="modal" disabled data-target="#exampleModal2" onclick="LoadA()">
+                  <input type="button" value="Reassign" class="btn btn-primary" disabled id=""  data-toggle="modal" disabled data-target="#exampleModal2" onclick="idcomp()">
                   <!-- <input type="button"onclick="selectRoomNum2()"> -->
 
                   <!-- <input type="button" value="Assign" class="btn btn-primary" disabled id="Assign" onclick="selectRoomNum2()"> -->
@@ -160,6 +160,9 @@
          		</div>
          	</div>
 <!-- reassign window -->
+<form  id="formReassign" name ="FormName"  onsubmit="ajaxpostReassign()" method="POST" class="row g-3 needs-validation" novalidate>
+  <!-- <form  id="form" name ="myFormName" action ="" onsubmit="ajaxpost()" method="POST" class="row g-3 needs-validation" novalidate> -->
+
                     <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -169,21 +172,66 @@
                                 </div>
                                 <div class="modal-body">
                                     <div>
-                                      <select  class="form-select form-select-lg mb-2 form-control " aria-label=".form-select-lg example" id="workerSelect">
-                                      </select>
+                                      <!-- <select  class="form-select form-select-lg mb-2 form-control " aria-label=".form-select-lg example" id="workerSelect">
+                                      </select> -->
+                                      <?php
 
-                                    </div>
+                                      $servername = "localhost";
+                                      $username = "root";
+                                      $password = "";
+                                      $dbname = "muqu";
+
+                                      $con = mysqli_connect($servername, $username, $password, $dbname);
+                                      if (!$con) {
+                                        die('Could not connect: ' . mysqli_error($con));
+                                      }
+
+                                      mysqli_select_db($con,$dbname);
+                                      $sql="SELECT * FROM worker";
+
+
+                                      $result = mysqli_query($con,$sql);
+                                      ?>
+                                      <?php
+
+                                      $sql1 = "SELECT userId,userName FROM worker";
+
+
+
+                                                 $result1 = $con->query($sql1);
+                                                  // echo" <select  class='form-select'>";
+                                                  echo"<select  class='form-select' id='SelectPicker_".$row["userId"]."' name='SelectPicker_".$row["userId"]."'>";
+
+                                                             echo "<option class='' name='W' value='".$row1["userId"]. "'>".$row1["userName"]."</option>";
+
+                                                             // echo "<option value='0' class=''>select worker </option>";
+
+                                                  while($row1=$result1->fetch_assoc()){
+
+
+                                                            echo "<option class='' name='W' value='".$row1["userId"]. "'>".$row1["userName"]."</option>";
+                                                         }
+                                                        echo"</select>";
+                                       ?>
+
+                                       </div>
+<input type="text" readonly class="form-control-plaintext" value="" name="ClassroomN" id="compalintIDreassign"></input>
+
                                 </div>
                                 <div class="modal-footer">
+                                  <!-- <input type="submit" value="Confirm" class="btn btn-primary" disabled id="Assign"> -->
+
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" onclick="selectRoomNum2()">Save changes</button>
+                                <button type="submit" class="btn btn-primary" onclick="selectRoomNum2()">Save changes</button>
                                   <!-- <input type="submit" value="reassign" class="btn btn-primary"  id="Assign">
                                   <input type="submit" value="later" class="btn btn-primary"  id="Assign"> -->
                                  </div>
+            </form>
                             </div>
                         </div>
                     </div>
                   </div>
+
 
           <!-- reassign window -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -222,38 +270,85 @@
 
 </div>
 <?php
-	$servername = "localhost";
-    $username = "root";
-    $password = "";
+// pre_r($_POST);
+// function pre_r(){
+// 	if ( defined('PRE_R') && PRE_R !== true ){
+// 		return;
+// 	}
+// 	foreach (func_get_args() as $arg) {
+// 		echo '<pre style="display:block">';
+// 		print_r($arg);
+// 		echo '</pre>';
+// 	}
+// }
+?>
+<?php
+	// $servername = "localhost";
+  //   $username = "root";
+  //   $password = "";
+  //
+  //   // Create connection
+  //   $conn = mysqli_connect($servername, $username, $password,"muqu");
+  //
+  //   if (!$conn) {
+	// 	die("Connection failed: " . mysqli_connect_error());
+	// }
+  //
+	// foreach($_POST as $key => $value) {
+	// 	if (strpos($key, 'box_') === 0) {
+	// 		$complainID = str_replace("box_", '', $key) ;
+	// 		$pickerName = "SelectPicker_".$complainID;
+  //
+  //
+	// 			 '<br/>'.$updateSql = "UPDATE complaint
+	// 					SET status = 'solved'
+	// 					WHERE complaintid = $complainID ";
+	// 			if ($conn->query($updateSql) === TRUE) {
+  //
+	// 			   // else {
+	// 			   //     echo "Error: " . $sql . "<br>" . $conn->error;
+	// 			   //   }
+  //
+	// 		}
+	// 	}
+	// }
+?>
 
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password,"muqu");
-
-    if (!$conn) {
-		die("Connection failed: " . mysqli_connect_error());
-	}
-
-	foreach($_POST as $key => $value) {
-		if (strpos($key, 'box_') === 0) {
-			$complainID = str_replace("box_", '', $key) ;
-			$pickerName = "SelectPicker_".$complainID;
-
-
-				 '<br/>'.$updateSql = "UPDATE complaint
-						SET status = 'solved'
-						WHERE complaintid = $complainID ";
-				if ($conn->query($updateSql) === TRUE) {
-
-				   // else {
-				   //     echo "Error: " . $sql . "<br>" . $conn->error;
-				   //   }
-
-			}
-		}
-	}
-
-
-
+<?php
+// 	$servername = "localhost";
+//     $username = "root";
+//     $password = "";
+//
+//     // Create connection
+//     $conn = mysqli_connect($servername, $username, $password,"muqu");
+//
+//     if (!$conn) {
+// 		die("Connection failed: " . mysqli_connect_error());
+// 	}
+//
+//
+// 			// $complainID = str_replace("box_", '', $key) ;
+//       $pickerName = "SelectPicker_";
+//     $employeeId= $_POST[$pickerName];
+//
+// 			// $employeeId = $_POST["W"];
+//       // $pickerName = "SelectPicker_".$complainID;
+//
+//       $complainID= $_POST["ClassroomN"];
+// echo "<h2>" . $employeeId . "</h2>";
+// echo "<h2>" . $complainID . "</h2>";
+//         //
+// 				echo '<br/>'.$updateSql = "UPDATE assign SET userId=$employeeId,compliantId=$complainID WHERE compliantId=$complainID";
+//
+//           // echo '<br/>'.$insertSql = "INSERT INTO assign (userId ,compliantId )
+// 					// VALUES ( $employeeId, $complainID  )";
+//           				// echo '<br/>'.$updateSql = "UPDATE complaint
+//           				// 		SET status = 'Under Processing'
+//           				// 		WHERE complaintId = $complainID ";
+//                       if ($conn->query($updateSql) === TRUE) {
+//                         echo "SUCCSED: " ;
+//
+//     				}
 
 ?>
 
@@ -351,25 +446,23 @@ console.log("hi");
    xmlhttp.send();
 
 }
-            function selectRoomNum2(strq){
-              var allCheckedBox =document.querySelectorAll('input[type="checkbox"]:checked');
-              for (var checkbox of allCheckedBox) { // to check if it select an employee
-                var ourbox = checkbox.id;
-                var workerid=  document.getElementById("workerSelect").value;
+function idcomp(){
+  var allCheckedBox =document.querySelectorAll('input[type="checkbox"]:checked');
+  for (var checkbox of allCheckedBox) { // to check if it select an employee
+    var ourbox = checkbox.id;
+    var ourBoxId = ourbox.replace(/\D+/,"");
+    // alert(ourBoxId);
+    document.getElementById("compalintIDreassign").value= ourBoxId;
+    // d=document.getElementById("compalintIDreassign").name= ourBoxId;
 
-                var ourBoxId = ourbox.replace(/\D+/,"");
-                alert(ourBoxId);
-                alert(workerid);
 
-                let part1 = "SelectPicker_";
-                let result = part1.concat(ourBoxId);
-                var ds =document.getElementById(result);
-                var strUser = ds.options[ds.selectedIndex].value;
 
-            var workerid=  document.getElementById("workerSelect").value;
-alert(workerid);
-alert(ourBoxId);
-              var str= strq.value;
+
+}}
+
+            function selectRoomNum2(str){
+
+              // var str= strq.value;
                 if (str=="") {
               document.getElementById("exampleModal").innerHTML="";
               return;
@@ -386,7 +479,7 @@ alert(ourBoxId);
             xmlhttp.open("GET","getComplaint0.php?q="+str,true);
             xmlhttp.send();
 }
-            }
+
 // ما يضغط لين سلكت
          			function validateMyForm(event)
                      {
@@ -560,5 +653,41 @@ alert(ourBoxId);
          //  $('input[name="foo"]').on('change', function() {
          //  $(this).closest('tr').toggleClass('yellow', $(this).is(':checked'));
          //});
+         var data = new FormData(document.getElementById("form"));
+         var xhr = new XMLHttpRequest();
+         xhr.open("POST", "setStatusSolved.php");
+         xhr.send(data);
 
+//post form1
+         function ajaxpost() {
+  // (A) GET FORM DATA
+  var form = document.getElementById("form");
+  var data = new FormData(form);
+
+  // (B) AJAX
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "setStatusSolved.php");
+  // What to do when server responds
+  xhr.onload = function () { console.log(this.response); };
+  xhr.send(data);
+
+  // (C) PREVENT HTML FORM SUBMIT
+  return false;
+}
+
+//post Reassign form
+function ajaxpostReassign(){
+var form1 = document.getElementById("formReassign");
+var data1 = new FormData(form1);
+
+// (B) AJAX
+var xhr = new XMLHttpRequest();
+xhr.open("POST","RassignPost.php");
+// What to do when server responds
+xhr.onload = function () { console.log(this.response); };
+xhr.send(data1);
+
+// (C) PREVENT HTML FORM SUBMIT
+return false;
+}
            </script>
