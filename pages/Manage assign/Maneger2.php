@@ -59,12 +59,23 @@
          }
          // $qury="select complaintid , date , category from complaint where status='Not Processed'";//Under Processing
          $qury= "SELECT complaint.complaintId , complaint.status, complaint.date , complaint.category , deal.userId , deal.completeness ,deal.reason , worker.userId,worker.userName
-                  FROM  complaint INNER JOIN deal
-                  ON complaint.complaintId=deal.complaintId
-                  INNER JOIN worker
-                  ON worker.userId=deal.userId
-                  -- RIGHT JOIN deal
-                  WHERE complaint.status='Under Processing'";
+                   FROM  complaint INNER JOIN deal
+                   ON complaint.complaintId=deal.complaintId
+                   INNER JOIN worker
+                   ON worker.userId=deal.userId
+                   -- RIGHT JOIN deal
+                   WHERE complaint.status='Under Processing'";
+
+                  // $qury= "SELECT complaint.complaintId , complaint.status, complaint.date , complaint.category , deal.userId , deal.completeness ,deal.reason , worker.userId , worker.userName,assign.userId,assign.compliantId
+                  //          FROM  complaint INNER JOIN assign
+                  //          ON complaint.complaintId=assign.compliantId
+                  //          INNER JOIN worker
+                  //          ON worker.userId=.userId
+                  //          INNER JOIN deal
+                  //          ON assign.userId=deal.userId
+                  //          -- RIGHT JOIN deal
+                  //          WHERE complaint.status='Under Processing'";
+                  //
 
          $result = $conn->query($qury);
 
@@ -79,10 +90,10 @@
          			<div class="col-md-8">
          			<div class="card text-left">
          			  <div class="card-header">
-         				<h2> Assign Emploess Complain</h2>
+         				<h2> Manege Task</h2>
          			  </div>
          			  <div class="card-body">
-         				 <form  id="form" name ="myFormName" action="" onsubmit="ajaxpost()" method="POST" class="row g-3 needs-validation" novalidate>
+         				 <form  id="form" name ="myFormName" action ="setStatusSolved.php" onsubmit="ajaxpost();"  method="POST" class="row g-3 " "needs-validation">
          									<div class="col col-md-12">
          				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for complaint id.." >
          				<br/>
@@ -90,7 +101,7 @@
          				  <table  id="myTable" class="table" >
          				  <thead class="table-light">
          					<tr>
-         					 <th><input type="checkbox"  value="bar1" onClick="toggle(this)"  /></th>
+         					 <th><input type="checkbox" id="select-all" value="bar1" onClick="toggle(this)"  /></th>
          					 <th>ID</th>
          					 <th>Date</th>
          					 <!-- <th>Catogry</th> -->
@@ -115,12 +126,12 @@
 
                   //button for info window
                     // $val="'.$row["complaintId"].'";
-                     echo'
-                      <td name=name_"'.$row["complaintId"].'">
-                      <button id="YourID" type="button" name='.$row["complaintId"].' value='.$row["complaintId"].'
-                       class="btn btn-primary"data-toggle="modal" data-target="#exampleModal"
-                        onclick="selectRoomNum(this)">
-                      '.$row["complaintId"].'</button></td>';
+                    echo'
+                     <td name=name_"'.$row["complaintId"].'">
+                     <button id="YourID" type="button" name='.$row["complaintId"].' value='.$row["complaintId"].'
+                      class="btn btn-primary"data-toggle="modal" data-target="#exampleModal"
+                       onclick="selectRoomNum(this)">
+                     '.$row["complaintId"].'</button></td>';
 
 
 
@@ -145,8 +156,8 @@
          				  ?>
          				  </tbody>
          				  </table>
-         					<input type="submit" value="Confirm" class="btn btn-primary" disabled id="Assign"  >
-                  <input type="button" value="Reassign" class="btn btn-primary" disabled id="Reassign1"  data-toggle="modal" disabled data-target="#exampleModal2" onclick="idcomp()">
+         					<input type="submit" value="Confirm" class="btn btn-primary" disabled id="Assign">
+                  <input type="button" value="Reassign" class="btn btn-primary" disabled id=""  data-toggle="modal" disabled data-target="#exampleModal2" onclick="idcomp()">
                   <!-- <input type="button"onclick="selectRoomNum2()"> -->
 
                   <!-- <input type="button" value="Assign" class="btn btn-primary" disabled id="Assign" onclick="selectRoomNum2()"> -->
@@ -160,22 +171,23 @@
          		</div>
          	</div>
 <!-- reassign window -->
-<form  id="formReassign" name ="FormName"  onsubmit="ajaxpostReassign();" method="POST" class="row g-3 needs-validation" novalidate>
+<form  id="formReassign" name ="FormName"  onsubmit="ajaxpostReassign()" method="POST" class="row g-3 needs-validation" >
   <!-- <form  id="form" name ="myFormName" action ="" onsubmit="ajaxpost()" method="POST" class="row g-3 needs-validation" novalidate> -->
 
                     <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header float-right">
-                                    <h5>User details</h5>
-                                    <div class="text-right"> <i data-dismiss="modal" aria-label="Close"  class="fa fa-close"></i> </div>
+                                    <h5>Reassign Complaint</h5>
+                                    <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
                                 </div>
                                 <div class="modal-body">
                                     <div>
                                       <!-- <select  class="form-select form-select-lg mb-2 form-control " aria-label=".form-select-lg example" id="workerSelect">
                                       </select> -->
-                                      <?php
+                                      <h3>Select Worker</h3>
 
+                                      <?php
                                       $servername = "localhost";
                                       $username = "root";
                                       $password = "";
@@ -200,9 +212,9 @@
 
                                                  $result1 = $con->query($sql1);
                                                   // echo" <select  class='form-select'>";
-                                                  echo"<select  class='form-select' id='SelectPicker_".$row1["userId"]."' name='SelectPicker_".$row1["userId"]."'>";
+                                                  echo"<select  class='form-select' id='SelectPicker_' name='SelectPicker_'>";
 
-                                                             // echo "<option class='' name='W' value='".$row1["userId"]. "'>".$row1["userName"]."</option>";
+                                                             echo "<option class='' name='W' value='".$row1["userId"]. "'>".$row1["userName"]."</option>";
 
                                                              // echo "<option value='0' class=''>select worker </option>";
 
@@ -222,7 +234,7 @@
                                   <!-- <input type="submit" value="Confirm" class="btn btn-primary" disabled id="Assign"> -->
 
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="submit" class="btn btn-primary" onclick="selectRoomNum2()">Save changes</button>
                                   <!-- <input type="submit" value="reassign" class="btn btn-primary"  id="Assign">
                                   <input type="submit" value="later" class="btn btn-primary"  id="Assign"> -->
                                  </div>
@@ -233,25 +245,30 @@
                   </div>
 
 
-          <!-- reassign window -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header float-right">
-                            <h5>User details</h5>
-                            <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
-                        </div>
-                        <div class="modal-body">
-                            <div id="Ctable">
+                  <!-- reassign window -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header float-right">
+                                    <h5>User details</h5>
+                                    <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div>
+                                        <table class="table table-bordered">
 
+                                            <tbody id="Ctable">
+                                              
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary" onclick="selectRoomNum3(this)">Save changes</button> </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button> </div>
                     </div>
-                </div>
-            </div>
           </div>
 <div id="message">
 
@@ -372,26 +389,26 @@
 
 
              // ajax for get complaint
-            function selectRoomNum(strq){
-              var str= strq.value;
+             function selectRoomNum(strq){
+               var str= strq.value;
 
-                if (str=="") {
-              document.getElementById("exampleModal").innerHTML="";
-              return;
-            }
-            var xmlhttp=new XMLHttpRequest();
-            xmlhttp.onreadystatechange=function() {
-              if (this.readyState==4 && this.status==200) {
+                 if (str=="") {
+               document.getElementById("exampleModal").innerHTML="";
+               return;
+             }
+             var xmlhttp=new XMLHttpRequest();
+             xmlhttp.onreadystatechange=function() {
+               if (this.readyState==4 && this.status==200) {
 
 
-                document.getElementById("Ctable").innerHTML=this.responseText;
+                 document.getElementById("Ctable").innerHTML=this.responseText;
 
-              };
-            }
-            xmlhttp.open("GET","getComplaint.php?q="+str,true);
-            xmlhttp.send();
+               };
+             }
+             xmlhttp.open("GET","getComplaint.php?q="+str,true);
+             xmlhttp.send();
 
-            }
+             }
 ////////////////////////////////
 // function getCheckValue{
 //   const ckb = document.querySelectorAll("#checkbox1 input[type=checkbox]");
@@ -567,37 +584,17 @@ function idcomp(){
              document.querySelectorAll('input[type="submit"]')[0].disabled = true;
          }
         // for enable button2
-//          function callFunction1() {
-//            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-//            var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
-// // alert(checkedOne.);
-//            if (checkedOne) {
-//              document.querySelectorAll('input[type="button"]')[0].disabled = false;
-//            }	else
-//              document.querySelectorAll('input[type="button"]')[0].disabled = true;
-//
-//          }
-         // $('#Reassign1').prop("disabled", true);
-         // $('input:checkbox').click(function() {
-         //  if ($(this).is(':checked')) {
-         //    if ($('.checks').filter(':checked').length == 1){
-         //  $('#Reassign1').prop("disabled", false);}
-         //  } else {
-         //  // if ($('.checks').filter(':checked').length < 1 ||$('.checks').filter(':checked').length > 1){
-         //  $('#Reassign1').attr('disabled',true);}
-         //  }
-         // });
-         //
-         $( ".box" ).on( "click", function() {
-           if($( ".box:checked" ).length == 1)
-           {
-             $('#Reassign1').prop('disabled', false);
-           }
-           else
-           {
-             $('#Reassign1').prop('disabled', true);
-           }
-         });
+         function callFunction1() {
+           var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+           var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+
+           if (checkedOne) {
+             document.querySelectorAll('input[type="button"]')[0].disabled = false;
+           }	else
+             document.querySelectorAll('input[type="button"]')[0].disabled = true;
+         }
+
+
        // dropdown enabled when row checked
            function enable(boxx) {
 
@@ -624,32 +621,72 @@ function idcomp(){
 
          	   }
 
+             $('#select-all').click(function(event) {
+                                                 if(this.checked) {
+                                                     // Iterate each checkbox
+                                                     $(':checkbox').each(function() {
+                                                         this.checked = true;
+                                                         // this.changBackground="#D7D0D0";
+                                                          $(this).parent().parent().css('background','#D7D0D0');
+                                                     });
+                                                 }
+                                                 else {
+                                                     $(':checkbox').each(function() {
+                                                         this.checked = false;
+                                                         $(this).parent().parent().css('background','');
+                                                     });
+                                                 }
 
+                                                 callFunction();
+                                                 callFunction1();
+                                             });
+                                             $('#select-all').click(function(event) {
+                                    if(this.checked) {
+                                        // Iterate each checkbox
+                                        $(':checkbox').each(function() {
+                                            this.checked = true;
+                                            // this.changBackground="#D7D0D0";
+                                             $(this).parent().parent().css('background','#D7D0D0');
+                                        });
+                                    }
+                                    else {
+                                        $(':checkbox').each(function() {
+                                            this.checked = false;
+                                            $(this).parent().parent().css('background','');
+                                        });
+                                    }
+
+                                    callFunction();
+                                    callFunction1();
+                                });
 
 //مايشتغل
+        // coloring checked row
+        function chk(result) {
+            if (result.checked) {
+                result.parentNode.parentNode.style.backgroundColor = "#D7D0D0";
+                result.parentNode.parentNode.style.color = "black";
+            } else {
+                result.parentNode.parentNode.style.backgroundColor = "";
+                result.parentNode.parentNode.style.color = "";
+            }
+        }
 
-function chk(result){
-  if(result.checked){
-    result.parentNode.parentNode.style.backgroundColor="#D7D0D0";
-    result.parentNode.parentNode.style.color="black";
-  } else{
-    result.parentNode.parentNode.style.backgroundColor="";
-    result.parentNode.parentNode.style.color="";
-  }
-}
+
 
          //مايشتغل
         // select all
-        function toggle(source) {
-     var  checkboxes = document.getElementsByClassName("box");
-      for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-        chk(checkboxes[i]);
-        enable(checkboxes[i]);
-        callFunction();
-
-      }
-    }
+           // function toggle(source) {
+           //  var  checkboxes = document.getElementsByName('foo');
+           //   for(var i=0, n=checkboxes.length;i<n;i++) {
+           //     checkboxes[i].checked = source.checked;
+           //
+           //     chk(checkboxes[i]);
+           //     enable(checkboxes[i]);
+           //     //enable button
+           //     callFunction();
+           //   }
+           // }
 
 
          //  $('input[name="foo"]').on('change', function() {
@@ -661,29 +698,38 @@ function chk(result){
          // xhr.send(data);
 
 //post form1 ajax
-         function ajaxpost() {
-  // (A) GET FORM DATA
-  var form = document.getElementById("form");
-  var data = new FormData(form);
-
-  // (B) AJAX
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "setStatusSolved.php");
-  // What to do when server responds
-  xhr.onload = function () { console.log(this.response); };
-  xhr.send(data);
-//call function for reload page on submit
-// reloadPage();
-  // (C) PREVENT HTML FORM SUBMIT
-  return true;
-}
-document.getElementById("form").onsubmit = function(){
-    location.reload(true);
-}
-//reload page on submit
-function reloadPage(){
-    location.reload(true);
-}
+//          function ajaxpost() {
+//   // (A) GET FORM DATA
+//   var form = document.getElementById("form");
+//   var data = new FormData(form);
+//
+//   // (B) AJAX
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("POST", "setStatusSolved.php");
+//   // What to do when server responds
+//   xhr.onload = function () { console.log(this.response); };
+//   xhr.send(data);
+//
+//   // (C) PREVENT HTML FORM SUBMIT
+//   return false;
+// }
+// function ajaxpost() {
+// // (A) GET FORM DATA
+//                                var form = document.getElementById("form");
+//                                var data = new FormData(form);
+//
+// // (B) AJAX
+//                                var xhr = new XMLHttpRequest();
+//                                xhr.open("POST", "setStatusSolved.php");
+// // What to do when server responds
+//                                xhr.onload = function () {
+//                                    console.log(this.response);
+//                                };
+//                                xhr.send(data);
+//
+// // (C) PREVENT HTML FORM SUBMIT
+//                                return false;
+//                            }
 //post Reassign form2 ajax
 function ajaxpostReassign(){
 var form1 = document.getElementById("formReassign");
@@ -699,44 +745,50 @@ xhr.send(data1);
 // (C) PREVENT HTML FORM SUBMIT
 return false;
 }
-function reload(){
-location.reload();
-return false;
-}
            </script>
+
            <?php
-           	// $servername = "localhost";
-            //    $username = "root";
-            //    $password = "";
-            //
-            //    // Create connection
-            //    $conn = mysqli_connect($servername, $username, $password,"muqu");
-            //
-            //    if (!$conn) {
-           	// 	die("Connection failed: " . mysqli_connect_error());
-           	// }
-            //
-           	// foreach($_POST as $key => $value) {
-           	// 	if (strpos($key, 'box_') === 0) {
-           	// 		$complainID = str_replace("box_", '', $key) ;
-           	// 		$pickerName = "SelectPicker_".$complainID;
-           	// 		$employeeId= $_POST[$pickerName];
-            //
-            //
-           	// 			echo '<br/>'.$updateSql = "UPDATE complaint
-           	// 					SET status = 'solved'
-           	// 					WHERE complaintid = $complainID ";
-           	// 			if ($conn->query($updateSql) === TRUE) {
-            //
-           	// 			   // else {
-           	// 			   //     echo "Error: " . $sql . "<br>" . $conn->error;
-           	// 			   //   }
-            //
-           	// 		}
-           	// 	}
-           	// }
-
-
-
+           //
+           //
+           // $servername = "localhost";
+           // 	$username = "root";
+           // 	$password = "";
+           //
+           // 	// Create connection
+           // 	$conn = mysqli_connect($servername, $username, $password,"muqu");
+           //
+           // 	if (!$conn) {
+           // 	die("Connection failed: " . mysqli_connect_error());
+           // }
+           //
+           //
+           //
+           //
+           // 	foreach($_POST as $key => $value) {
+           // 		if (strpos($key, 'box_') === 0) {
+           // 			$complainID = str_replace("box_", '', $key) ;
+           // 			// $employeeId= $_POST[$pickerName];
+           //
+           //
+           // 				'<br/>'.$updateSql = "UPDATE complaint
+           // 						SET status = 'solved'
+           // 						WHERE complaintid = $complainID ";
+           // 						if ($conn->query($updateSql) === TRUE) {
+           //
+           // }
+           //
+           //     //make it =1 to delete it
+           //
+           //
+           // // if(!mysqli_error($conn))
+           //   echo '<meta http-equiv="refresh" content="0; url=maneger2.php">';
+           // }
+           //
+           //
+           //
+           //
+           //
+           //   }
 
            ?>
+		</html>
