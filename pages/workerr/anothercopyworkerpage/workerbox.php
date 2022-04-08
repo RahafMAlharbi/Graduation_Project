@@ -5,17 +5,11 @@ $username = "root";
 $password = "";
 $dbname = "muqu";
 
-
-
-
 $con = mysqli_connect($servername, $username, $password, $dbname) or die("Error: " . mysqli_error($con));
 
-session_start();
-$check['userId']=$_SESSION['userid'];
-$userid= $check['userId'];
 // fetch records saved =0 that Will be showing in the page
 //and fk.saved='0'
-$result = @mysqli_query($con, "SELECT * FROM complaint pk, assign fk where pk.complaintId =fk.compliantId and fk.userId=$userid and fk.saved='0'") or die("Error: " . mysqli_error($con));
+$result = @mysqli_query($con, "SELECT * FROM complaint pk, assign fk where pk.complaintId =fk.compliantId and fk.saved='0'   ") or die("Error: " . mysqli_error($con));
 
 echo(mysqli_error($con));
 
@@ -132,7 +126,7 @@ echo(mysqli_error($con));
                             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for complaint id..">
                             <br/>
                             <br/>
-                            <table class="table " id="">
+                            <table class="table " id="myTable">
                                 <thead class="table-light">
                                 <tr>
                                     <th><input type="checkbox" value="bar1" id="select-all" onclick="toggle(this)"/></th>
@@ -462,6 +456,25 @@ echo(mysqli_error($con));
         function getTheReason() {
             let comment = $("#comment").val();
             $("#comment2").val(comment)
+        }
+        /////////
+        function myFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
         }
 
     </script>
