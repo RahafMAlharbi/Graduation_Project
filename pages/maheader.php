@@ -236,14 +236,14 @@
                                 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> -->
 
                                 <div class="container ">
-                                <div class="row col-md-4 position-relative">
+                                <div class="row ">
                                    <!-- <div class="col-md-4"> -->
 
                                    <div id="map" class=" col-md-4 position-relative"></div>
                             <!-- </div> -->
                             <!-- <div class="col-md-4  pb-5"> -->
 
-                                            <div id="mySidenavR" class="  top-50 end-0 translate-middle-y  position-absolute col-md-2 sidenavR   sidebar  navbar mt-5">
+                                            <div id="mySidenavR" class="  top-50 end-0 translate-middle-y top-50 position-absolute col-md-2 sidenavR   sidebar  navbar mt-5">
                                             <!-- <div id="mySidenavR" class="sidenavR position-absolute top-00 start-0 translate-middle-y navbar "> -->
                                             <a href="javascript:void(0)" class="closebtn position-absolute" onclick="closeNavR()">×</a>
 
