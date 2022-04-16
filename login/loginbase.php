@@ -1,3 +1,7 @@
+<?php
+include ('MainHeadar.php');
+ ?>
+
 <style>
 body {
   margin: 0;
@@ -33,7 +37,7 @@ body {
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                        <form id="login-form" class="form" action="MainHeadar.php" method="post">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Username:</label><br>
@@ -41,13 +45,15 @@ body {
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Password:</label><br>
-                                <input type="password" name="password" id="password" class="form-control">
+                                <input type="text" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                             </div>
-
+                            <div id="register-link" class="text-right">
+                                <a href="#" class="text-info">Register here</a>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -56,34 +62,36 @@ body {
 
 
          <?php
-         $servername = "localhost";
-         $username = "root";
-         $password = "";
-
-         // Create connection
-         $conn = mysqli_connect($servername, $username, $password,"muqu");
-
-         if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-      }
-
-
-      if (isset($_POST['submit'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-      $sql= "SELECT userEmail,userPassword,userId FROM facultymember  WHERE userEmail = '$username' AND userPassword = '$password'
-              UNION SELECT userEmail,userPassword,userId  FROM manager WHERE userEmail = '$username' AND userPassword = '$password'
-              UNION SELECT userEmail,userPassword,userId  FROM worker  WHERE userEmail = '$username' AND userPassword = '$password'   ";
-      $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
-      $check = mysqli_fetch_array($result);
-      if(isset($check)){
-        /*  header("Location: ../Assignpagelastone\AssignMod\anothercopyassign.php");*/
-      echo 'wow';
-      }else{
-      echo 'failure';
-      }
-      }
-        session_start();
-         die( mysqli_error($conn));
-        $_SESSION['userid'] = $check['userId'];
-      ?>
+      //    $servername = "localhost";
+      //    $username = "root";
+      //    $password = "";
+      //
+      //    // Create connection
+      //    $conn = mysqli_connect($servername, $username, $password,"muqu");
+      //
+      //    if (!$conn) {
+      //   die("Connection failed: " . mysqli_connect_error());
+      // }
+      //
+      //
+      // if (isset($_POST['submit'])){
+      //   $username = $_POST['username'];
+      //   $password = $_POST['password'];
+      //   $sql= "SELECT userPassword,userId FROM facultymember  WHERE  userPassword = '$password'
+      //         UNION SELECT userPassword,userId  FROM manager WHERE  userPassword = '$password'
+      //         UNION SELECT userPassword,userId  FROM worker  WHERE  userPassword = '$password'   ";
+      //
+      //
+      // $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
+      // $check = mysqli_fetch_array($result);
+      //
+      // if(isset($check)){
+      //   /*  header("Location: ../Assignpagelastone\AssignMod\anothercopyassign.php");*/
+      // echo 'wow';
+      // }else{
+      // echo 'failure';
+      // }
+      // }
+      //   // session_start();
+      //   // $_SESSION['userid'] = $check['userId'];
+      // ?>
