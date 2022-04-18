@@ -43,7 +43,7 @@ body {
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Password:</label><br>
-                                <input type="text" name="password" id="password" class="form-control">
+                                <input type="password" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
@@ -73,9 +73,9 @@ body {
         if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $sql= "SELECT      userPassword,userId ,usertype FROM facultymember  WHERE  userPassword = '$password'
-              UNION SELECT userPassword,userId ,usertype FROM manager WHERE         userPassword = '$password'
-              UNION SELECT userPassword,userId ,usertype FROM worker  WHERE         userPassword = '$password' ";
+        $sql= "SELECT      userPassword,userId,usertype FROM facultymember  WHERE  userPassword = '$password'
+              UNION SELECT userPassword,userId,usertype FROM manager WHERE         userPassword = '$password'
+              UNION SELECT userPassword,userId,usertype FROM worker  WHERE         userPassword = '$password' ";
         $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
         $check = mysqli_fetch_array($result);
 
@@ -92,6 +92,7 @@ body {
         }
 
         session_start();
+         die( mysqli_error($conn));
         $_SESSION['userid'] = $check['userId'];
 
 
