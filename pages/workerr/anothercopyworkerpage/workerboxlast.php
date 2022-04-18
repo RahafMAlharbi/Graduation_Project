@@ -126,13 +126,13 @@ echo(mysqli_error($con));
             <div class="card text-left">
                 <div class="card-header"><h2> Worker page</h2></div>
                 <div class="card-body">
-                    <form method="post" id="form" action="workerbutton.php" class="">
+                  <form method="post" id="form" action="workerbutton.php" class="">
                         <input type="hidden" name="comment" id="comment2">
                         <div class="col col-md-12">
                             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for complaint id..">
                             <br/>
-                            <br/>
-                            <table class="table " id="">
+                              <br/>
+                            <table class="table " id="myTable">
                                 <thead class="table-light">
                                 <tr>
                                     <th><input type="checkbox" value="bar1" id="select-all" onclick="toggle(this)"/></th>
@@ -463,6 +463,25 @@ echo(mysqli_error($con));
             let comment = $("#comment").val();
             $("#comment2").val(comment)
         }
+        /////////
+        function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
 
     </script>
 </body>
