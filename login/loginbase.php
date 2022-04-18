@@ -1,6 +1,4 @@
-<?php
-include ('MainHeadar.php');
- ?>
+
 
 <style>
 body {
@@ -37,7 +35,7 @@ body {
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="MainHeadar.php" method="post">
+                        <form id="login-form" class="form" action="loginbase.php" method="post">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Username:</label><br>
@@ -59,3 +57,42 @@ body {
                 </div>
             </div>
         </div>
+
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password,"muqu");
+
+        if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+        }
+
+        if(isset($_POST['submit'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $sql= "SELECT      userPassword,userId ,usertype FROM facultymember  WHERE  userPassword = '$password'
+              UNION SELECT userPassword,userId ,usertype FROM manager WHERE         userPassword = '$password'
+              UNION SELECT userPassword,userId ,usertype FROM worker  WHERE         userPassword = '$password' ";
+        $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
+        $check = mysqli_fetch_array($result);
+
+           if($check['usertype'] =="1"){
+                       header("location:Fcheader.php");
+                   }
+                   else if($check['usertype'] == "2"){
+                       header("location:woheader.php");
+                   }
+                   else if($check['usertype'] == "3"){
+                       header("location:maheader.php");
+                   }
+         // header("lcation:muqumap.php");
+        }
+
+        session_start();
+        $_SESSION['userid'] = $check['userId'];
+
+
+        ?>
