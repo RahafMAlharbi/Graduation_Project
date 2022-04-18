@@ -30,25 +30,14 @@
   </head>
   <body>
 
-
-
-
-
                               <style media="screen">
                               #complaintTable{
-                                /* display: none; */
-                                /* padding:10px 10px 30px 0; */
                               }
 
                             #dev-table{
-                              /* border: solid red; */
                               border:1px #345e73 solid;
                               border-radius: 1em;
                               margin-top: 20px;
-
-
-                            /* margin: 10px 10px 10px px; */
-
                             }
                             #roomN{
                             width: 21em;
@@ -57,44 +46,15 @@
                             }
                             #dev-table-filter{
                               border:1px #345e73 solid;
-
-
-                            /* width: 380px; */
-
                             }
-
-
                             .panel > .panel-heading {
                             background-image: none;
-                            /* background-color: #345e73; */
                             color: white;
-                            /* border-color: #345e73; */
                             }
                             #Ctable{
-                            /* border-color: #345e73;
-                            border-radius: 25px; */
                             width: 21em;
-
-
-
                             }
-                            table {
-  /* border-collapse: collapse; */
-  /* border: solid red; */
 
-  /* border: 10px solid red; */
-  /* overflow: hidden; */
-}
-
-th, td {
-  /* border-bottom: 2px solid #345e73; */
-
-  /* padding: 1em;
-  background: #ddd;*/
-  /* border-radius: 10px;
-
-  border-bottom: 2px solid red; */
-}
 table {
   /* border-collapse: collapse; */
   border-radius: 1em;
@@ -103,24 +63,7 @@ table {
 
 }
 
-th, td {
-  /* overflow: hidden; */
-  /* border-radius: 1em; */
 
-  /* padding: 1em; */
-  /* background: #ddd; */
-  /* border-bottom: 2px solid #345e73; */
-  /* border: 2px solid #345e73; */
-
-}
-                            tr{
-                            /* border-bottom: 1px solid #345e73; */
-                            }
-                            #pb,#dev-table{
-                              /* border-radius: 25px; */
-
-                            /* background-color: #ffffff; filter: alpha(opacity=40); opacity: 0.95;border:1px #345e73 solid; */
-                            }
                             #pbd{
                             display: none;
 
@@ -141,14 +84,8 @@ th, td {
                               .sidenavR{
                               background-color:#fff;
                               height:490px;
-                              /* margin:00px 10px 100px 20px ; */
-
                               overflow-x:hidden;
-                              padding:30px 10px 10px 20px;
-                              /* position:absolute; */
                               right:0;
-                              /* margin: 0px 00px 00 80px; */
-                              /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
                               border-radius: 30px;
 
                               top:0;transition:.5s;width:0;z-index:1000;}
@@ -159,19 +96,7 @@ th, td {
                               .sidenav,.sidenavR{padding-top:15px;}
                               .sidenav a,.sidenavR a{font-size:13px;}
                               }
-                              /* .closebtn{font-size:105px;margin-left:50px;position:absolute;right:25px;top:0;} */
-                              /* .sidenav .closebtn,.sidenavR .closebtn{font-size:36px;margin-left:50px;position:absolute;right:25px;top:0;} */
-
-                              .navbar {
-                              /* margin-bottom: 0px; */
-                              }
-                              #mySidenavR{margin: 8850px 00 00 0;}
                               .cardS{
-                                /* position: absolute; */
-
-                                margin: 50px;
-
-                              /* top: 70%; */
                               background: rgba( 255, 255, 255, 0.2 );
                               box-shadow: 0 8px 32px 0 rgba(19, 22, 60, 0.37);
                               backdrop-filter: blur( 6px );
@@ -181,59 +106,32 @@ th, td {
                               height: 200px;
                               width: 200px;
                               }
+                              .cardS-disc{
+                                margin: 50px;
+                              backdrop-filter: blur( 6px );
+                              height: 300px;
+                              width: 200px;
+                              }
                               .carddice{
-                                /* margin: 50px; */
-                                /* margin-left: 10px;
-                                margin-right: 10px; */
-
-                                /* position: absolute; */
-                                /* margin: 300px 50px 50px 10px; */
                                 border:3px #345e73 solid;
-                                /* margin: 50px; */
-
-                                /* margin: 00px 0px 00px 80px; */
-
-                              /* top: 70%; */
                               background: rgba( 255, 255, 255, 0.2 );
-                              /* background:#666; */
-                              /* box-shadow: 0 8px 32px 0 rgba(19, 22, 60, 0.37); */
                               backdrop-filter: blur( 6px );
                               -webkit-backdrop-filter: blur( 6px );
                               border-radius: 10px;
-                              /* border: 1px solid rgba(0, 0, 0, 1); */
-                              height: 400px;
-                              width: 300px;
+                              height: 500px;
+                              width: 380px;
                               }
-                              #{
-                                margin: 200px 0px 0px 0px;
-                                padding: 00px 00px 00px 90px;
 
-                              }
                               #cardinfo{
-                                /* margin: 00px 30px 100px 35px; */
                                 margin: 130px 0px 0px 0px;
-
                                 width: 1000px;
                                 height: 1px;
                                 border:3px #345e73 solid;
-
-
                               }
                               #statistics {
-                                /* position: relative; */
-                                /* padding :00px 100px 50px 50px ; */
-                                /* border: 2px solid black; */
-                                /* background-repeat: no-repeat; */
                                 background-color:#2d3873;
                                 background-image: linear-gradient(to bottom right, #0D3749, #B2D5E2);
                                 border-radius: 10px;
-
-                                /* background-size: 1000px 900px 900px 900px; */
-                                 /* height: 40em; */
-                                /* width: 1270px;  */
-                                /* padding :50px 50px 50px 50px ;
-                                margin:200px 00 200px 100 ; */
-                                /* background-color: greenyellow; */
 
                               }
                             #s2{
@@ -241,17 +139,40 @@ th, td {
                             height: 119px;
 
                             }
-
-#abuotus{
-   /* margin-left: 60px;
-   margin-right: 180px; */
-
+.discribtion{
+  text-align: center;
+  color: #0c2837;
 
 }
-                            body{
-                              margin-left: 10px;
 
-                            }
+#how-to-use{
+  color: #0c2837;
+  text-decoration: none;
+
+}
+
+#how-to-use::before {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #18272F;
+  bottom: 0;
+  left: 50px;
+  right:50px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+  margin-top: 20px;
+}
+#how-to-use:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+    body{
+margin-left: 10px;
+}
                               </style>
                               <div class="b-example-divider pt-5 pb-5 pe-5">
 
@@ -310,7 +231,7 @@ th, td {
                                             <!-- <div id="mySidenavR" class="sidenavR position-absolute top-00 start-0 translate-middle-y navbar "> -->
                                             <a href="javascript:void(0)" class="closebtn position-absolute" onclick="closeNavR()">×</a>
 
-                                            <div id="content1" class="position-sticky  ">
+                                            <div id="content1" class="position-sticky ms-2 ">
                                               <div id="complaint">
                                                 <h2 class"panel-title lead" >View Complaints</h2>
                                               </div>
@@ -370,42 +291,53 @@ th, td {
 
 
                             </div>
+
                             <div class="container pt-5 mb-5" id="statistics">
                             <!-- <h2 class="pb-2 border-bottom">Columns with icons</h2> -->
                             <div class="row g-4 py-5 row-cols-1 pt-5 row-cols-lg-3 ps-5">
-                            <div class="cardS feature col">
-                              <!-- <div class="feature-icon bg-primary bg-gradient">
-                                <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
-                              </div> -->
-
-                            </div>
-                            <div class="cardS feature col">
-
-                              <!-- <img src="/s2.png.png" alt="Girl in a jacket"> -->
-                              <!-- <div class="feature-icon bg-primary bg-gradient">
-                                <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
-                              </div>
-                              <h2>Featured title</h2>
-                              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                              <a href="#" class="icon-link">
-                                Call to action
-                                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
-                              </a> -->
-                            </div>
-                            <div class="cardS feature col position-relative">
-                              <div class="position-absolute top-50 start-50 translate-middle">
+                              <div class="cardS-disc col">
+                            <div class=" cardS feature ">
+                              <div class=" row-3 position-absolute top-50 start-50 translate-middle">
                                 <img id="s2" src="s2.png" class="ms-2">
 
-                                <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
                               </div>
-                              <!-- <h2>Featured title</h2>
-                              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                              <a href="#" class="icon-link">
-                                Call to action
-                                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
-                              </a> -->
+
+
                             </div>
-                            <div class="cardS feature col">
+                            <div class="row-3 position-absolute" >
+                            <h5 class="discribtion ms-5 me-4 mt-4">Site visitors</h5>
+                              </div>
+                              </div>
+                            <div class="cardS-disc col">
+                            <div class=" cardS feature ">
+                              <div class=" row-3 position-absolute top-50 start-50 translate-middle">
+                                <img id="s2" src="s2.png" class="ms-2">
+
+                              </div>
+
+                            </div>
+                            <div class="row-3 position-absolute" >
+                            <h5 class="discribtion ms-1 mt-4">Number of complaints resolved</h5>
+                              </div>
+                              </div>
+                            <div class="cardS-disc col">
+                            <div class="cardS feature">
+                              <div class=" row-3 position-absolute top-50 start-50 translate-middle">
+                                <img id="s2" src="s2.png" class="ms-2">
+
+                              </div>
+
+                            </div>
+                            <div class="row-3 position-absolute" >
+                            <h5 class="discribtion ms-1 mt-4">Quick response and repair</h5>
+                              </div>
+                            </div>
+                            <div class="cardS-disc col">
+                            <div class=" cardS feature ">
+                              <div class=" row-3 position-absolute top-50 start-50 translate-middle">
+                                <img id="s2" src="s2.png" class="ms-2">
+
+                              </div>
                               <!-- <div class="feature-icon bg-primary bg-gradient">
                                 <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
                               </div>
@@ -416,6 +348,10 @@ th, td {
                                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
                               </a> -->
                             </div>
+                            <div class="row-3 position-absolute" >
+                            <h5 class="discribtion ms-1 mt-4"> Number of complaints filed</h5>
+                              </div>
+                              </div>
                             </div>
                             </div>
 
@@ -423,14 +359,35 @@ th, td {
 <!-- ////////// -->
 <div class="container ps-5 pe-5 ps-5 mb-5 " id="abuotus">
 <div class="  d-flex justify-content-between position-relative row  pt-5 ">
-<div class=" carddice   feature col-2 mt-4 ">
+<div class=" carddice   feature col-2 mt-4 ps-4">
+  <div class=" row-3 position-absolute top-0 start-50 mt-5 translate-middle-x">
+    <img id="s2" src="uhowtouse.png" class="ms-2">
 
+  </div>
+  <div class="position-absolute top-50  me-2 " >
+  <h3 class="discribtion  mt-2 ms-3 me-3">Do you want to know more about MUQU team?</h3>
 
+    </div>
+    <div class="position-absolute bottom-0 ms-3 mb-5  ps-4 row" >
+    <!-- <h3 class="discribtion  mt-2">Do you want to learn how to use our website?</h3> -->
+<h3>    <a id="how-to-use" class="discribtion  mt-5 ms-5" href="">About us</a></h3>
+
+      </div>
 </div>
 
-<div class="  col-2 feature carddice mt-4 ">
+<div class="  d-flex flex-column feature carddice mt-4 ">
+  <div class="position-absolute top-50 ms-2 me-2" >
+  <h3 class="discribtion  mt-2 ms-4 me-4">Do you want to learn how to use our website?</h3>
+  <!-- <a class="discribtion  mt-5 ms-5" href="https://www.w3schools.com">Visit W3Schools.com!</a> -->
+    </div>
 
+    <div class="position-absolute bottom-0 ms-2 mb-5 me-4 ps-5 d-flex flex-column " >
+    <!-- <h3 class="discribtion  mt-2">Do you want to learn how to use our website?</h3> -->
+    <h3><a id="how-to-use"class="discribtion  mt-5 ms-5" href="">How to use</a></h3>
+
+      </div>
 </div>
+
 </div>
 </div>
 
