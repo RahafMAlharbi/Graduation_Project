@@ -38,7 +38,7 @@ body {
                         <form id="login-form" class="form" action="loginbase.php" method="post">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
+                                <label for="username" class="text-info">userEmail:</label><br>
                                 <input type="text" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
@@ -73,9 +73,9 @@ body {
         if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $sql= "SELECT      userPassword,userId,usertype FROM facultymember  WHERE  userPassword = '$password'
-              UNION SELECT userPassword,userId,usertype FROM manager WHERE         userPassword = '$password'
-              UNION SELECT userPassword,userId,usertype FROM worker  WHERE         userPassword = '$password' ";
+        $sql= "SELECT userEmail,userPassword,userId ,usertype FROM facultymember  WHERE userEmail = '$username' AND  userPassword = '$password'
+              UNION SELECT userEmail,userPassword,userId ,usertype FROM manager WHERE  userEmail = '$username' AND userPassword = '$password'
+              UNION SELECT userEmail, userPassword,userId ,usertype FROM worker  WHERE userEmail = '$username' AND userPassword = '$password' ";
         $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
         $check = mysqli_fetch_array($result);
 
