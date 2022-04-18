@@ -59,34 +59,3 @@ body {
                 </div>
             </div>
         </div>
-
-        <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-
-        // Create connection
-        $conn = mysqli_connect($servername, $username, $password,"muqu");
-
-        if (!$conn) {
-       die("Connection failed: " . mysqli_connect_error());
-     }
-
-
-     if (isset($_POST['submit'])){
-       $username = $_POST['username'];
-       $password = $_POST['password'];
-     $sql= "SELECT userEmail,userPassword,userId FROM facultymember  WHERE userEmail = '$username' AND userPassword = '$password'
-             UNION SELECT userEmail,userPassword,userId  FROM manager WHERE userEmail = '$username' AND userPassword = '$password'
-             UNION SELECT userEmail,userPassword,userId  FROM worker  WHERE userEmail = '$username' AND userPassword = '$password'   ";
-     $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
-     $check = mysqli_fetch_array($result);
-     if(isset($check)){
-       /*  header("Location: ../Assignpagelastone\AssignMod\anothercopyassign.php");*/
-     echo 'wow';
-     }else{
-     echo 'failure';
-     }}
-        session_start();
-       $_SESSION['userid'] = $check['userId'];
-     ?>
