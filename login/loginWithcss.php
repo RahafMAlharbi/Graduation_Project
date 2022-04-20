@@ -50,6 +50,52 @@ border-bottom: 1px solid rgb(212, 212, 212);
 </style>
 
 
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password,"muqu");
+
+if (!$conn) {
+die("Connection failed: " . mysqli_connect_error());
+}
+
+if(isset($_POST['submit'])){
+$username = $_POST['username'];
+$password = $_POST['password'];
+$sql= "SELECT userEmail,userPassword,userId ,usertype FROM facultymember  WHERE userEmail = '$username' AND  userPassword = '$password'
+      UNION SELECT userEmail,userPassword,userId ,usertype FROM manager WHERE   userEmail = '$username' AND userPassword = '$password'
+      UNION SELECT userEmail, userPassword,userId ,usertype FROM worker  WHERE userEmail = '$username' AND userPassword = '$password' ";
+$result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
+$check = mysqli_fetch_array($result);
+
+           if(isset($check)){
+                if($check['usertype'] =="1"){
+                            header("location:Fcheader.php");
+                        }
+                        else if($check['usertype'] == "2"){
+                            header("location:woheader.php");
+                        }
+                        else if($check['usertype'] == "3"){
+                            header("location:maheader.php");
+                        }
+                        session_start();
+                        $_SESSION['userid'] = $check['userId'];
+            }else{
+              echo "<script>
+                   var x = document.getElementById('error');
+                   if (x.style.display == 'none') {
+                       x.style.display = 'block';
+                    }
+                    </script>";
+                 }
+               }
+?>
+
+
 <!--Bootstrap CSS Reference-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
@@ -70,7 +116,7 @@ border-bottom: 1px solid rgb(212, 212, 212);
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box container " class="col-md-12">
-                        <form id="login-form container " class="form container login-div needs-validation" action="logincssanderrormessage.php" method="post" novalidate>
+                        <form id="login-form container " class="form container login-div needs-validation" action="loginWithcss.php" method="post" novalidate>
                           <h3 class="text-center mt-5 ">Login</h3>
                            <div class="container ">
                                <div class="form-group row mt-5">
@@ -103,49 +149,6 @@ border-bottom: 1px solid rgb(212, 212, 212);
             </div>
         </div>
 
-        <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-
-        // Create connection
-        $conn = mysqli_connect($servername, $username, $password,"muqu");
-
-        if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-        }
-
-        if(isset($_POST['submit'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $sql= "SELECT userEmail,userPassword,userId ,usertype FROM facultymember  WHERE userEmail = '$username' AND  userPassword = '$password'
-              UNION SELECT userEmail,userPassword,userId ,usertype FROM manager WHERE   userEmail = '$username' AND userPassword = '$password'
-              UNION SELECT userEmail, userPassword,userId ,usertype FROM worker  WHERE userEmail = '$username' AND userPassword = '$password' ";
-        $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
-        $check = mysqli_fetch_array($result);
-
-                   if(isset($check)){
-                        if($check['usertype'] =="1"){
-                                    header("location:Fcheader.php");
-                                }
-                                else if($check['usertype'] == "2"){
-                                    header("location:woheader.php");
-                                }
-                                else if($check['usertype'] == "3"){
-                                    header("location:maheader.php");
-                                }
-                                session_start();
-                                $_SESSION['userid'] = $check['userId'];
-                    }else{
-                      echo "<script>
-                           var x = document.getElementById('error');
-                           if (x.style.display == 'none') {
-                               x.style.display = 'block';
-                            }
-                            </script>";
-                         }
-                       }
-        ?>
 
 <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
