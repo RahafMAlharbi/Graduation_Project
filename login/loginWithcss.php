@@ -1,5 +1,3 @@
-
-
 <style>
 body {
   margin: 0;
@@ -72,25 +70,32 @@ border-bottom: 1px solid rgb(212, 212, 212);
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box container " class="col-md-12">
-                        <form id="login-form container " class="form container login-div" action="loginbase.php" method="post">
+                        <form id="login-form container " class="form container login-div needs-validation" action="logincssanderrormessage.php" method="post" novalidate>
                           <h3 class="text-center mt-5 ">Login</h3>
-
                            <div class="container ">
-                            <div class="form-group row mt-5">
+                               <div class="form-group row mt-5">
                                 <label for="username " class="">User Email:</label><br>
-                                <input type="text" name="username" id="username" class="input-failed" placeholder="user email">
+                                <input type="text" name="username" id="username" class="input-failed" placeholder="user email"required>
+                                <div class="invalid-feedback">
+                                 Please choose a user email.
+                                  </div>
                             </div>
                             <div class="form-group row mt-5">
                                 <label for="password" class="">Password:</label><br>
-                                <input type="password" name="password" id="password" class="input-failed" placeholder="password:">
+                                <input type="password" name="password" id="password" class="input-failed" placeholder="password"required>
+                                <div class="invalid-feedback">
+                               Please enter a password.
+                                  </div>
                             </div>
                             <div class="form-group row mt-5">
-                                <label for="remember-me" class=""><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <label for="remember-me" class=""><span><input id="remember-me" name="remember-me" type="checkbox"></span><span> Remember me</span> </label><br>
                                 <input type="submit" name="submit" class="btn row btn-md" value="submit">
                             </div>
-                            <div id="register-link" class="text-right row">
-                                <a href="#" class="">Register here</a>
-                            </div>
+                            <div class="form-group row mt-5">
+                              <div class="alert alert-danger" id="error" style="display:none;"  role="alert">
+                                Invalid UserEmail or Password
+                               </div>
+                                 </div>
                           </div>
                         </form>
                     </div>
@@ -114,26 +119,53 @@ border-bottom: 1px solid rgb(212, 212, 212);
         $username = $_POST['username'];
         $password = $_POST['password'];
         $sql= "SELECT userEmail,userPassword,userId ,usertype FROM facultymember  WHERE userEmail = '$username' AND  userPassword = '$password'
-              UNION SELECT userEmail,userPassword,userId ,usertype FROM manager WHERE  userEmail = '$username' AND userPassword = '$password'
+              UNION SELECT userEmail,userPassword,userId ,usertype FROM manager WHERE   userEmail = '$username' AND userPassword = '$password'
               UNION SELECT userEmail, userPassword,userId ,usertype FROM worker  WHERE userEmail = '$username' AND userPassword = '$password' ";
         $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
         $check = mysqli_fetch_array($result);
 
-           if($check['usertype'] =="1"){
-                       header("location:Fcheader.php");
-                   }
-                   else if($check['usertype'] == "2"){
-                       header("location:woheader.php");
-                   }
-                   else if($check['usertype'] == "3"){
-                       header("location:maheader.php");
-                   }
-         // header("lcation:muqumap.php");
+                   if(isset($check)){
+                        if($check['usertype'] =="1"){
+                                    header("location:Fcheader.php");
+                                }
+                                else if($check['usertype'] == "2"){
+                                    header("location:woheader.php");
+                                }
+                                else if($check['usertype'] == "3"){
+                                    header("location:maheader.php");
+                                }
+                                session_start();
+                                $_SESSION['userid'] = $check['userId'];
+                    }else{
+                      echo "<script>
+                           var x = document.getElementById('error');
+                           if (x.style.display == 'none') {
+                               x.style.display = 'block';
+                            }
+                            </script>";
+                         }
+                       }
+        ?>
+
+<script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
         }
 
-        session_start();
-         die( mysqli_error($conn));
-        $_SESSION['userid'] = $check['userId'];
-
-
-        ?>
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
