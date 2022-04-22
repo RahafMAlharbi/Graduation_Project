@@ -262,7 +262,7 @@ div.headerDatails{
                 </div>
               </div>
             </header>
-
+</div>
 <div class="container position-relative mt-5 pt-5">
     <div class="col-md-12 position-absolute mt-5 start-50 translate-middle">
         <div class="">
