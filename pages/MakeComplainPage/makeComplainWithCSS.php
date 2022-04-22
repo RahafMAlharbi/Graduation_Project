@@ -79,8 +79,9 @@
 }
 .card-body{
   background:#F6F4F1;
-  border:#2F5972;
-border-color:#2F5972;
+
+border:#2F5972 solid 1px;
+
 
 }
 .input-defult{
@@ -252,7 +253,37 @@ transform: translateY(0%);
      $rowcount1=mysqli_num_rows($result1);
      $rowcount2=mysqli_num_rows($result2);
     ?>
-
+    <div class="b-example-divider pt-3">
+              <header class="p-3 ms-3 mb-3 border-bottom">
+                <div class="container">
+                  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                      <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">  <img src="img/MUQU.png" width="80" height="80" alt=""></svg>
+                    </a>
+                  <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
+              <li ><a href="#" class="nav-link px-2 ps-5 link-secondary">Home</a></li>
+                      <!--  <li><a href="Fcheader.php" class="nav-link px-2 link-dark">map</a></li>-->
+                      <li ><a href="#" class="nav-link  ps-5 px-2 link-dark">Make complaint</a></li>
+                      <li ><a href="#" class="nav-link ps-5 px-2 link-dark">Statistic</a></li>
+                    </ul>
+                    <form class="col-12 pe-5 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                      <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                    </form>
+                    <div class="dropdown text-end">
+                      <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="img/person2.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
+                      </a>
+                      <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                          <!--<li><a class="dropdown-item" href="#">Profile</a></li>-->
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </header>
+</div>
 	<header class="navbar navbar-expand-md navbar-dark bd-navbar" > </header>
 	<div class="container-fluid">
 		<div class="row justify-content-center ">
@@ -318,7 +349,7 @@ transform: translateY(0%);
 									<!-- <span class="me-1 " for ="desc">Description</span> -->
                   <!-- <label class="form-label mb-3 me-5 ms-5 mb-4 " for="desc" >Description</label> -->
 
-									<textarea class="form-control form-label-width ms- me-4" aria-label="Leave a comment here" id="desc" name ="desc" style="  resize: none;"required></textarea>
+									<textarea class="form-control form-label-width ms- me-4" aria-label="Leave a comment here" placeholder ="Description" id="desc" name ="desc" style="  resize: none;"required></textarea>
 									 <div class="invalid-feedback">
 										Please leave a Description
 									</div>
