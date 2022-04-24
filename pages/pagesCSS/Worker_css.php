@@ -64,15 +64,15 @@ body {
                                 <body oncontextmenu='return' class='snippet-body'>
                                   <!-- here2 -->
 
-                                    <div class="b-example-divider pt- pe-5">
-                                              <header class="  pb-3 border-bottom">
+                                    <div class="b-example-divider pt- pb- pe-">
+                                              <header class=" p- ms-3 mb- border-bottom pb-3">
                                                 <div class="container">
                                                   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                                                     <a href="/" class="d-flex align-items-center mb- mb-lg-0 text-dark text-decoration-none">
                                                       <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">  <img src="img/MUQU.png" width="80" height="80" alt=""></svg>
                                                     </a>
 
-                                                  <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                                                  <ul class="nav col-12 col-lg-auto me-lg-auto  justify-content-center mb-md-0">
 
 
                                               <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
@@ -84,11 +84,11 @@ body {
 
                                                     </ul>
 
-                                                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search">
+                                                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search  pe-5">
                                                       <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                                                     </form>
 
-                                                    <div class="dropdown text-end heder-search">
+                                                    <div class="dropdown text-end heder-search pe-5">
                                                       <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                                                         <img src="img/person2.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
                                                       </a>
@@ -512,7 +512,9 @@ body{
   width:35%;
   border:1px solid red;
 }
-
+body {
+    background: #eee
+}
 /* tr {
 width: 100%;
 display: inline-table;
