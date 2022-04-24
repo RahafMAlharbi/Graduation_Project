@@ -272,7 +272,7 @@ ul.nav li a, ul.nav li a:visited {
               <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
               <li ><a href="#" class="nav-link px-2 ps-5 link-secondary">Home</a></li>
                       <!--  <li><a href="Fcheader.php" class="nav-link px-2 link-dark">map</a></li>-->
-                      <li ><a href="#" class="nav-link  ps-5 px-2 link-dark">Make complaint</a></li>
+                      <li ><a href="#" class="nav-link  ps-5 px-2 link-dark">Make Complaint</a></li>
                       <li ><a href="#" class="nav-link ps-5 px-2 link-dark">Statistic</a></li>
                     </ul>
                     <form class="col-12 pe-5 col-lg-auto mb-3 mb-lg-0 me-lg-3">
