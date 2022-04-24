@@ -36,7 +36,7 @@ body {
                                   <!-- here2 -->
                                   <div class="b-example-divider pt-3 pb- pe-5 ">
 
-                                    <header class="p-3 ms-3 mb- border-bottom ">
+                                    <header class="p-3 ms-3 mb- border-bottom ps-1">
                                       <div class="container">
                                         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                                           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
