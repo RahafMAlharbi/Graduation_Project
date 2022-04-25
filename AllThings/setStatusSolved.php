@@ -69,7 +69,7 @@
 
 
            // if(!mysqli_error($conn))
-             echo '<meta http-equiv="refresh" content="0; url=manager2.php">';
+             echo '<meta http-equiv="refresh" content="0; url=Manage.php">';
            }
 
 
