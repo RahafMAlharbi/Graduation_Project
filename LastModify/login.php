@@ -127,9 +127,9 @@ die("Connection failed: " . mysqli_connect_error());
 if(isset($_POST['submit'])){
 $username = $_POST['username'];
 $password = $_POST['password'];
-$sql= "SELECT userEmail,userPassword,userId ,usertype FROM facultymember  WHERE userEmail = '$username' AND  userPassword = '$password'
-      UNION SELECT userEmail,userPassword,userId ,usertype FROM manager WHERE   userEmail = '$username' AND userPassword = '$password'
-      UNION SELECT userEmail, userPassword,userId ,usertype FROM worker  WHERE userEmail = '$username' AND userPassword = '$password' ";
+$sql= "SELECT userEmail,userPassword,userId,userName ,usertype FROM facultymember  WHERE userEmail = '$username' AND  userPassword = '$password'
+      UNION SELECT userEmail,userPassword,userId ,userName,usertype FROM manager WHERE   userEmail = '$username' AND userPassword = '$password'
+      UNION SELECT userEmail, userPassword,userId ,userName,usertype FROM worker  WHERE userEmail = '$username' AND userPassword = '$password' ";
 $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
 $check = mysqli_fetch_array($result);
 
@@ -145,6 +145,7 @@ $check = mysqli_fetch_array($result);
                         }
                         session_start();
                         $_SESSION['userid'] = $check['userId'];
+                        $_SESSION['userName'] = $check['userName'];
             }else{
               echo "<style>
                     #error{
