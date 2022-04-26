@@ -89,13 +89,13 @@ body {
                                     <li ><a href="..\ManagerHome.php" class="nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
                                             <!--  <li><a href="Fcheader.php" class="nav-link px-2 link-dark">map</a></li>-->
 
-                                            <li ><a href="Assign Tasks\Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
-                                             <li ><a href="Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark">Mange Assign Tasks</a></li>
+                                            <li ><a href="Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
+                                             <li ><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark">Mange Assign Tasks</a></li>
 
                                                <li ><a href="#" class="nav-link px-2 ms-4 hedermaargin  link-dark">Statestcs</a></li>
                                                 </ul>
 
-                                            
+
 
                                           <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search">
                                             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
@@ -237,7 +237,7 @@ body {
                                                </div>
                                                <div class="modal-footer">
                                                   <button type="button" class="btn btn-secondary choose_file" data-dismiss="modal">Close</button>
-                                                 <button type="button" class="btn btn-primary choose_file" onclick="selectRoomNum3(this)">Save changes</button> </div>
+                                                  </div>
                                            </div>
                                        </div>
                                    </div>
