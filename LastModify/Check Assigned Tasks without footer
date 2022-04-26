@@ -267,7 +267,7 @@ body {
 
                 <div class="form-outline divtext me-4">
                     <label>
-                        <textarea onkeyup="getTheReason()"  placeholder="reason" class="form-control resonBox" rows="4" id="comment" rows="5" cols="54"></textarea>
+                        <textarea onkeyup="disable();getTheReason();"  placeholder="reason" class="form-control resonBox" rows="4" id="comment" rows="5" cols="54"></textarea>
                     </label>
                 </div>
             </div>
@@ -279,7 +279,7 @@ body {
                                    <div class="modal-footer">
 
                                          <button type="button" class="btn btn-secondary choose_file " data-dismiss="modal">Close</button>
-                                         <button form="form" value="submit2" name="submit2" type="submit" class="btn btn-primary choose_file">Send</button>
+                                         <button form="form" id="subres" value="submit2" name="submit2" type="submit" class="btn btn-primary choose_file"disabled>Send</button>
                                      </div>
                         </div>
                       </div>
@@ -841,6 +841,17 @@ th     { background:#eee; } */
                let comment = $("#comment").val();
                $("#comment2").val(comment)
            }
+           function disable()
+        {
+        if(document.getElementById("comment").value=="")
+          {
+           document.getElementById("subres").disabled=true;
+          }
+        else
+        {
+         document.getElementById("subres").disabled=false;
+        }
+        }
            /////////
            function myFunction() {
      var input, filter, table, tr, td, i, txtValue;
@@ -868,4 +879,4 @@ th     { background:#eee; } */
                                 <script type='text/javascript' src=''></script>
                                 <script type='text/Javascript'></script>
                                 </body>
-                            </html>
+                                </html>
