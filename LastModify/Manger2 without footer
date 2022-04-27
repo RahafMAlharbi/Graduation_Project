@@ -419,7 +419,7 @@ body {
                                     <div class="col-md-12 position-absolute mt- start-translate-middle ">
 
                                                 <div class="card-body ">
-                                                  <h2> Manege Task</h2>
+                                              
 
                                                   <!-- <form  id="form" name ="myFormName" action ="setStatusSolved.php" onsubmit="ajaxpost();"  method="POST" class="row g-3 needs-validation" > -->
                                                     <form  id="form" name ="myFormName" action ="setStatusSolved.php" onsubmit="ajaxpost();"  method="POST" class="row g-3 " "needs-validation">
