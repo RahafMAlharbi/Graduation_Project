@@ -651,7 +651,7 @@ ul.nav li a, ul.nav li a:visited {
 
                              // reload table in B
                               function RefreshTable() {
-                                  $( "#complaintTable" ).load( "map8.php #complaintTable" );
+                                  $( "#complaintTable" ).load( "WorkerHome.php #complaintTable" );
                               }
                               singleMarkerB.on("click", RefreshTable);
                               singleMarkerB.on("click", RefreshTable);
@@ -660,7 +660,7 @@ ul.nav li a, ul.nav li a:visited {
 
                               // reload table in A
                               function RefreshTable() {
-                                  $( "#complaintTable" ).load( "map8.php #complaintTable" );
+                                  $( "#complaintTable" ).load( "WorkerHome.php #complaintTable" );
                               }
                               singleMarkerA.on("click", RefreshTable);
                             });
