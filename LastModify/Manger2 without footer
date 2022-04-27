@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 // mysql connection000
 $servername = "localhost";
 $username = "root";
@@ -368,8 +371,8 @@ body {
                                       <li ><a href="..\ManagerHome.php" class="nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
                                               <!--  <li><a href="Fcheader.php" class="nav-link px-2 link-dark">map</a></li>-->
 
-                                              <li ><a href="Assign Tasks\Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
-                                              <li ><a href="Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark">Mange Assign Tasks</a></li>
+                                              <li ><a href="..\Assign Tasks\Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
+                                              <li ><a href="Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark">Mange Assign Tasks</a></li>
 
                                               <li ><a href="#" class="nav-link px-2 ms-4 hedermaargin  link-dark">Statestcs</a></li>
                                             </ul>
