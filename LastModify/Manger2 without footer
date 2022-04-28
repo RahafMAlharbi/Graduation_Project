@@ -117,6 +117,8 @@ body {
                                                 h5.mytiteldetails{
                                                   color: #F6F4F1;
                                                   font-family: 'Roboto Mono';font-size: 17px;
+                                                  /* //style */
+                                                  font-size: 23px;
 
                                                   }
 
@@ -124,6 +126,8 @@ body {
                                                 background-color: #F6F4F1;
                                                 color: #676767;
                                                 font-family: 'Rambla';font-size: 15px ;
+                                                /* //style */
+                                                font-size: 19px;
 
 
                                               }
@@ -145,6 +149,7 @@ body {
                                               h5.mytitelreson{
                                                 color: #F6F4F1;
                                                 font-family: 'Roboto Mono';font-size: 17px;
+                                                font-size: 22px;
 
                                               }
                                               .xc
@@ -348,6 +353,15 @@ body {
                                      table  { border-collapse: collapse; width: 100%; }
                                      th, td { padding: 8px 16px; }
                                      th     { background:#eee; } */
+                                     .pagetitle{
+                                       /* font-family: Roboto Condensed ;
+                                       color: #676767;
+                                       font-family: 'Rambla';font-size: 18px */
+                                       font-family: "Times New Roman", Times, serif;
+   color: #676767;
+                                     }
+
+
                                      </style>
 
 
@@ -419,7 +433,10 @@ body {
                                     <div class="col-md-12 position-absolute mt- start-translate-middle ">
 
                                                 <div class="card-body ">
-                                              
+                                                <div class="row page-">
+                                                  <!-- <h2 class="row pagetitle"> Manege Task</h2> -->
+                                                </div>
+
 
                                                   <!-- <form  id="form" name ="myFormName" action ="setStatusSolved.php" onsubmit="ajaxpost();"  method="POST" class="row g-3 needs-validation" > -->
                                                     <form  id="form" name ="myFormName" action ="setStatusSolved.php" onsubmit="ajaxpost();"  method="POST" class="row g-3 " "needs-validation">
@@ -427,6 +444,8 @@ body {
                                                                <input type="text" id="myInput" class="search-bar form-control"  onkeyup="myFunction()" placeholder="Search for complaint id..">
                                                    <br/>
                                                    <br/>
+                                                   <div class="">
+
                                                      <table  id="myTable" class="table" >
                                                      <thead class="">
                                                      <tr>
@@ -436,7 +455,7 @@ body {
                                                       <th scope="col">Worker</th>
                                                       <th scope="col">Completeness</th>
                                                       <th scope="col">Reason	</th>
-                                              <th scope="col">Re-Assign	</th>
+                                                   <th scope="col">Re-Assign	</th>
                                                       </tr>
                                                      </thead>
                                                      <tbody>
@@ -477,6 +496,7 @@ body {
 
                                                       </form>
                                                      </div>
+                                                     </div>
                                                    </div>
 
                                                  </div>
@@ -512,8 +532,8 @@ body {
                                        </div>
                                    </div>
 
-                                   <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                       <div class="modal-dialog p-5">
+                                   <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalToggleLabel" aria-hidden="true" >
+                                       <div class="modal-dialog p-5 modal-lg" >
                                            <div class="modal-content  csstext ">
                                              <div class="modal-header modelhedercss float-right ">
 
@@ -528,7 +548,7 @@ body {
                                                                                        <div>
                                                                                          <!-- <select  class="form-select form-select-lg mb-2 form-control " aria-label=".form-select-lg example" id="workerSelect">
                                                                                          </select> -->
-                                                                                         <h5 class="mb-3">Select Worker</h5>
+                                                                                         <h6 class="mb-3"></h6>
 
                                                                                          <?php
                                                                                          $servername = "localhost";
@@ -555,9 +575,9 @@ body {
                                                                                                      // echo" <select  class='form-select'>";
                                                                                                      echo"<select  class='form-select' id='SelectPickerWorked' name='SelectPickerWorked'>";
 
-                                                                                                     echo "<option disabled class='' name='W'selected  value='".$row1["userId"]. "'> Select Worker</option>";
+                                                                                                     echo "<option disabled class='' name='W'selected  value='".$row1["userId"]. "'> </option>";
 
-                                                                                                                // echo "<option value='0' class=''>select worker </option>";
+                                                                                                                echo "<option value='0' class=''>select worker </option>";
 
                                                                                                      while($row1=$result1->fetch_assoc()){
 
@@ -587,6 +607,11 @@ body {
                                              </div>
 
                                              </div>
+   </div>
+ </div>
+</div>
+
+
 
 <!-- Modal -->
 
@@ -847,10 +872,10 @@ function callFunction1() {
 var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
 
-if (checkedOne) {
- document.querySelectorAll('input[type="button"]')[0].disabled = false;
-}	else
- document.querySelectorAll('input[type="button"]')[0].disabled = true;
+// if (checkedOne) {
+//  document.querySelectorAll('input[type="button"]')[0].disabled = false;
+// }	else
+//  document.querySelectorAll('input[type="button"]')[0].disabled = false;
 }
 
 
