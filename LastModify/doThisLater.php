@@ -15,15 +15,18 @@
 	 $workerId=$_GET['workerId'];
 	 mysqli_select_db($conn,"muqu");
 	 $sql1  ="DELETE FROM deal WHERE complaintId ='$complainId'" ;
-	 
+	 // $sql1  ="DELETE FROM deal WHERE complaintId ='$complainId'" ;
+
+
 	if ($conn->query($sql1) === TRUE) {
 	  echo "Record deleted successfully 1 ";
 	} else {
 	  echo "Error deleting record: " . $conn->error;
 	}
-	 
-	  $sql2  ="DELETE FROM assign WHERE complaintId ='$complainId' and userId = '$workerId'" ;
-	 
+
+	  // $sql2  ="DELETE FROM assign WHERE complaintId ='$complainId' and userId = '$workerId'" ;
+		$sql2  ="DELETE FROM assign WHERE compliantId ='$complainId'" ;
+
 	if ($conn->query($sql2) === TRUE) {
 	  echo "Record deleted successfully2 ";
 	} else {
@@ -38,9 +41,9 @@
 
 	$conn->close();
 	 $result = mysqli_query($conn,$sql);
-	 
+
 	 echo "sucess";
-	 
-	 
- 
+
+
+
  ?>
