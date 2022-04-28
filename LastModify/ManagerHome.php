@@ -276,7 +276,7 @@ ul.nav li a, ul.nav li a:visited {
                               </style>
                               <div class="b-example-divider pt-3 pb- pe-5 ">
 
-                                <header class="p-3 ms-3 mb- border-bottom ">
+                                <header class="p-3 ms-3 mb- border-bottom me-3">
                                   <div class="container">
                                     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                                       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
@@ -285,7 +285,7 @@ ul.nav li a, ul.nav li a:visited {
 
                                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
-                                      
+
 
                                 <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
                                 <li ><a href="ManagerHome.php" class="nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
