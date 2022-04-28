@@ -13,32 +13,33 @@
            	die("Connection failed: " . mysqli_connect_error());
            }
 
-
-
-
            	foreach($_POST as $key => $value) {
            		if (strpos($key, 'box_') === 0) {
            			$complainID = str_replace("box_", '', $key) ;
            			// $employeeId= $_POST[$pickerName];
 
-
-           				'<br/>'.$updateSql = "UPDATE complaint
+           				$updateSql = "UPDATE complaint
            						SET status = 'solved'
            						WHERE complaintid = $complainID ";
-           						if ($conn->query($updateSql) === TRUE) {
 
+           						if ($conn->query($updateSql) === TRUE) {
+                        echo "Record UPDATE successfully 1 ";
+           }
+         else {
+             echo "Error UPDATE record: " . $conn->error;
            }
 
-               //make it =1 to delete it
+             $sql2  ="DELETE FROM deal WHERE complaintId ='$complainID'" ;
 
+           if ($conn->query($sql2) === TRUE) {
+             echo "Record deleted successfully2 ";
+           } else {
+             echo "Error deleting record: " . $conn->error;
+           }
 
            // if(!mysqli_error($conn))
              echo '<meta http-equiv="refresh" content="0; url=Manage.php">';
            }
-
-
-
-
 
              }
  ?>
