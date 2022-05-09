@@ -320,7 +320,7 @@ ul.nav li a, ul.nav li a:visited {
                                                                                                                                     echo $_SESSION['userName']; ?></p>
                                                                                                                                     </button>
                                                                                                                                       <div class="dropdown-content banner">
-                                                                                                                                      <a href="#">Sign out</a>
+                                                                                                                                      <a href="../logout.php">Sign out</a>
                                                                                                                                       <a href="#">About us</a>
                                                                                                                                       <a href="#">link3</a>
                                                                                                                                       </div>
