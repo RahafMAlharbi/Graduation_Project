@@ -23,18 +23,18 @@
            						WHERE complaintid = $complainID ";
 
            						if ($conn->query($updateSql) === TRUE) {
-                        echo "Record UPDATE successfully 1 ";
+                         "Record UPDATE successfully 1 ";
            }
          else {
-             echo "Error UPDATE record: " . $conn->error;
+              "Error UPDATE record: " . $conn->error;
            }
 
              $sql2  ="DELETE FROM deal WHERE complaintId ='$complainID'" ;
 
            if ($conn->query($sql2) === TRUE) {
-             echo "Record deleted successfully2 ";
+              "Record deleted successfully2 ";
            } else {
-             echo "Error deleting record: " . $conn->error;
+              "Error deleting record: " . $conn->error;
            }
 
            // if(!mysqli_error($conn))
