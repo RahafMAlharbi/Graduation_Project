@@ -377,7 +377,7 @@ margin-top: -50px;}
                                                                                                                                     echo $_SESSION['userName']; ?></p>
                                                                                                                                     </button>
                                                                                                                                       <div class="dropdown-content banner">
-                                                                                                                                      <a href="../../logout.php">Sign out</a>
+                                                                                                                                      <a href="../logout.php">Sign out</a>
                                                                                                                                       <a href="#">About us</a>
 
                                                                                                                                       </div>
