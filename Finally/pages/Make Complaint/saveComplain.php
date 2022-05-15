@@ -1,11 +1,8 @@
 <style>
 
 .button11 {
-  /* width:190px; */
-  color: #edf1f7;
-
+ color: #edf1f7;
  cursor: pointer;
- /* font-weight: 700; */
  font-family: Helvetica,"sans-serif";
  transition: all .2s;
  padding: 10px 20px;
@@ -93,7 +90,7 @@
 					$str = $str.',images ';
 					$value =  $value .",'" .$inputGroupFile ."'";
 					// Insert image file name into database
-					$insert = 'ok';//$db->query("INSERT into images (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
+					$insert = 'ok';
 					if($insert){
 						$statusMsg = "The file ".$fileName. " has been uploaded successfully.";
 					}else{
@@ -109,8 +106,6 @@
 			$statusMsg = 'Please select a file to upload.';
 		}
 
-		// Display status message
-		//echo $statusMsg;
 	  }
 	  if (!isset($_POST["category"])&& empty($_POST["category"])) {
 		  $category = "";
@@ -124,7 +119,6 @@
 	  if (empty($_POST["selectpickerArray"])) {
 		  $pcnum = "pcnum is required";
 	  } else {
-		//print_r($selectpickerArray = explode(",",$_POST["selectpickerArray"]));
 		$selectpickerArray = explode(",",$_POST["selectpickerArray"]);
 	  }
 
@@ -140,8 +134,6 @@
 				  $conn->query($sql) ;
 				}
 	  }
-
-	//  echo "New record created successfully";
 	} else {
 	  echo "Error: " . $sql . "<br>" . $conn->error;
 	}

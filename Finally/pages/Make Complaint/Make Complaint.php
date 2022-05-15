@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 ?>
@@ -8,18 +10,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="../css/bootstrap5/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<script src="../css/bootstrap5/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
+    <script src="html5-qrcode.min.js"></script>
+    <script src="../css/bootstrap5/dist/js/i18n/defaults-en_US.min.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript' src=''></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
-<script src="html5-qrcode.min.js"></script>
 
-<!-- (Optional) Latest compiled and minified JavaScript translation files -->
-<script src="../css/bootstrap5/dist/js/i18n/defaults-en_US.min.js"></script>
-<!--Bootstrap CSS Reference-->
- <title>Make Complaint</title>
+    <title>Make Complaint</title>
 
   </head>
   <style>
@@ -89,20 +90,20 @@ border:#2F5972 solid 1px;
   background:#ffffff;
   width: 1040px;
   height: 40px;
-padding: 12px 20px;
-box-sizing: border-box;
-border: 1px solid rgb(212, 212, 212);
-border-radius: 4px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 4px;
 }
 /* uploas img button */
 .download-button {
-position: relative;
-border-width: 0;
-color: white;
-font-size: 15px;
-font-weight: 600;
-border-radius: 4px;
-z-index: 1;
+ position: relative;
+ border-width: 0;
+ color: white;
+ font-size: 15px;
+ font-weight: 600;
+ border-radius: 4px;
+ z-index: 1;
 }
 
 .download-button .docs {
@@ -161,15 +162,9 @@ transform: translateY(0%);
 }
 }
 
-
-
-/* css QR button */
 .buttonQR {
-  /* width:190px; */
-  color: #edf1f7;
-
+ color: #edf1f7;
  cursor: pointer;
- /* font-weight: 700; */
  font-family: Helvetica,"sans-serif";
  transition: all .2s;
  padding: 10px 20px;
@@ -200,15 +195,12 @@ transform: translateY(0%);
  transform: scale(0.95);
 }
 
-/* submit */
-/* From uiverse.io by @Gumpack */
 .btnSUB {
  background-image: linear-gradient(45deg, #2F5972 0%, #6F92A0  100%, #2F5972  60%)
 }
 
 .btnSUB {
-  height: 40px;
-
+ height: 40px;
  margin: 5px;
  padding: 8px 25px 10px 25px;
  text-align: center;
@@ -218,13 +210,11 @@ transform: translateY(0%);
  border-radius: 100px;
  display: block;
  border: 0px;
- /* font-weight: 700; */
  box-shadow: 0px 0px 14px -7px #f09819;
 }
 
 .btnSUB:hover {
  background-position: right center;
- /* change the direction of the change here */
  color: #fff;
  text-decoration: none;
 }
@@ -289,10 +279,10 @@ ul.nav li a, ul.nav li a:visited {
                         }
 
                         .ctaa span {
-                          padding-bottom: 7px;
-                         letter-spacing: 4px;
-                         font-size: 10px;
-                          padding-right: 9px;
+                        padding-bottom: 7px;
+                       letter-spacing: 4px;
+                       font-size: 10px;
+                        padding-right: 9px;
 
                          text-transform: uppercase;
                         }
@@ -314,7 +304,7 @@ ul.nav li a, ul.nav li a:visited {
                         .hover-underline-animation {
 
                          color:#eee;
-                         /* padding-bottom: 20px; */
+
                         }
 
 
@@ -356,7 +346,7 @@ ul.nav li a, ul.nav li a:visited {
 	}
 
 
-
+     // Get room bumber from DB
      $sql1 = "SELECT roomNumber FROM classroom WHERE roomType!='Lab'";
      $sql2 = "SELECT roomNumber FROM classroom WHERE roomType='Lab'";
      $result1 = $conn->query($sql1);
@@ -365,16 +355,19 @@ ul.nav li a, ul.nav li a:visited {
      $rowcount2=mysqli_num_rows($result2);
     ?>
     <div class="b-example-divider pt-3">
+      <!--Header-->
               <header class="p-3 ms-3 mb-3 border-bottom">
                 <div class="container">
                   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                      <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">  <img src="img/MUQU.png" width="80" height="80" alt=""></svg>
+                      <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">  <img src="..\img/muqu1.png" width="200" height="230" alt=""></svg>
                     </a>
                   <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
+
+
+
               <li ><a href="../FacultyMemberHome.php" class="nav-link px-2 ps-5 link-secondary">Home</a></li>
-                      <!--  <li><a href="Fcheader.php" class="nav-link px-2 link-dark">map</a></li>-->
                       <li ><a href="Make Complaint.php" class="nav-link  ps-5 px-2 link-dark">Make Complaint</a></li>
                       <li ><a href="#" class="nav-link ps-5 px-2 link-dark">Statistics</a></li>
                     </ul>
@@ -389,15 +382,16 @@ ul.nav li a, ul.nav li a:visited {
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                         </svg>
-                        <!--  -->
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
-                      <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z"/>
-                    </svg>
-                    <p><?php
-                    echo $_SESSION['userName']; ?></p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
+                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z"/>
+                        </svg>
+                    <p>
+                      <?php
+                    echo $_SESSION['userName']; ?>
+                    </p>
                     </button>
                       <div class="dropdown-content ">
-                  <a href="../../logout.php">Sign out</a>
+                      <a href="../../logout.php">Sign out</a>
                       <a href="#">About us</a>
 
                       </div>
@@ -415,15 +409,14 @@ ul.nav li a, ul.nav li a:visited {
 				<h2 class="Make-Complain m-3"> Make Complaint</h2>
 			  </div>
 			  <div class="card-body">
+          <!--Make Complaint Form -->
 					<form action="saveComplain.php" id="form" name ="myFormName" method="POST" class="row g-3 ms-3 needs-validation" enctype="multipart/form-data" novalidate>
               <div id="errorDiv">   </div>
-              <!-- <div class="ms- me-3"> -->
 
 						<div class="col col-md-12">
               <label class="form-label me-5 ms- mb-2" for="target">Room Number</label>
 
 							<div class="input-group mb-3 ">
-							  <!-- <label class="form-label mb-3 me-5 ms-5 mb-4" for="target">Room Number</label> -->
 							  <select class="form-select me-4"  name="roomNum" id="target" required>
 								<option selected disabled value="">select room number</option>
 									<?php
@@ -448,29 +441,24 @@ ul.nav li a, ul.nav li a:visited {
 								</div>
 							</div>
 						</div>
+              <!-- floor number  -->
 						<div class="row">
 							 <label class="visually- form-label mb-3 me-5 ms- mb-2 mt-3 " for="floorNum">Floor</label>
 							<div class="input-group  col mb-3 me- ps-">
-							  <!-- <div class="form-label  mb-3 me-5 ms- mb-4 ">Floors</div> -->
 							  <input type="text" class=" input-defult ms- form-label-width" id="floorNum" name="floorNum" placeholder="floor" disabled>
 							</div>
 						</div>
-
+              <!-- building number  -->
 						<div class="row mb-3">
 							 <label class="form-label mb-3 me-5 mb-2 mt-3 " for="BuildingNum" >Building</label>
 							<div class="input-group ps-">
-							  <!-- <div class="form-label me-3 ms- pe-3 mb-4 " >Building</div> -->
 							  <input type="text" class="input-defult ms- form-label-width" id="BuildingNum" name="BuildingNum" placeholder="Building" disabled>
 							</div>
 						</div>
-
+             <!-- complaint description  -->
 						  <div class="mb-3 mt-3 me-4">
                 <span class="me-1 mb-3 me-5 ms- mb-4 " for ="desc">Description</span>
-
 								<div class="input-group mb-2 mt-3">
-									<!-- <span class="me-1 " for ="desc">Description</span> -->
-                  <!-- <label class="form-label mb-3 me-5 ms-5 mb-4 " for="desc" >Description</label> -->
-
 									<textarea class="form-control form-label-width ms- me-4" aria-label="Leave a comment here" placeholder ="Description" id="desc" name ="desc" style="  resize: none;"required></textarea>
 									 <div class="invalid-feedback">
 										Please leave a Description
@@ -479,14 +467,13 @@ ul.nav li a, ul.nav li a:visited {
 						  </div>
 
 						<div class="col-12">
-              <!-- uppload img input  -->
+              <!-- upload img input  -->
 							<div class="" style="height:0px;overflow:hidden">
                 <span class="position-absolute ps-2 pt-1"></span>
 
 							  <input type="file" class="" id="inputGroupFile02" name="inputGroupFile" accept="image/*">
-							  <!-- <label class="" for="inputGroupFile">Upload</label> -->
 							</div>
-              <!-- uppload img botton -->
+              <!-- upload img botton -->
               <button type="button" class=" download-button" onclick="chooseFile();">
                     <div class="docs">
 
@@ -503,8 +490,8 @@ ul.nav li a, ul.nav li a:visited {
                       </svg>
                     </div>
                   </button>
-						</div>
-
+					     	</div>
+              <!-- gategory without PC  -->
 						  <div class="col-12 mt-5 ">
 						   <fieldset class="row mb-3 inv" id="content_1">
 								<legend class="col-form-label col-sm-2 pt-0">Category</legend>
@@ -536,6 +523,7 @@ ul.nav li a, ul.nav li a:visited {
 								</div>
 							  </fieldset>
 
+                <!-- gategory with PC  -->
 						  	<fieldset class="row mb-3 inv" id="content_2">
 								<legend class="col-form-label col-sm-2 pt-0">Category</legend>
 								<div class="col-sm-12">
@@ -588,7 +576,6 @@ ul.nav li a, ul.nav li a:visited {
 							</div>
                <!-- QR code button -->
               <div class="d-grid gap-2 col-4 mx-auto">
-              <!-- <button type="button" class="ms-4 QRcodeB" onclick="myFunction()">Scan QR code   <img src="QRcode.png "height ="30" width="30"/></button> -->
               <button type="button" class="ms-3 buttonQR QRcodeB" onclick="myFunction()">
                 <span>Scan QR code</span>
 
@@ -610,13 +597,13 @@ ul.nav li a, ul.nav li a:visited {
                 </div>
              </div>
 
-               <!-- </div> -->
-<span class="border-top mb-4">
+
+             <span class="border-top mb-4">
             	<div class="mt-3">
 
-							<!-- <button class="choose_file" name="submit" data-bs-toggle="modal" data-bs-target="#exampleModal1" type="submit">Submit form</button> -->
-<button class=" buttonQR mt-3 mb-3 ms-4 me-4 " name="submit" data-bs-toggle="modal" data-bs-target="#exampleModal1" type="submit">Submit</button>
-</span>
+                <!-- submit button  -->
+             <button class=" buttonQR mt-3 mb-3 ms-4 me-4 " name="submit" data-bs-toggle="modal" data-bs-target="#exampleModal1" type="submit">Submit</button>
+             </span>
               </div>
 						</form>
 					 </div>
@@ -629,11 +616,11 @@ ul.nav li a, ul.nav li a:visited {
 
 
 <script>
-//jquery for button
+//jquery for button upload
 function chooseFile() {
     $("#inputGroupFile02").click();
  }
-
+//display of QR code scanner button
       function myFunction() {
               var x = document.getElementById("myDIV");
               if (x.style.display === "none") {
@@ -642,8 +629,6 @@ function chooseFile() {
                   x.style.display = "none";
               }
             }
-
-
 
 function displaySelectOptionFn(str) {
 	$.selectOptionFn(str);
@@ -700,7 +685,7 @@ document.getElementById('target').addEventListener('change', function () {
 			document.getElementById("BuildingNum").value = myArray[1];
       }
     };
-    xmlhttp.open("GET", "getFloor.php?roomNum=" + value, true);
+    xmlhttp.open("GET", "getFloorAndBuild.php?roomNum=" + value, true);
     xmlhttp.send();
   }
 });
@@ -717,13 +702,12 @@ document.getElementById('target').addEventListener('change', function () {
 
       $('#mySelectpicker').selectpicker('deselectAll');
         if(this.checked) {
-      //  $("#mySelectpicker").prop("disabled", false);
-			$("#mySelectpicker").prop("required", true); //.attr('requied');
+
+			$("#mySelectpicker").prop("required", true);
 			$('#mySelectpicker').selectpicker('show');
 			$('#selectPickerLbl').show();
 
         }else {
-			// $("#mySelectpicker").prop("disabled", true);
 			$('#mySelectpicker').removeAttr("required");
 			$('#mySelectpicker').selectpicker('hide');
 			$('#selectPickerLbl').hide();
@@ -735,8 +719,6 @@ document.getElementById('target').addEventListener('change', function () {
 
 	  $.clearSelectPicker =function() {
 			$('#mySelectpicker').find('option').remove();
-
-			//$("#mySelectpicker").prop("disabled", true);
 			$('#mySelectpicker').removeAttr("required");
 			$('#mySelectpicker').selectpicker('hide');
 			$('#selectPickerLbl').hide();
@@ -765,7 +747,7 @@ document.getElementById('target').addEventListener('change', function () {
 
     $("form").submit(function(){
 		function failValidation(msg) {
-		  alert(msg); // just an alert for now but you can spice this up later
+		  alert(msg);
 		  return false;
 		}
 
@@ -926,9 +908,5 @@ Array.prototype.slice.call(forms)
 
 
   </footer>
-                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
-                                <script type='text/javascript' src=''></script>
-                                <script type='text/javascript' src=''></script>
-                                <script type='text/Javascript'></script>
   </body>
 </html>
