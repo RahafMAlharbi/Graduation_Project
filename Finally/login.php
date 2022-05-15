@@ -1,3 +1,9 @@
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <style media="screen">
 html, body {
   width: 100%;
@@ -26,19 +32,7 @@ body {
   padding-top: 90;
   height: 100vh;
 }
-/* #login .container #login-row #login-column #login-box {
-  margin-top: 120px;
-  max-width: 600px;
-  height: 320px;
-  border: 1px solid #9C9C9C;
-  background-color: #EAEAEA;
-}
-#login .container #login-row #login-column #login-box #login-form {
-  padding: 20px;
-}
-#login .container #login-row #login-column #login-box #login-form #register-link {
-  margin-top: -85px;
-} */
+
 .input-defult{
   background:#ffffff;
   width: 5px;
@@ -50,11 +44,7 @@ border-radius: 0px;
 border: none;
 border-bottom: 1px solid rgb(212, 212, 212);
 }
-/* input[type=text] {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #000000;
-} */
+
 .input-failed {
   outline: 0;
   border-width: 0 0 2px;
@@ -127,12 +117,14 @@ die("Connection failed: " . mysqli_connect_error());
 if(isset($_POST['submit'])){
 $username = $_POST['username'];
 $password = $_POST['password'];
-$sql= "SELECT userEmail,userPassword,userId,userName ,usertype FROM facultymember  WHERE userEmail = '$username' AND  userPassword = '$password'
-      UNION SELECT userEmail,userPassword,userId ,userName,usertype FROM manager WHERE   userEmail = '$username' AND userPassword = '$password'
-      UNION SELECT userEmail, userPassword,userId ,userName,usertype FROM worker  WHERE userEmail = '$username' AND userPassword = '$password' ";
+// Get user information from database
+$sql=
+"SELECT userEmail,userPassword,userId,userName ,usertype FROM facultymember  WHERE userEmail = '$username' AND  userPassword = '$password'
+UNION SELECT userEmail,userPassword,userId ,userName,usertype FROM manager WHERE   userEmail = '$username' AND userPassword = '$password'
+UNION SELECT userEmail, userPassword,userId ,userName,usertype FROM worker  WHERE userEmail = '$username' AND userPassword = '$password' ";
 $result = mysqli_query($conn,$sql) or die( mysqli_error($conn));
 $check = mysqli_fetch_array($result);
-
+// check the user type
            if(isset($check)){
                 if($check['usertype'] =="1"){
                             header("location:pages/FacultyMemberHome.php");
@@ -156,19 +148,6 @@ $check = mysqli_fetch_array($result);
                  }
                }
 ?>
-
-<!--Bootstrap CSS Reference-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!------ Include the above in your HEAD tag ---------->
-
-<body>
-
-<!------ Include the above in your HEAD tag ---------->
 
 <body>
     <div id="login" class="">
@@ -211,9 +190,9 @@ $check = mysqli_fetch_array($result);
             </div>
         </div>
 
-
+</body>
 <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
+
 (function () {
   'use strict'
 
