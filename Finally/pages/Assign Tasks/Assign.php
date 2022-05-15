@@ -11,10 +11,14 @@ session_start();
 <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'> -->
 <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
+<script type='text/javascript' src=''></script>
 <title>Assign Tasks</title>
 
   </head>
-                                <style>
+
+    <style>
+
 body {
     background: #eee
 }
@@ -90,61 +94,50 @@ body {
       </style>
                                 <body oncontextmenu='return' class='snippet-body'>
 
-                                  <!-- here2 -->
+                          <!-- beginning of header-->
                                   <div class="b-example-divider pt-3 pb- pe-5 me-1">
-
                                     <header class="p-3 ms-3 mb- border-bottom ">
                                       <div class="container">
                                         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                                           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                                            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">  <img src="img/MUQU.png" width="80" height="80" alt=""></svg>
+                                            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">  <img src="..\img/muqu1.png" width="200" height="230" alt=""></svg>
                                           </a>
-
                                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-
-
-                                    <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
                                     <li ><a href="..\ManagerHome.php" class="nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
-                                            <!--  <li><a href="Fcheader.php" class="nav-link px-2 link-dark">map</a></li>-->
-
-                                            <li ><a href="Assign Tasks\Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
-                                             <li ><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark">Mange Assign Tasks</a></li>
-
-                                               <li ><a href="#" class="nav-link px-2 ms-4 hedermaargin  link-dark">Statistics</a></li>
+                                    <li ><a href="Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
+                                    <li ><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark">Mange Assign Tasks</a></li>
+                                    <li ><a href="#" class="nav-link px-2 ms-4 hedermaargin  link-dark">Statestcs</a></li>
                                                 </ul>
-
-
-
                                           <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search">
                                             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                                           </form>
 
 
-                                                                                                                                       <!-- dropdown -->
-                                                                                                                                        <div class="dropdown ">
-                                                                                                                                          <button class="dropbtn ">
+                                                   <!-- dropdown -->
+                                              <div class="dropdown ">
+                                          <button class="dropbtn ">
+                                            <!-- person icon  -->
+                                           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                           <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                           </svg>
 
-                                                                                                                                             <!-- person icon  -->
-                                                                                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                                                                                                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                                                                                                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                                                                                                                                            </svg>
+                                           <!-- Arow icon -->
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
+                                         <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z"/>
+                                       </svg>
+                                       <p><?php
+                                       echo $_SESSION['userName']; ?></p>
+                                       </button>
+                                         <div class="dropdown-content ">
+                                         <a href="../../logout.php">Sign out</a>
+                                         <a href="#">About us</a>
+                                         </div>
+                                       </div>
 
-                                                                                                                                            <!-- Arow icon -->
-                                                                                                                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
-                                                                                                                                          <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z"/>
-                                                                                                                                        </svg>
-                                                                                                                                        <p><?php
-                                                                                                                                        echo $_SESSION['userName']; ?></p>
-                                                                                                                                        </button>
-                                                                                                                                          <div class="dropdown-content ">
-                                                                                                                                          <a href="../../logout.php">Sign out</a>
-                                                                                                                                          <a href="#">About us</a>
-
-                                                                                                                                          </div>
-                                                                                                                                        </div>
                                         </div>
                                       </div>
+                                        <!-- end  of header-->
                                     </header>
                                     </div>
                                     <div id="containerBODY">
@@ -165,26 +158,22 @@ body {
                                     $result = $conn->query($qury);
 
                                      ?>
-
-
-
-                                    <!-- here2 -->
                                 <div class="container position-relative table- ">
-                                  <!-- here2 -->
                                     <div class="col-md-12 position-absolute mt- start-translate-middle ">
 
                                                 <div class="card-body ">
-                                        <form  id="form" name ="myFormName" action ="Assign.php" method="POST" class="row g-3 needs-validation" novalidate>
-                                       <input type="text" id="myInput" onkeyup="myFunction()" class="search-bar form-control" placeholder="Search for complaint id.." >
-                                       <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for complaint id.." > -->
 
+                                      <form  id="form" name ="myFormName" action ="Assign.php" method="POST" class="row g-3 needs-validation" novalidate>
+                                        <h3>Assign Task</h3>
+                                          <!--Search for complaint id-->
+                                       <input type="text" id="myInput" onkeyup="myFunction()" class="search-bar form-control" placeholder="Search for complaint id.." >
                                        <br/>
                                        <br/>
                                        <div class="tableFixHead">
                                          <table  id="myTable" class="table" >
                                          <thead class="">
                                          <tr>
-                                           <!-- here -->
+
                                   <th><label class="ontainer"><input type="checkbox"  value="bar1" onClick="toggle(this)"  /><div class="heckmark"></th>					 <th scope="col">ID</th>
                                           <th scope="col">Date</th>
                                           <th scope="col">catogry</th>
@@ -195,12 +184,11 @@ body {
                                        <?php
                                        $sql1 = "SELECT userId,userName FROM worker";
 
-                                       //$rowcount1=mysqli_num_rows($result1);
+
 
                                          while($row=$result->fetch_assoc()){
                                            $result1 = $conn->query($sql1);
                                            echo"<tr>";
-                                           // <!-- here -->
                                            echo"<th>  <label class='ontainer'><input scope='row'type='checkbox'  class='box' name='box_".$row["complaintid"]."' id='box_".$row["complaintid"]."' onchange='callFunction()' onclick='mycomplaininfo();enable(this);chk(this)' /><div class='heckmark'></div></label></th>";
                                            echo'
                                             <td name=name_"'.$row["complaintid"].'">
@@ -239,17 +227,13 @@ body {
                                        <div class="modal-dialog">
                                            <div class="modal-content csstext">
                                                <div class="modal-header modelhedercss float-right">
-                                                 <!-- <a href="#" class="close closeX order-1" data-dismiss="modal" aria-label="close">&times;</a> -->
-
                                                    <h5 class="mytiteldetails">complaint detail</h5>
                                                    <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
                                                </div>
                                                <div class="modal-body">
                                                    <div>
                                                        <table class="table ">
-
                                                            <tbody id="Ctable">
-
                                                            </tbody>
                                                        </table>
                                                    </div>
@@ -260,9 +244,6 @@ body {
                                            </div>
                                        </div>
                                    </div>
-                                <!-- <div class="container">
-    <div class="height d-flex justify-content-center align-items-center"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> User details </button> </div>
-</div> -->
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -339,13 +320,10 @@ body {
            background-color: #2F5972;
              color: #FFFFFF;
              font-family: 'Roboto Mono';font-size: 18px ;
-         /* font-style: italic; */
-
-
 
            }
 
-         /*تنسيق الديل والريزن */div .csstext{
+        div .csstext{
            background: #F6F4F1;
          border-radius: 4px;
          border: 3px solid #2F5972;
@@ -396,8 +374,6 @@ body {
          .choose_file{
              position:relative;
              display:inline-block;
-              /* bottom: 42px;
-             left:125px; */
              border-radius:38px;
              border:#6F92A0 solid 1px;
              width:120px;
@@ -406,7 +382,6 @@ body {
              font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
              color: #edf1f7;
              margin-top: 2px;
-             /* background:#2F5972 */
          }
          .btn-primary,
          .btn-primary:active,
@@ -420,8 +395,6 @@ body {
          .btn-primary:hover{
              background-color: #6F92A0  !important;
              border-color: #6F92A0 !important;
-
-
          }
          .btn-secondary,
          .btn-secondary:active,
@@ -441,8 +414,7 @@ body {
          .btn-secondary:disabled{
             color: #2F5972;
          }
-         /* From uiverse.io by @martinval9 */
-         /* Hide the default checkbox */
+
          .ontainer input {
          position: absolute;
          opacity: 0;
@@ -459,7 +431,6 @@ body {
          user-select: none;
          }
 
-         /* Create a custom checkbox */
          .heckmark {
          position: relative;
          top: 0;
@@ -471,26 +442,23 @@ body {
          transition: 0.15s;
          }
 
-         /* When the checkbox is checked, add a blue background */
          .ontainer input:checked ~ .heckmark {
          background-color: #2F5972;
          border-radius: 25px;
          transition: 0.15s;
          }
 
-         /* Create the checkmark/indicator (hidden when not checked) */
          .heckmark:after {
          content: "";
          position: absolute;
          display: none;
          }
 
-         /* Show the checkmark when checked */
          .ontainer input:checked ~ .heckmark:after {
          display: block;
          }
 
-         /* Style the checkmark/indicator */
+
          .ontainer .heckmark:after {
          left: 0.48em;
          top: 0.16em;
@@ -560,7 +528,7 @@ padding-right: 9px;
 .hover-underline-animation {
 
  color:#eee;
- /* padding-bottom: 20px; */
+
 }
 #wrap {
   min-height: 100%;
@@ -571,65 +539,23 @@ padding-right: 9px;
    padding-bottom: 650px;
 
 }
-/* .footer{width:200%;
-bottom: 0;} */
-
-
-.ctaa:hover .hover-underline-animation:after {
- transform: scaleX(1);
- transform-origin: bottom left;
-}
-/*
-.hover-underline-animation:after {
- content: "";
- position: absolute;
- width: 90%;
- transform: scaleX(0);
- height: 1.5px;
- bottom: 0;
- left: 0;
- background-color: #ccc;
- transform-origin: bottom right;
- transition: transform 0.25s ease-out;
-} */
 
 .ctaa:hover .hover-underline-animation:after {
  transform: scaleX(1);
  transform-origin: bottom left;
 }
 
-/* .contain{ display: flex;
-  flex-direction: column;
-  min-height: 100vh;} */
-/* tr {
-width: 100%;
-display: inline-table;
-table-layout: fixed;
+
+.ctaa:hover .hover-underline-animation:after {
+ transform: scaleX(1);
+ transform-origin: bottom left;
 }
 
-table{
- height:300px;              // <-- Select the height of the table
- display: block;
-}
-tbody{
-  overflow-y: scroll;
-  height: 200px;            //  <-- Select the height of the body
-  width: 100%;
-  position: absolute;
-} */
-/* .tableFixHead
- { overflow: auto; height: 100%; }
-.tableFixHead thead th
- { position: sticky; top: 0; z-index: 1;
- background:#2F5972; }
 
-/* Just common table stuff. Really. */
 table  { border-collapse: collapse; width: 100%; }
 th, td { padding: 8px 16px; }
 th     { background:#eee; } */
 </style>
-
-
 
 
   <?php
@@ -701,8 +627,6 @@ th     { background:#eee; } */
 					let result = part1.concat(ourBoxId);
 					var ds =document.getElementById(result);
 					var strUser = ds.options[ds.selectedIndex].value;
-
-					//var strUser1 = e.options[e.selectedIndex].text;
 					if(strUser==0)
 					{
 						 ds.classList.add("is-invalid");
@@ -710,18 +634,13 @@ th     { background:#eee; } */
 
 						event.preventDefault();
 						event.stopPropagation();
-						//window.history.back();
 						return false;
 					}else{
 
 						ds.classList.remove("is-invalid");
 
 					}
-
-								// returnToPreviousPage();
-
 				}
-
 
                 return true;
       }
@@ -738,23 +657,6 @@ function mycomplaininfo(){
 }
 
 
-/*$(document).ready(function(){
-	//document.querySelectorAll("[name^=q1_]")
-
-  var myrow1=0;
-  $(".box").each(function() {
-    myrow1=myrow1+1;
-    $(this).attr("id","box_"+ myrow1);
-  });
- var myrow2=0;
-  $(".form-select").each(function() {
-    myrow2=myrow2+1;
-    $(this).attr("id","SelectPicker_"+ myrow2);
-  });
-
-});
-
-*/
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
@@ -814,10 +716,6 @@ function callFunction() {
 
 	   }
 
-
-
-
-
 function chk(result){
   if(result.checked){
     result.parentNode.parentNode.parentNode.style.backgroundColor="";
@@ -839,12 +737,6 @@ function chk(result){
     }
   }
 
-//  $('input[name="foo"]').on('change', function() {
-//  $(this).closest('tr').toggleClass('yellow', $(this).is(':checked'));
-//});
-
-
-
 
 
   </script>
@@ -853,7 +745,7 @@ function chk(result){
 </div>
 </div>
 
-
+  <!--beginning of footer-->
       <footer id="footer"class=" fotter text-center text-white p-0 mt-5" style="background-color: #2F5972 ;">
         <!-- Grid container -->
         <div class="container pt-2">
@@ -892,29 +784,21 @@ function chk(result){
             </svg> </a></span>
             </button>
 
-            <!-- Linkedin -->
-
           </section>
-          <!-- Section: Social media -->
+
         </div>
-        <!-- Grid container -->
+
 
         <!-- Copyright -->
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2020 Copyright:
           <a class="text-white" href="#">MUQU.com</a>
         </div>
-        <!-- Copyright -->
-
-
-
+        <!--end of footer-->
 </footer>
 
 
-                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
-                                <script type='text/javascript' src=''></script>
-                                <script type='text/javascript' src=''></script>
-                                <script type='text/Javascript'></script>
+
 
 
                                 </body>
