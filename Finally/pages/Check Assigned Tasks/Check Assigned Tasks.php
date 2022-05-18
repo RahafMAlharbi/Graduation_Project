@@ -1,5 +1,5 @@
 <?php
-// mysql connection000
+// mysql connection
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,8 +10,6 @@ $con = mysqli_connect($servername, $username, $password, $dbname) or die("Error:
 session_start();
 $check['userId']=$_SESSION['userid'];
 $userid= $check['userId'];
-// fetch records saved =0 that Will be showing in the page
-//and fk.saved='0'
 $result = @mysqli_query($con, "SELECT * FROM complaint pk, assign fk where pk.complaintId =fk.compliantId and fk.userId=$userid  and fk.saved='0'   ") or die("Error: " . mysqli_error($con));
 
 echo(mysqli_error($con));
@@ -22,160 +20,152 @@ echo(mysqli_error($con));
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-
-<!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
-<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'> -->
-<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <title>Check Assign tasks</title>
 
   </head>
-                                <style>
-body {
-    background: #eee
-}
+<style>
+  body {
+              background: #eee
+              }
+             .height {
+              }
 
-.height {
-/* height: 100vh */}
-             h6.mytitelscss{
-             color: #676767;
-             font-family: 'Rambla';font-size: 18px;
+              .mytitelh3{
+              color: #F;
+              font-size: 30px;
 
-             }
-             /* .hedermaargin{
-               margin-right: 30px;
-             }
-             .heder-search{
-               margin-right: 80px;
-               margin-left: 20px;
-             } */
-             ul.nav li a, ul.nav li a:visited {
-                        color: #2F5972 !important;
-                        font-family: Roboto Condensed ;
-                         font-size: 20px;}
-                         ul.nav li a, ul.nav li a:hover {
-                                    color: #747f86 !important;
-                                    font-family: Roboto Condensed ;
-                                     font-size: 20px;}
+               }
+               h6.mytitelscss{
+               color: #676767;
+               font-family: 'Roboto Mono';font-size:18px;
 
-                                     .dropbtn {
-                                       background-color:#eee;
-                                       color: #2F5972;
-                                       padding: 16px;
-                                       font-size: 16px;
-                                       border: none;
-                                       cursor: pointer;
-                                     }
+               }
+              /* css for icons */
+               ul.nav li a, ul.nav li a:visited {
+                          color: #2F5972 !important;
+                          font-family: Roboto Condensed ;
+                           font-size: 20px;}
+                           ul.nav li a, ul.nav li a:hover {
+                                      color: #747f86 !important;
+                                      font-family: Roboto Condensed ;
+                                       font-size: 20px;}
 
-                                     .dropdown {
-                                       position: relative;
-                                       display: inline-block;
-                                       top: 15px;
-                                     }
+                                       .dropbtn {
+                                         background-color:#eee;
+                                         color: #2F5972;
+                                         padding: 16px;
+                                         font-size: 16px;
+                                         border: none;
+                                         cursor: pointer;
+                                       }
 
-                                     .dropdown-content {
-                                       display: none;
-                                       position: absolute;
-                                       background-color: #f9f9f9;
-                                       min-width: 160px;
-                                       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                                       z-index: 1;
-                                     }
+                                       .dropdown {
+                                         position: relative;
+                                         display: inline-block;
+                                         top: 15px;
+                                       }
 
-                                     .dropdown-content a {
-                                       color: black;
-                                       padding: 12px 16px;
-                                       text-decoration: none;
-                                       display: block;
-                                     }
+                                       .dropdown-content {
+                                         display: none;
+                                         position: absolute;
+                                         background-color: #f9f9f9;
+                                         min-width: 160px;
+                                         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                         z-index: 1;
+                                       }
 
-                                     .dropdown-content a:hover {background-color: #6F92A0}
+                                       .dropdown-content a {
+                                         color: black;
+                                         padding: 12px 16px;
+                                         text-decoration: none;
+                                         display: block;
+                                       }
 
-                                     .dropdown:hover .dropdown-content {
-                                       display: block;
-                                     }
+                                       .dropdown-content a:hover {background-color: #6F92A0}
 
-                                         .ctaa {
-                                          border: none;
-                                          background: none;
+                                       .dropdown:hover .dropdown-content {
+                                         display: block;
+                                       }
 
-
-                                         }
-
-                                         .ctaa span {
-                                           padding-bottom: 7px;
-                                          letter-spacing: 4px;
-                                          font-size: 10px;
-                                           padding-right: 9px;
-
-                                          text-transform: uppercase;
-                                         }
-
-                                         .ctaa svg {
-                                          transform: translateX(-8px);
-                                          transition: all 0.3s ease;
-                                         }
-
-                                         .ctaa:hover svg {
-                                          transform: translateX(0);
-                                         }
-
-                                         .ctaa:active svg {
-                                          transform: scale(0.9);
-                                          color:#ccc;
-                                         }
-
-                                         .hover-underline-animation {
-
-                                          color:#eee;
-                                          /* padding-bottom: 20px; */
-                                         }
+                                           .ctaa {
+                                            border: none;
+                                            background: none;
 
 
+                                           }
 
-                                         .ctaa:hover .hover-underline-animation:after {
-                                          transform: scaleX(1);
-                                          transform-origin: bottom left;
-                                         }
-                                     *{
-                                       padding: 0;
-                                        margin: 0;}
+                                           .ctaa span {
+                                             padding-bottom: 7px;
+                                            letter-spacing: 4px;
+                                            font-size: 10px;
+                                             padding-right: 9px;
 
-                                     html,body{height: 100%; }
+                                            text-transform: uppercase;
+                                           }
 
-                                     #containerBODY{min-height: 100%;}
+                                           .ctaa svg {
+                                            transform: translateX(-8px);
+                                            transition: all 0.3s ease;
+                                           }
 
-                                     #mainBODY{overflow: auto;
-                                     padding-bottom: 50px;
-                                      height:650px;}
+                                           .ctaa:hover svg {
+                                            transform: translateX(0);
+                                           }
 
-                                     #footer{position: relative;
-                                     height: 100px;
-                                     margin-top: -50px;}
-      </style>
+                                           .ctaa:active svg {
+                                            transform: scale(0.9);
+                                            color:#ccc;
+                                           }
+
+                                           .hover-underline-animation {
+
+                                            color:#eee;
+                                            /* padding-bottom: 20px; */
+                                           }
+
+
+
+                                           .ctaa:hover .hover-underline-animation:after {
+                                            transform: scaleX(1);
+                                            transform-origin: bottom left;
+                                           }
+                                       *{
+                                         padding: 0;
+                                          margin: 0;}
+
+                                       html,body{height: 100%; }
+
+                                       #containerBODY{min-height: 100%;}
+
+                                       #mainBODY{overflow: auto;
+                                       padding-bottom: 50px;
+                                        height:650px;}
+
+                                       #footer{position: relative;
+                                       height: 100px;
+
+                                       margin-top: -50px;}
+                                </style>
                                 <body oncontextmenu='return' class='snippet-body'>
-                                  <!-- here2 -->
 
                                     <div class="b-example-divider pt- pb- pe-">
+
+                                            <!-- beginning of header-->
                                               <header class=" p- ms-3 mb- border-bottom pb-3">
                                                 <div class="container">
                                                   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                                                     <a href="/" class="d-flex align-items-center mb- mb-lg-0 text-dark text-decoration-none">
-                                                      <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">  <img src="img/MUQU.png" width="80" height="80" alt=""></svg>
+                                                      <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">  <img class="card-img-top"src="../img/muqu2.png" width="100" height="80" alt=""></svg>
                                                     </a>
 
                                                   <ul class="nav col-12 col-lg-auto me-lg-auto  justify-content-center mb-md-0">
 
+                                                      <li ><a href="../WorkerHome.php" class="nav-link px-2 ps-5 hedermaargin link-secondary">Home</a></li>
 
-                                              <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
-                                                  <li ><a href="../WorkerHome.php" class="nav-link px-2 ps-5 hedermaargin link-secondary">Home</a></li>
-                                                      <!--  <li><a href="Fcheader.php" class="nav-link px-2 link-dark">map</a></li>-->
-
-                                                      <li ><a href="Check Assigned Tasks.php" class="nav-link px-2 ps-5 hedermaargin link-dark">Check Assign Tasks</a></li>
-                                                      <li ><a href="#" class="nav-link px-2 ps-5 hedermaargin link-dark">Statistics</a></li>
+                                                        <li ><a href="Check Assigned Tasks.php" class="nav-link px-2 ps-5 hedermaargin link-dark">Check Assign Tasks</a></li>
+                                                        <li ><a href="#" class="nav-link px-2 ps-5 hedermaargin link-dark">Statistics</a></li>
 
                                                     </ul>
 
@@ -211,6 +201,8 @@ body {
                                                 </div>
                                               </header>
                                               </div>
+
+                                              <!-- check Assigend tasks form-->
                                               <div id="containerBODY">
                                                 <div id="mainBODY">
                                     <div class="container position-relative ">
@@ -220,6 +212,8 @@ body {
                                                       <form method="post" id="form" action="completerUncomplete.php" class="">
                                                             <input type="hidden" name="comment" id="comment2">
                                                             <div class="col col-md-12">
+                                                                  <h3 class="mytitelh3">check Assigend tasks</h3>
+                                                                    <!--Search for complaint id-->
                                                                 <input type="text" id="myInput" class="search-bar form-control"  onkeyup="myFunction()" placeholder="Search for complaint id..">
                                                                 <br/>
                                                                   <br/>
@@ -288,7 +282,6 @@ body {
                                        <div class="modal-dialog">
                                            <div class="modal-content csstext">
                                                <div class="modal-header modelhedercss float-right">
-                                                 <!-- <a href="#" class="close closeX order-1" data-dismiss="modal" aria-label="close">&times;</a> -->
 
                                                    <h5 class="mytiteldetails">complaint detail</h5>
                                                    <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
@@ -309,19 +302,17 @@ body {
                                            </div>
                                        </div>
                                    </div>
-                                <!-- <div class="container">
-    <div class="height d-flex justify-content-center align-items-center"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> User details </button> </div>
-</div> -->
+
 <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content  csstext ">
           <div class="modal-header modelhedercss ">
-            <!-- <a href="#" class="close closeX order-1" data-dismiss="modal" aria-label="close">&times;</a> -->
 
               <h5 class=" mytitelreson">Uccompleted<h5>
                 <div class="text-right"><i data-dismiss="modal" aria-label="Close" class="  fa fa-close"></i></div>
 
               </div>
+              <!-- Reason model -->
                 <div class="modal-body">
                 <h6 class= "modal-title mytitelscss ">Please enter the reason</h6>
 
@@ -431,7 +422,7 @@ body{
 
            }
 
-         /*تنسيق الديل والريزن */div .csstext{
+         div .csstext{
            background: #F6F4F1;
          border-radius: 4px;
          border: 3px solid #2F5972;
@@ -470,7 +461,7 @@ body{
          }
          .closeX{
            margin-top: 90px;
-           /* margin-bottom: 100px; */
+
          }
          .select-css{
            width:100px;
@@ -482,8 +473,7 @@ body{
          .choose_file{
              position:relative;
              display:inline-block;
-              /* bottom: 42px;
-             left:125px; */
+
              border-radius:38px;
              border:#6F92A0 solid 1px;
              width:120px;
@@ -616,29 +606,7 @@ body{
 body {
     background: #eee
 }
-/* tr {
-width: 100%;
-display: inline-table;
-table-layout: fixed;
-}
 
-table{
- height:300px;              // <-- Select the height of the table
- display: block;
-}
-tbody{
-  overflow-y: scroll;
-  height: 200px;            //  <-- Select the height of the body
-  width: 100%;
-  position: absolute;
-} */
-/* .tableFixHead
- { overflow: auto; height: 100%; }
-.tableFixHead thead th
- { position: sticky; top: 0; z-index: 1;
- background:#2F5972; }
-
-/* Just common table stuff. Really. */
 table  { border-collapse: collapse; width: 100%; }
 th, td { padding: 8px 16px; }
 th     { background:#eee; } */
@@ -684,7 +652,6 @@ th     { background:#eee; } */
 
 ?>
    <script>
-
 
                                    function selectRoomNum(strq) {
                                        var str = strq.value;
@@ -743,9 +710,6 @@ th     { background:#eee; } */
 
                                        }
                                    }
-
-
-
                                    function myFunction() {
                                        var input, filter, table, tr, td, i, txtValue;
                                        input = document.getElementById("myInput");
@@ -786,7 +750,7 @@ th     { background:#eee; } */
                                        } else
                                            document.querySelectorAll('input[type="button"]')[0].disabled = true;
                                    }
-
+//to checkbox enable
 
                                    function enable(boxx) {
 
@@ -814,7 +778,7 @@ th     { background:#eee; } */
 
                                    }
 
-                                 //change color
+//change color of th row
                                    function chk(result) {
                                        if (result.checked) {
                                            result.parentNode.parentNode.parentNode.style.backgroundColor = "";
@@ -979,8 +943,6 @@ th     { background:#eee; } */
               </svg> </a></span>
               </button>
 
-              <!-- Linkedin -->
-
             </section>
             <!-- Section: Social media -->
           </div>
@@ -988,7 +950,7 @@ th     { background:#eee; } */
 
           <!-- Copyright -->
           <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
+            © 2022 Copyright:
             <a class="text-white" href="#">MUQU.com</a>
           </div>
           <!-- Copyright -->
