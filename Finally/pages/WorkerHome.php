@@ -506,8 +506,6 @@ session_start();
       </div>
     </div>
 
-
-    <!-- ////////// -->
     <div class="container ps-5 pe-5 ps-5 mb-5 " id="abuotus">
       <div class="  d-flex justify-content-between position-relative row  pt-5 ">
         <div class=" carddice   feature col-2 mt-4 ps-4">
@@ -520,7 +518,6 @@ session_start();
 
           </div>
           <div class="position-absolute bottom-0 ms-3 mb-5  ps-4 row">
-            <!-- <h3 class="discribtion  mt-2">Do you want to learn how to use our website?</h3> -->
             <h3>    <a id="" class="how-to-useT discribtion  mt-5 ms-5" href="">About us</a></h3>
 
           </div>
@@ -533,11 +530,9 @@ session_start();
           </div>
           <div class="position-absolute top-50 ms-2 me-2">
             <h3 class="discribtion  mt-2 ms-4 me-4">Do you want to learn how to use our website?</h3>
-            <!-- <a class="discribtion  mt-5 ms-5" href="https://www.w3schools.com">Visit W3Schools.com!</a> -->
           </div>
 
           <div class="position-absolute bottom-0 ms-2 mb-5 me-4 ps-5 d-flex flex-column ">
-            <!-- <h3 class="discribtion  mt-2">Do you want to learn how to use our website?</h3> -->
             <h3><a class=" how-to-use discribtion  mt-5 ms-5" href="">How to use</a></h3>
 
           </div>
@@ -682,7 +677,7 @@ session_start();
       });
       googleSat.addTo(map);
 
-      //MapnMarkerA
+      //Map MarkerA
       var singleMarkerA = L.marker([21.651846, 39.715863]).on('click', LoadA);
       singleMarkerA.addTo(map);
 
@@ -699,7 +694,6 @@ session_start();
         }
         singleMarkerB.on("click", RefreshTable);
         singleMarkerB.on("click", RefreshTable);
-        // document.getElementById("pbd").style.display="block";
 
 
         // reload table in A
