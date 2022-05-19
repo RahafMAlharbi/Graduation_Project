@@ -505,7 +505,7 @@ session_start();
                                             <td name=name_"'.$row["complaintid"].'">
                                             <button id="YourID" type="button" name='.$row["complaintid"].' value='.$row["complaintid"].'
                                              class="xc" data-toggle="modal" data-target="#exampleModal"
-                                              onclick="selectRoomNum(this)"><b>
+                                              // onclick="ComaplaintDetails(this)"><b>
                                             '.$row["complaintid"].'</b></button></td>';
                                            echo"<td>".$row["date"]."</td>";
                                            echo"<td>".$row["category"]."</td>";
@@ -704,7 +704,8 @@ session_start();
 
 ?>
       <script>
-        function selectRoomNum(strq) {
+
+        function ComaplaintDetails(strq) {
           var str = strq.value;
 
           if (str == "") {
