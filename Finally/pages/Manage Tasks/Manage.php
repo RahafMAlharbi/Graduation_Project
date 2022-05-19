@@ -687,7 +687,7 @@ echo"</select>";
 
 
 <script>
-//enable button when select worker
+//jquery for enable button when select worker
 $(document).ready(function () {
   $('#SelectPickerWorked').val("0");
 
