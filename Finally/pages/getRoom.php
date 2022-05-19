@@ -1,6 +1,5 @@
 
  <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -17,6 +16,9 @@ $sql="SELECT * FROM classroom WHERE building = '".$q."'";
 
 $result = mysqli_query($con,$sql);
 ?>
+<!-- get building room number from dara base -->
+<option>Select classroom number</option>
+
 <?php
 while($row = mysqli_fetch_array($result)) {
   ?>
