@@ -703,59 +703,7 @@ $(document).ready(function () {
     }
   })
 });
-			// function validateMyForm (event) {
-			// 		var ourbox = checkbox.id;
-			// 		var ourBoxId = ourbox.replace(/\D+/,"");
-			// 		let part1 = "SelectPickerWorked";
-			// 		let result = part1.concat(ourBoxId);
-			// 		var ds =document.getElementById(result);
-			// 		var strUser = ds.options[ds.selectedIndex].value;
-      //
-			// 		if(strUser==0)
-			// 		{
-			// 			 ds.classList.add("is-invalid");
-			// 			 ds.focus();
-      //
-			// 			event.preventDefault();
-			// 			event.stopPropagation();
-			// 			return false;
-			// 		}else{
-      //
-			// 			ds.classList.remove("is-invalid");
-      //
-			// 		}
-      //
-      //           return true;
-      // }
 
-
-// function validateMyForm (event) {
-//   var allCheckedBox =document.querySelectorAll(".box:checked");
-//   for (var checkbox of allCheckedBox) { // to check if it select an employee
-//     var ourbox = checkbox.id;
-//     var ourBoxId = ourbox.replace(/\D+/,"");
-//     let part1 = "SelectPicker_";
-//     let result = part1.concat(ourBoxId);
-//     var ds =document.getElementById(result);
-//     var strUser = ds.options[ds.selectedIndex].value;
-//
-//     if(strUser==0)
-//     {
-//        ds.classList.add("is-invalid");
-//        ds.focus();
-//
-//       event.preventDefault();
-//       event.stopPropagation();
-//       //window.history.back();
-//       return false;
-//     }else{
-//
-//       ds.classList.remove("is-invalid");
-//
-//     }
-//   }
-//           return true;
-// }
 
 //ajax for get complaint details
 function selectRoomNum (strq) {
