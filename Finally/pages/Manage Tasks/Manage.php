@@ -416,6 +416,18 @@ $result = $conn->query($qury);
     height: 100px;
     margin-top: -50px;
   }
+  .hmarg{
+margin-top: 63px;
+
+  }
+  .hmarg2{
+ margin-top: 38px;
+
+  }
+  .hmarg3{
+margin-top: 5px;
+
+}
   /* footer */
 </style>
 
@@ -427,23 +439,23 @@ $result = $conn->query($qury);
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img src="img/MUQU.png" width="80" height="80" alt=""></svg>
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="../img/muqu2.png" width="100" height="80" alt=""></svg>
           </a>
 
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
 
             <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
-            <li><a href="..\ManagerHome.php" class="nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
+            <li><a href="..\ManagerHome.php" class="hmarg nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
 
-            <li><a href="..\Assign Tasks\Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
-            <li><a href="Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark">Mange Assign Tasks</a></li>
+            <li><a href="..\Assign Tasks\Assign.php" class="hmarg nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
+            <li><a href="Manage.php" class="nav-link px-2 ms-4  hmarg hedermaargin link-dark">Mange Assign Tasks</a></li>
 
-            <li><a href="#" class="nav-link px-2 ms-4 hedermaargin  link-dark">Statistics</a></li>
+            <li><a href="#" class="nav-link px-2 ms-4 hedermaargin hmarg link-dark">Statistics</a></li>
           </ul>
 
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search">
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+          <form class="hmarg2 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search">
+            <input type="search" class=" form-control" placeholder="Search..." aria-label="Search">
           </form>
 
 
@@ -452,7 +464,7 @@ $result = $conn->query($qury);
             <button class="dropbtn ">
 
               <!-- person icon  -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="hmarg3 bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
               </svg>
