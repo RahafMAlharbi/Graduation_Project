@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
   </head>
   <body>
 <style media="screen">
@@ -115,20 +112,13 @@ font-size: 20px;
     <input class="input-info form-control-plaintext" type="text"  value="<?php echo $rows["description"]; ?>" aria-label="Disabled input example" disabled readonly>
   </div>
 </div>
-
-
-
-
-
-
-
   <?php
   $ii = 0;
   while($row1 = mysqli_fetch_array($result1)){
   $ii++;
   if( !empty($row1["images"])){
     ?>
-   <label for="inputPassword6" class="mtop col-form-label">Image</label>
+    images
    <p><img src="<?php echo $row1["images"]; ?>" width="100" height="100" /> </p>
 
   <?php }
@@ -146,6 +136,4 @@ font-size: 20px;
  ?>
 </form>
 </body>
-<!-- <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script> -->
-
 </html>
