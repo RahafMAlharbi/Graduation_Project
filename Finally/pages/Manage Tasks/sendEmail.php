@@ -1,5 +1,5 @@
 <?php
-
+// Send email to faculty member
 	 $servername = "localhost";
 	 $username = "root";
 	 $password = "";
@@ -15,25 +15,25 @@
 	 mysqli_select_db($conn,"muqu");
 
 
-//get faculty member email and name
+   //get faculty member email and name from data base
    $qury1= "SELECT  complaint.complaintId , complaint.idofuser , facultymember.userId , facultymember.userEmail , facultymember.userName
              FROM  complaint INNER JOIN facultymember
              ON complaint.idofuser=facultymember.userId
              WHERE complaint.complaintId='$complainId'";
 
-             $result = $conn->query($qury1);
-             while($row=$result->fetch_assoc()){
+    $result = $conn->query($qury1);
+		 while($row=$result->fetch_assoc()){
 
          echo $userEmail=$row["userEmail"];
          echo $userName=$row["userName"];
          echo $thiscomplaint=$row["complaintId"];
 
              }
-echo $userEmail;
-echo $userName;
-echo $thiscomplaint;
+    echo $userEmail;
+    echo $userName;
+    echo $thiscomplaint;
 
-use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\PHPMailer;
 
 
     $name ="MUQU Group ";// $_POST['name'];
