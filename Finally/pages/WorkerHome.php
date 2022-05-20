@@ -364,6 +364,25 @@ session_start();
         height: 100px;
         margin-top: -50px;
       }
+
+      .hmarg{
+      margin-top: 63px;
+
+      }
+      .hmarg2{
+      margin-top: 38px;
+
+      }
+      .hmarg3{
+      margin-top: 5px;
+
+      }
+
+
+
+
+
+
     </style>
 
     <div class="b-example-divider pt-3 pb- pe-">
@@ -371,16 +390,16 @@ session_start();
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb- mb-lg-0 text-dark text-decoration-none">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img src="img/MUQU.png" width="80" height="80" alt=""></svg>
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="img/muqu2.png" width="100" height="80" alt=""></svg>
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto  justify-content-center mb-md-0">
-              <li><a href="WorkerHome.php" class="nav-link px-2 ps-5 hedermaargin link-secondary">Home</a></li>
-              <li><a href="Check Assigned Tasks/Check Assigned Tasks.php" class="nav-link px-2 ps-5 hedermaargin link-dark">Check Assign Tasks</a></li>
-              <li><a href="#" class="nav-link px-2 ps-5 hedermaargin link-dark">Statistics</a></li>
+              <li><a href="WorkerHome.php" class="nav-link px-2 ps-5 hedermaargin link-secondary hmarg">Home</a></li>
+              <li><a href="Check Assigned Tasks/Check Assigned Tasks.php" class="nav-link px-2 ps-5 hedermaargin link-dark hmarg">Check Assign Tasks</a></li>
+              <li><a href="#" class="nav-link px-2 ps-5 hedermaargin link-dark hmarg">Statistics</a></li>
             </ul>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search  pe-5">
+            <form class=" hmarg2 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search  pe-5">
               <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
             </form>
 
@@ -389,7 +408,7 @@ session_start();
               <button class="dropbtn ">
 
                 <!-- person icon  -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class=" hmarg3 bi bi-person-circle" viewBox="0 0 16 16">
                   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                 </svg>
