@@ -368,6 +368,19 @@ session_start();
         height: 100px;
         margin-top: -50px;
       }
+      .hmarg{
+      margin-top: 63px;
+
+      }
+      .hmarg2{
+      margin-top: 38px;
+
+      }
+      .hmarg3{
+      margin-top: 5px;
+
+      }
+
     </style>
 
     <div class="b-example-divider pt-3">
@@ -375,14 +388,14 @@ session_start();
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img src="img/MUQU.png" width="80" height="80" alt=""></svg>
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="img/muqu2.png" width="100" height="80" alt=""></svg>
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="FacultyMemberHome.php" class="nav-link px-2 ps-5 link-secondary">Home</a></li>
-              <li><a href="Make Complaint\Make Complaint.php" class="nav-link  ps-5 px-2 link-dark">Make Complaint</a></li>
-              <li><a href="#" class="nav-link ps-5 px-2 link-dark">Statistics</a></li>
+              <li><a href="FacultyMemberHome.php" class="nav-link px-2 ps-5 link-secondary hmarg">Home</a></li>
+              <li><a href="Make Complaint\Make Complaint.php" class="nav-link  ps-5 px-2 link-dark hmarg">Make Complaint</a></li>
+              <li><a href="#" class="nav-link ps-5 px-2 link-dark hmarg">Statistics</a></li>
             </ul>
-            <form class="col-12 pe-5 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <form class="hmarg2 col-12 pe-5 col-lg-auto mb-3 mb-lg-0 me-lg-3">
               <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
             </form>
             <div class="dropdown ">
