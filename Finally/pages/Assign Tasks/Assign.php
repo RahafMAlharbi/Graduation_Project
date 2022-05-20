@@ -394,6 +394,22 @@ session_start();
     }
 
     */
+
+    .hmarg{
+    margin-top: 63px;
+
+    }
+    .hmarg2{
+    margin-top: 38px;
+
+    }
+    .hmarg3{
+    margin-top: 5px;
+
+    }
+
+
+
   </style>
 
   <body oncontextmenu='return' class='snippet-body'>
@@ -404,15 +420,15 @@ session_start();
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img src="..\img/muqu1.png" width="200" height="230" alt=""></svg>
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="../img/muqu2.png" width="100" height="80" alt=""></svg>
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><a href="..\ManagerHome.php" class="nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
-              <li><a href="Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
-              <li><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark">Mange Assign Tasks</a></li>
-              <li><a href="#" class="nav-link px-2 ms-4 hedermaargin  link-dark">Statestcs</a></li>
+              <li><a href="Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark hmarg">Assign Tasks</a></li>
+              <li><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark hmarg">Mange Assign Tasks</a></li>
+              <li><a href="#" class="nav-link px-2 ms-4 hedermaargin  link-dark hmarg">Statestcs</a></li>
             </ul>
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search">
+            <form class="hmarg2 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search">
               <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
             </form>
 
@@ -427,7 +443,7 @@ session_start();
                 </svg>
 
                 <!-- Arow icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="hmarg3 bi bi-caret-down-square-fill" viewBox="0 0 16 16">
                   <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
                 </svg>
                 <p>
