@@ -385,8 +385,8 @@ session_start();
 
     </style>
 
-    <div class="b-example-divider pt-3 pb- pe-">
-      <header class=" p-3 ms-3 mb- border-bottom pb-3">
+    <div class="b-example-divider mb-5 pb- pe-">
+      <header class=" p- ms-3 mb- border-bottom pb-3">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb- mb-lg-0 text-dark text-decoration-none">
