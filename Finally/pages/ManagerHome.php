@@ -383,10 +383,9 @@ session_start();
 
 
     </style>
-    <div class="b-example-divider pt-3 pb- pe-5 ">
+    <div class="b-example-divider pt-3 ps-1 pb- pe-5 me-1">
 
       <header class="p-3 ms-3 mb- border-bottom ">
-        <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
               <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="img/muqu2.png" width="100" height="80" alt=""></svg>
