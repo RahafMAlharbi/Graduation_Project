@@ -159,7 +159,7 @@
 					  <div class="card-body">
 						<div class="alert alert-success" role="alert">
 		        <h4 class="alert-heading">Well done!</h4>
-		         <p>Thank you ! The complaint has been successfully raised and we will deal with it as soon as possible.</p>
+		         <p>Thank you ! The complaint has been successfully submitted and we will deal with it as soon as possible.</p>
 
 	           	</div>
 			  			<button class="button11" onclick="window.location.href='Make Complaint.php'">Go Back</buttton>
