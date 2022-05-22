@@ -17,397 +17,414 @@ session_start();
 
   </head>
 
+ <?php
+session_start();
+?>
+  <!doctype html>
+  <html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'> -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script type='text/javascript' src=''></script>
+    <title>Assign Tasks</title>
+
+  </head>
+
   <style>
-    body {
-      background: #eee
-    }
-
-    .height {
-      /* height: 100vh */
-    }
-
-    h6.mytitelscss {
-      color: #676767;
-      font-family: 'Rambla';
-      font-size: 18px;
-    }
-
-    ul.nav li a,
-    ul.nav li a:visited {
-      color: #2F5972 !important;
-      font-family: Roboto Condensed;
-      font-size: 20px;
-    }
-
-    ul.nav li a,
-    ul.nav li a:hover {
-      color: #747f86 !important;
-      font-family: Roboto Condensed;
-      font-size: 20px;
-    }
-
-    .dropbtn {
-      background-color: #eee;
-      color: #2F5972;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      top: 15px;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {
-      background-color: rgba(227, 231, 234, 0.61)
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    * {
-      padding: 0;
-      margin: 0;
-    }
-
-    html,
-    body {
-      height: 100%;
-    }
-
-    #containerBODY {
-      min-height: 100%;
-    }
-
-    #mainBODY {
-      overflow: auto;
-      padding-bottom: 50px;
-      height: 650px;
-    }
-
-    #footer {
-      position: relative;
-      height: 100px;
-      margin-top: -50px;
-    }
-
-    h6.mytitelscss {
-      color: #676767;
-      font-family: 'Rambla';
-      font-size: 18px
-    }
-
-    h5.mytitelscs0 {
-      color: #2F5972;
-      font-family: 'Roboto Mono';
-      font-size: 17px;
-    }
-
-    h5.mytiteldetails {
-      color: #F6F4F1;
-      font-family: 'Roboto Mono';
-      font-size: 17px;
-    }
-
-    tbody {
-      background-color: #F6F4F1;
-      color: #676767;
-      font-family: 'Rambla';
-      font-size: 15px;
-    }
-
-    thead {
-      background-color: #2F5972;
-      color: #FFFFFF;
-      font-family: 'Roboto Mono';
-      font-size: 18px;
-    }
-
-    div .csstext {
-      background: #F6F4F1;
-      border-radius: 4px;
-      border: 3px solid #2F5972;
-    }
-
-    h5.mytitelreson {
-      color: #F6F4F1;
-      font-family: 'Roboto Mono';
-      font-size: 17px;
-    }
-
-    .xc {
-      padding: 0;
-      border: none;
-      background: none;
-      text-decoration: underline;
-    }
-
-    div.modelhedercss {
-      background: #2F5972;
-      height: 40px;
-      width: 100%;
-      border-radius: 00;
-    }
-
-    .search-bar {
-      width: 270px;
-      margin-top: 100px;
-      height: 35px;
-    }
-
-    div.headerDatails {
-      background: #2F5972;
-      height: 40px;
-      width: 100%;
-      padding-bottom: 40px;
-    }
-
-    .closeX {
-      margin-top: 90px;
-      /* margin-bottom: 100px; */
-    }
-
-    .select-css {
-      width: 100px;
-    }
-
-    .table-complaint {
-      width: 900px;
-    }
-
-    .choose_file {
-      position: relative;
-      display: inline-block;
-      border-radius: 38px;
-      border: #6F92A0 solid 1px;
-      width: 120px;
-      height: 40px;
-      padding: 4px 6px 4px 8px;
-      font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
-      color: #edf1f7;
-      margin-top: 2px;
-    }
-
-    .btn-primary,
-    .btn-primary:active,
-    .btn-primary:visited,
-    .btn-primary:active:hover,
-    .btn-primary.active,
-    .open > .dropdown-toggle.btn-primary {
-      background-color: #2F5972 !important;
-      border-color: #2F5972 !important;
-    }
-
-    .btn-primary:hover {
-      background-color: #6F92A0 !important;
-      border-color: #6F92A0 !important;
-    }
-
-    .btn-secondary,
-    .btn-secondary:active,
-    .btn-secondary:visited,
-    .btn-secondary:active:hover,
-    .btn-secondary.active,
-    .open > .dropdown-toggle.btn-secondary {
-      background-color: white !important;
-      border-color: white !important;
-      color: #2F5972;
-    }
-
-    .btn-secondary:hover {
-      background-color: #2F5972 !important;
-      border-color: #edf1f7 !important;
-      color: #edf1f7;
-    }
-
-    .btn-secondary:disabled {
-      color: #2F5972;
-    }
-
-    .ontainer input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-    }
-
-    .ontainer {
-      display: block;
-      position: relative;
-      cursor: pointer;
-      font-size: 17px;
-      user-select: none;
-    }
-
-    .heckmark {
-      position: relative;
-      top: 0;
-      left: 0;
-      height: 17px;
-      width: 18px;
-      background-color: #ccc;
-      border-radius: 25px;
-      transition: 0.15s;
-    }
-
-    .ontainer input:checked ~ .heckmark {
-      background-color: #2F5972;
-      border-radius: 25px;
-      transition: 0.15s;
-    }
-
-    .heckmark:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
-
-    .ontainer input:checked ~ .heckmark:after {
-      display: block;
-    }
-
-    .ontainer .heckmark:after {
-      left: 0.48em;
-      top: 0.16em;
-      width: 0.2em;
-      height: 0.5em;
-      border: solid white;
-      border-width: 0 0.15em 0.15em 0;
-      transform: rotate(40deg);
-    }
-
-    .newclss {
-      background-color: black;
-    }
-
-    .table-wrapper {
-      position: relative;
-    }
-
-    .table-scroll {
-      height: 150px;
-      overflow: auto;
-      margin-top: 20px;
-    }
-
-    .table-wrapper table {
-      width: 100%;
-    }
-
-    .table-wrapper table * {
-      background: yellow;
-      color: black;
-    }
-
-    .table-wrapper table thead th .text {
-      position: absolute;
-      top: -20px;
-      z-index: 2;
-      height: 20px;
-      width: 35%;
-      border: 1px solid red;
-    }
-
-    .ctaa {
-      border: none;
-      background: none;
-    }
-
-    .ctaa span {
-      padding-bottom: 7px;
-      letter-spacing: 4px;
-      font-size: 10px;
-      padding-right: 9px;
-      text-transform: uppercase;
-    }
-
-    .ctaa svg {
-      transform: translateX(-8px);
-      transition: all 0.3s ease;
-    }
-
-    .ctaa:hover svg {
-      transform: translateX(0);
-    }
-
-    .ctaa:active svg {
-      transform: scale(0.9);
-      color: #ccc;
-    }
-
-    .hover-underline-animation {
-      color: #eee;
-    }
-
-    #wrap {
-      min-height: 100%;
-    }
-
-    #main {
-      overflow: auto;
-      padding-bottom: 650px;
-    }
-
-    .ctaa:hover .hover-underline-animation:after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-
-    .ctaa:hover .hover-underline-animation:after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    th,
-    td {
-      padding: 8px 16px;
-    }
-
-    th {
-      background: #eee;
-    }
-
-    */
-
-    .hmarg{
-    margin-top: 63px;
-
-    }
-    .hmarg2{
-    margin-top: 38px;
-
-    }
-    .hmarg3{
-    margin-top: 5px;
-
-    }
-
+  body {
+    background: #eee
+  }
+
+  h6.mytitelscss {
+    color: #676767;
+    font-family: 'Rambla';
+    font-size: 18px;
+  }
+
+  ul.nav li a,
+  ul.nav li a:visited {
+    color: #2F5972 !important;
+    font-family: Roboto Condensed;
+    font-size: 20px;
+  }
+
+  ul.nav li a,
+  ul.nav li a:hover {
+    color: #747f86 !important;
+    font-family: Roboto Condensed;
+    font-size: 20px;
+  }
+
+  .dropbtn {
+    background-color: #eee;
+    color: #2F5972;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    top: 15px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: rgba(227, 231, 234, 0.61)
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  h6.mytitelscss {
+    color: #676767;
+    font-family: 'Rambla';
+    font-size: 18px
+  }
+
+  h5.mytitelscs0 {
+    color: #2F5972;
+    font-family: 'Roboto Mono';
+    font-size: 17px;
+  }
+
+  h5.mytiteldetails {
+    color: #F6F4F1;
+    font-family: 'Roboto Mono';
+    font-size: 17px;
+    /* //style */
+    font-size: 23px;
+  }
+
+  tbody {
+    background-color: #F6F4F1;
+    color: #676767;
+    font-family: 'Rambla';
+    font-size: 15px;
+    /* //style */
+    font-size: 19px;
+  }
+
+  thead {
+    background-color: #2F5972;
+    color: #FFFFFF;
+    font-family: 'Roboto Mono';
+    font-size: 18px;
+  }
+
+  div .csstext {
+    background: #F6F4F1;
+    border-radius: 4px;
+    border: 3px solid #2F5972;
+  }
+
+  h5.mytitelreson {
+    color: #F6F4F1;
+    font-family: 'Roboto Mono';
+    font-size: 17px;
+    font-size: 22px;
+  }
+
+  .xc {
+    padding: 0;
+    border: none;
+    background: none;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  div.modelhedercss {
+    background: #2F5972;
+    height: 40px;
+    width: 100%;
+    border-radius: 00;
+  }
+
+  .search-bar {
+    width: 270px;
+    margin-top: 100px;
+    height: 35px;
+  }
+
+  div.headerDatails {
+    background: #2F5972;
+    height: 40px;
+    width: 100%;
+    padding-bottom: 40px;
+  }
+
+  .closeX {
+    margin-top: 90px;
+  }
+
+  .select-css {
+    width: 100px;
+  }
+
+  .table-complaint {
+    width: 900px;
+  }
+
+  .choose_file {
+    position: relative;
+    display: inline-block;
+    border-radius: 38px;
+    border: #6F92A0 solid 1px;
+    width: 120px;
+    height: 40px;
+    padding: 4px 6px 4px 8px;
+    font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
+    color: #edf1f7;
+    margin-top: 2px;
+  }
+
+  .btn-primary,
+  .btn-primary:active,
+  .btn-primary:visited,
+  .btn-primary:active:hover,
+  .btn-primary.active,
+  .open > .dropdown-toggle.btn-primary {
+    background-color: #2F5972 !important;
+    border-color: #2F5972 !important;
+  }
+
+  .btn-primary:hover {
+    background-color: #6F92A0 !important;
+    border-color: #6F92A0 !important;
+  }
+
+  .btn-secondary,
+  .btn-secondary:active,
+  .btn-secondary:visited,
+  .btn-secondary:active:hover,
+  .btn-secondary.active,
+  .open > .dropdown-toggle.btn-secondary {
+    background-color: white !important;
+    border-color: white !important;
+    color: #2F5972;
+  }
+
+  .btn-secondary:hover {
+    background-color: #2F5972 !important;
+    border-color: #edf1f7 !important;
+    color: #edf1f7;
+  }
+
+  .btn-secondary:disabled {
+    color: #2F5972;
+  }
+
+  .ontainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .ontainer {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 17px;
+    user-select: none;
+  }
+
+  .heckmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 17px;
+    width: 18px;
+    background-color: #ccc;
+    border-radius: 25px;
+    transition: 0.15s;
+  }
+  /* When the checkbox is checked, add a blue background */
+
+  .ontainer input:checked ~ .heckmark {
+    background-color: #2F5972;
+    border-radius: 25px;
+    transition: 0.15s;
+  }
+  /* Create the checkmark/indicator (hidden when not checked) */
+
+  .heckmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  /* Show the checkmark when checked */
+
+  .ontainer input:checked ~ .heckmark:after {
+    display: block;
+  }
+  /* Style the checkmark/indicator */
+
+  .ontainer .heckmark:after {
+    left: 0.48em;
+    top: 0.16em;
+    width: 0.2em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(40deg);
+  }
+
+  .newclss {
+    background-color: black;
+  }
+
+  .table-wrapper {
+    position: relative;
+  }
+
+  .table-scroll {
+    height: 150px;
+    overflow: auto;
+    margin-top: 20px;
+  }
+
+  .table-wrapper table {
+    width: 100%;
+  }
+
+  .table-wrapper table * {
+    background: yellow;
+    color: black;
+  }
+
+  .table-wrapper table thead th .text {
+    position: absolute;
+    top: -20px;
+    z-index: 2;
+    height: 20px;
+    width: 35%;
+    border: 1px solid red;
+  }
+  /* Just common table stuff. Really. */
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 8px 16px;
+  }
+
+  th {
+    background: #eee;
+  }
+
+  */ .pagetitle {
+    font-family: "Times New Roman", Times, serif;
+    color: #676767;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ctaa {
+    border: none;
+    background: none;
+  }
+
+  .ctaa span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 10px;
+    padding-right: 9px;
+    text-transform: uppercase;
+  }
+
+  .ctaa svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+
+  .ctaa:hover svg {
+    transform: translateX(0);
+  }
+
+  .ctaa:active svg {
+    transform: scale(0.9);
+    color: #ccc;
+  }
+
+  .hover-underline-animation {
+    color: #eee;
+  }
+
+  .ctaa:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  #containerBODY {
+    min-height: 100%;
+  }
+
+  #mainBODY {
+    overflow: auto;
+    padding-bottom: 50px;
+    height: 650px;
+  }
+
+  #footer {
+    position: relative;
+    height: 100px;
+    margin-top: -50px;
+  }
+  .hmarg{
+margin-top: 63px;
+
+  }
+  .hmarg2{
+ margin-top: 38px;
+
+  }
+  .hmarg3{
+margin-top: 5px;
+
+}
 
 
   </style>
@@ -416,39 +433,47 @@ session_start();
 
     <!-- beginning of header-->
     <div class="b-example-divider pt-3 pb- pe-5 me-1">
+
       <header class="p-3 ms-3 mb- border-bottom ">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
               <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="../img/muqu2.png" width="100" height="80" alt=""></svg>
             </a>
+
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="..\ManagerHome.php" class="nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
-              <li><a href="Assign.php" class="nav-link px-2 ms-4 hedermaargin link-dark hmarg">Assign Tasks</a></li>
+
+
+              <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
+              <li><a href="..\ManagerHome.php" class="hmarg nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
+
+              <li><a href="..\Assign Tasks\Assign.php" class="hmarg nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
               <li><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark hmarg">Mange Assign Tasks</a></li>
-              <li><a href="#" class="nav-link px-2 ms-4 hedermaargin  link-dark hmarg">Statestcs</a></li>
+
+              <li><a href="#" class="nav-link px-2 ms-4 hedermaargin hmarg link-dark">Statistics</a></li>
             </ul>
+
             <form class="hmarg2 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search">
-              <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+              <input type="search" class=" form-control" placeholder="Search..." aria-label="Search">
             </form>
 
 
             <!-- dropdown -->
             <div class="dropdown ">
               <button class="dropbtn ">
+
                 <!-- person icon  -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="hmarg3 bi bi-person-circle" viewBox="0 0 16 16">
                   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                 </svg>
 
                 <!-- Arow icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="hmarg3 bi bi-caret-down-square-fill" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
                   <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
                 </svg>
                 <p>
-                  <?php
-                                       echo $_SESSION['userName']; ?>
+                  <?php                                                                                                                      echo $_SESSION['userName']; ?>
                 </p>
               </button>
               <div class="dropdown-content ">
@@ -456,10 +481,8 @@ session_start();
                 <a href="#">About us</a>
               </div>
             </div>
-
           </div>
         </div>
-        <!-- end  of header-->
       </header>
     </div>
     <div id="containerBODY">
@@ -815,3 +838,4 @@ session_start();
   </body>
 
   </html>
+
