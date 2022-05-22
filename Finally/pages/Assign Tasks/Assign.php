@@ -429,7 +429,7 @@ margin-top: 5px;
               <li><a href="..\ManagerHome.php" class="hmarg nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
 
               <li><a href="..\Assign Tasks\Assign.php" class="hmarg nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
-              <li><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hmarg hedermaargin link-dark">Mange Assign Tasks</a></li>
+              <li><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hedermaargin link-dark hmarg">Mange Assign Tasks</a></li>
 
               <li><a href="#" class="nav-link px-2 ms-4 hedermaargin hmarg link-dark">Statistics</a></li>
             </ul>
@@ -484,17 +484,20 @@ margin-top: 5px;
                                     $result = $conn->query($qury);
 
                                      ?>
-          <div class="container position-relative table- ">
+          <div class="container position-relative table- pt-4">
             <div class="col-md-12 position-absolute mt- start-translate-middle ">
 
               <div class="card-body ">
 
+
+
                 <form id="form" name="myFormName" action="Assign.php" method="POST" class="row g-3 needs-validation" novalidate>
-                  <h3>Assign Task</h3>
+
+                  <h3 class="tableTitle mt-5 p-1"style="font-family:Roboto Condensed ;  font-size: 40px ; font-weight: bold; color: #2F5972; ">Assign Task</h3>
+
                   <!--Search for complaint id-->
-                  <input type="text" id="myInput" onkeyup="myFunction()" class="search-bar form-control" placeholder="Search for complaint id..">
-                  <br/>
-                  <br/>
+                  <input type="text" id="myInput" onkeyup="myFunction()" class="search-bar form-control mt-5" placeholder="Search for complaint id..">
+
                   <div class="tableFixHead">
                     <table id="myTable" class="table">
                       <thead class="">
@@ -584,7 +587,7 @@ margin-top: 5px;
       <div class="container pt-2">
         <!-- Section: Social media -->
         <section class="mb-3">
-          <!-- Facebook -->
+          <!-- Twitter -->
           <button class="ctaa">
             <a href="https://twitter.com/">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -593,7 +596,7 @@ margin-top: 5px;
             </svg> </a></span>
           </button>
 
-          <!-- Twitter -->
+          <!-- Outlook -->
           <button class="ctaa">
             <a href="https://outlook.live.com/owa/">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -602,7 +605,7 @@ margin-top: 5px;
 
           </button>
 
-          <!-- Google -->
+          <!-- Instagram -->
           <button class="ctaa">
             <a href="https://www.instagram.com/">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -611,7 +614,7 @@ margin-top: 5px;
             </svg></a> </span>
           </button>
 
-          <!-- Instagram -->
+          <!-- contact-->
           <button class="ctaa">
             <a href="#">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -628,8 +631,8 @@ margin-top: 5px;
 
       <!-- Copyright -->
       <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright:
-        <a class="text-white" href="#">MUQU.com</a>
+     © 2022<em>Copyright</em> :
+        <a class="text-white" href="..\ManagerHome.php">MUQU.com</a>
       </div>
       <!--end of footer-->
     </footer>
