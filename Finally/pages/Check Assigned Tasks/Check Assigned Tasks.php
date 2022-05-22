@@ -480,7 +480,8 @@ echo(mysqli_error($con));
     <!-- check Assigend tasks form-->
     <div id="containerBODY">
       <div id="mainBODY">
-        <div class="container position-relative ">
+
+        <div class="container position-relative pt-4">
           <div class="col-md-12 position-absolute start-translate-middle">
 
             <div class="card-body  ">
@@ -489,9 +490,10 @@ echo(mysqli_error($con));
               <form method="post" id="form" action="completerUncomplete.php" class="">
                 <input type="hidden" name="comment" id="comment2">
                 <div class="col col-md-12">
-                  <h3 class="mytitelh3">check Assigend tasks</h3>
+                <h3 class="tableTitle mt-5 p-1"style="font-family:Roboto Condensed ;  font-size: 38px ; font-weight: bold; color: #2F5972; ">Check Assigend tasks</h3>
+
                   <!--Search for complaint id-->
-                  <input type="text" id="myInput" class="search-bar form-control" onkeyup="myFunction()" placeholder="Search for complaint id..">
+                  <input type="text" id="myInput" onkeyup="myFunction()" class="search-bar form-control mt-5" placeholder="Search for complaint id..">
                   <br/>
                   <br/>
                   <table class="table" id="myTable">
@@ -681,9 +683,9 @@ echo(mysqli_error($con));
     <footer id="footer" class=" fotter text-center text-white p-0 mt-5" style="background-color: #2F5972 ;">
       <!-- Grid container -->
       <div class="container pt-2">
-        <!-- Section: Social media -->
+      <!-- Section: Social media -->
         <section class="mb-3">
-          <!-- Facebook -->
+          <!-- Twitter -->
           <button class="ctaa">
             <a href="https://twitter.com/">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -692,7 +694,7 @@ echo(mysqli_error($con));
             </svg> </a></span>
           </button>
 
-          <!-- Twitter -->
+          <!-- Outlook -->
           <button class="ctaa">
             <a href="https://outlook.live.com/owa/">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -701,7 +703,7 @@ echo(mysqli_error($con));
 
           </button>
 
-          <!-- Google -->
+            <!-- Instagram -->
           <button class="ctaa">
             <a href="https://www.instagram.com/">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -710,7 +712,7 @@ echo(mysqli_error($con));
             </svg></a> </span>
           </button>
 
-          <!-- Instagram -->
+          <!-- contact-->
           <button class="ctaa">
             <a href="#">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -727,8 +729,8 @@ echo(mysqli_error($con));
 
       <!-- Copyright -->
       <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright:
-        <a class="text-white" href="#">MUQU.com</a>
+        © 2022<em>Copyright</em> :
+        <a class="text-white" href="../WorkerHome.php">MUQU.com</a>
       </div>
       <!-- Copyright -->
     </footer>
