@@ -496,7 +496,7 @@ margin-top: 5px;
 
                 <form id="form" name="myFormName" action="Assign.php" method="POST" class="row g-3 needs-validation" novalidate>
 
-                  <h3 class="tableTitle mt-5 p-1 ms-4"style="font-family:Roboto Condensed ;  font-size: 33px ; font-weight: bold; color: #2F5972; ">Assign Task</h3>
+                  <h3 class="tableTitle mt-5 p-1 ms-4"style="font-family:Roboto Condensed ;  font-size: 33px ; font-weight: bold; color: #2F5972; ">Assign Tasks</h3>
 
                   <!--Search for complaint id-->
                   <input type="text" id="myInput" onkeyup="myFunction()" class="search-bar form-control mt-5" placeholder="Search for complaint id..">
