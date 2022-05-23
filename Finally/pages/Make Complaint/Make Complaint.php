@@ -373,7 +373,7 @@ ul.nav li a, ul.nav li a:visited {
       <header class="p-3 ms-3 mb-3 border-bottom">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <a href="../FacultyMemberHome.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
               <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="../img/muqu2.png" width="100" height="80" alt=""></svg>
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -628,7 +628,7 @@ ul.nav li a, ul.nav li a:visited {
               <div class="container pt-2">
                 <!-- Section: Social media -->
                 <section class="mb-3">
-                  <!-- Facebook -->
+                  <!-- Twitter -->
                   <button class="ctaa"> <a href="https://twitter.com/">
                   <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
 
@@ -636,7 +636,7 @@ ul.nav li a, ul.nav li a:visited {
                   </svg> </a></span>
                 </button>
 
-                  <!-- Twitter -->
+                  <!-- Outlook -->
                   <button class="ctaa"> <a href="https://outlook.live.com/owa/">
                 <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
@@ -644,7 +644,7 @@ ul.nav li a, ul.nav li a:visited {
 
                 </button>
 
-                  <!-- Google -->
+                  <!-- Instagram -->
                   <button class="ctaa"><a href="https://www.instagram.com/">
                   <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
 
@@ -652,7 +652,7 @@ ul.nav li a, ul.nav li a:visited {
                   </svg></a> </span>
                   </button>
 
-                  <!-- Instagram -->
+                  <!-- contact-->
                   <button class="ctaa"><a href="#">
                   <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
 
@@ -661,7 +661,7 @@ ul.nav li a, ul.nav li a:visited {
                   </svg> </a></span>
                   </button>
 
-                  <!-- Linkedin -->
+
 
                 </section>
                 <!-- Section: Social media -->
@@ -670,8 +670,8 @@ ul.nav li a, ul.nav li a:visited {
 
               <!-- Copyright -->
               <div class="text-center text-white p-3 " style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2022 Copyright:
-                <a class="text-white" href="#">MUQU.com</a>
+                © 2022<em>Copyright</em> :
+                <a class="text-white" href="../FacultyMemberHome.php">MUQU.com</a>
               </div>
               <!-- Copyright -->
       </footer>
