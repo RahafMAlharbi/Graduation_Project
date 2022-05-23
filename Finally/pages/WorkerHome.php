@@ -390,7 +390,7 @@ session_start();
       <header class=" p- ms-3 mb- border-bottom pb-3">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb- mb-lg-0 text-dark text-decoration-none">
+            <a href="WorkerHome.php" class="d-flex align-items-center mb- mb-lg-0 text-dark text-decoration-none">
               <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="img/muqu2.png" width="100" height="80" alt=""></svg>
             </a>
 
@@ -571,7 +571,7 @@ session_start();
       <div class="container pt-2">
         <!-- Section: Social media -->
         <section class="mb-3">
-          <!-- Facebook -->
+            <!-- Twitter -->
           <button class="ctaa">
             <a href="https://twitter.com/">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -580,7 +580,7 @@ session_start();
                                   </svg> </a></span>
           </button>
 
-          <!-- Twitter -->
+          <!-- Outlook -->
           <button class="ctaa">
             <a href="https://outlook.live.com/owa/">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -589,7 +589,7 @@ session_start();
 
           </button>
 
-          <!-- Google -->
+          <!-- Instagram -->
           <button class="ctaa">
             <a href="https://www.instagram.com/">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -598,7 +598,7 @@ session_start();
                                   </svg></a> </span>
           </button>
 
-          <!-- Instagram -->
+          <!-- contact-->
           <button class="ctaa">
             <a href="#">
               <span class="hover-underline-animation">     <svg xmlns="" width="25" height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -608,7 +608,7 @@ session_start();
                                   </svg> </a></span>
           </button>
 
-          <!-- Linkedin -->
+
 
         </section>
         <!-- Section: Social media -->
@@ -617,8 +617,8 @@ session_start();
 
       <!-- Copyright -->
       <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright:
-        <a class="text-white" href="#">MUQU.com</a>
+        © 2022<em>Copyright</em> :
+        <a class="text-white" href="WorkerHome.php">MUQU.com</a>
       </div>
       <!-- Copyright -->
     </footer>
