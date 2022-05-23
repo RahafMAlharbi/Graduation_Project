@@ -430,7 +430,7 @@ margin-top: 5px;
               <li><a href="..\ManagerHome.php" class="hmarg nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
 
               <li><a href="Assign.php" class="hmarg nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
-              <li><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hmarg hedermaargin link-dark">Manage Assign Tasks</a></li>
+              <li><a href="..\Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hmarg hedermaargin link-dark">Manage Assigned Tasks</a></li>
 
               <li><a href="#" class="nav-link px-2 ms-4 hedermaargin hmarg link-dark">Statistics</a></li>
             </ul>
