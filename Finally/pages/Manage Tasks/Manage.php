@@ -446,7 +446,7 @@ margin-top: 5px;
             <li><a href="..\ManagerHome.php" class="hmarg nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
 
             <li><a href="..\Assign Tasks\Assign.php" class="hmarg nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
-            <li><a href="Manage.php" class="nav-link px-2 ms-4  hmarg hedermaargin link-dark">Mange Assign Tasks</a></li>
+            <li><a href="Manage.php" class="nav-link px-2 ms-4  hmarg hedermaargin link-dark">Manage Assigned Tasks</a></li>
 
             <li><a href="#" class="nav-link px-2 ms-4 hedermaargin hmarg link-dark">Statistics</a></li>
           </ul>
@@ -493,7 +493,7 @@ margin-top: 5px;
             <div class="row page-">
             </div>
             <form id="form" name="myFormName" action="setStatusSolved.php" onsubmit="ajaxpost();" method="POST" class="row g-3 " "needs-validation">
-              <h3 class="tableTitle mt-5 p-1 ms-4"style="font-family:Roboto Condensed ;  font-size: 33px ; font-weight: bold; color: #2F5972; ">Manage Tasks</h3>
+              <h3 class="tableTitle mt-5 p-1 ms-4"style="font-family:Roboto Condensed ;  font-size: 33px ; font-weight: bold; color: #2F5972; ">Manage Assigned Tasks</h3>
                 <!--Search for complaint id-->
               <input type="text" id="myInput" class="search-bar form-control mt-5" onkeyup="myFunction()" placeholder="Search for complaint id..">
 
