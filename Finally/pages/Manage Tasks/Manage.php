@@ -391,10 +391,7 @@ $result = $conn->query($qury);
     transform-origin: bottom left;
   }
 
-  * {
-    padding: 0;
-    margin: 0;
-  }
+
 
   html,
   body {
@@ -433,13 +430,13 @@ margin-top: 5px;
 
 <body oncontextmenu='return' class='snippet-body'>
   <!-- Header-->
-  <div class="b-example-divider pt-3 pb- pe-5 me-1">
+  <div class="b-example-divider  pt-3 pb- pe- me-">
 
-    <header class="p-3 ms-3 mb- border-bottom ">
-      <div class="container">
+    <header class="p-3 ms-  mb- border-bottom ">
+      <div class="container ">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="../img/muqu2.png" width="100" height="80" alt=""></svg>
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="..\img/muqu2.png" width="100" height="80" alt=""></svg>
           </a>
 
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -454,38 +451,39 @@ margin-top: 5px;
             <li><a href="#" class="nav-link px-2 ms-4 hedermaargin hmarg link-dark">Statistics</a></li>
           </ul>
 
-          <form class="hmarg2 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search">
+          <form class="hmarg2 col-12 col-lg-1 mb-3 mb-lg-0 me-lg-5 heder-search ">
             <input type="search" class=" form-control" placeholder="Search..." aria-label="Search">
           </form>
 
 
           <!-- dropdown -->
-          <div class="dropdown ">
-            <button class="dropbtn ">
+          <div class="dropdown me5 pe-">
+            <button class="dropbtn col-sm-auto  col-1 col-lg-auto me-lg-auto mb-2  mb-md-0">
 
-              <!-- person icon  -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="hmarg3 bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-              </svg>
 
-              <!-- Arow icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
-                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
-              </svg>
-              <p>
-                <?php                                                                                                                      echo $_SESSION['userName']; ?>
-              </p>
-            </button>
-            <div class="dropdown-content ">
-              <a href="../../logout.php">Sign out</a>
-              <a href="#">About us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  </div>
+                              <!-- person icon  -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class=" hmarg3 bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                              </svg>
+                              <!-- Arow icon -->
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
+                              </svg>
+                              <p>
+                                <?php
+                                  echo $_SESSION['userName']; ?>
+                              </p>
+                            </button>
+                            <div class="dropdown-content banner">
+                              <a href="../logout.php">Sign out</a>
+                              <a href="#">About us</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </header>
+                  </div>
 
   <div id="containerBODY">
     <div id="mainBODY">
@@ -495,7 +493,7 @@ margin-top: 5px;
             <div class="row page-">
             </div>
             <form id="form" name="myFormName" action="setStatusSolved.php" onsubmit="ajaxpost();" method="POST" class="row g-3 " "needs-validation">
-              <h3 class="tableTitle mt-5 p-1"style="font-family:Roboto Condensed ;  font-size: 38px ; font-weight: bold; color: #2F5972; ">Manage Tasks</h3>
+              <h3 class="tableTitle mt-5 p-1 ms-4"style="font-family:Roboto Condensed ;  font-size: 33px ; font-weight: bold; color: #2F5972; ">Manage Tasks</h3>
                 <!--Search for complaint id-->
               <input type="text" id="myInput" class="search-bar form-control mt-5" onkeyup="myFunction()" placeholder="Search for complaint id..">
 
