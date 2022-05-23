@@ -398,7 +398,7 @@ ul.nav li a, ul.nav li a:visited {
                 </svg>
                 <p>
                   <?php
-                                              echo $_SESSION['userName']; ?>
+                  echo $_SESSION['userName']; ?>
                 </p>
               </button>
               <div class="dropdown-content banner">
@@ -425,7 +425,7 @@ ul.nav li a, ul.nav li a:visited {
               <div id="errorDiv">   </div>
 
 						<div class="col col-md-12">
-              <label class="form-label me-5 ms- mb-2" for="target">Room Number</label>
+              <label class="form-label me-5 ms- mb-2" for="target">Room Number <img src="../img/star.png" width="10" height="10" alt=""></label>
 
 							<div class="input-group mb-3 ">
 							  <select class="form-select me-4"  name="roomNum" id="target" required>
@@ -468,7 +468,7 @@ ul.nav li a, ul.nav li a:visited {
 						</div>
              <!-- complaint description  -->
 						  <div class="mb-3 mt-3 me-4">
-                <span class="me-1 mb-3 me-5 ms- mb-4 " for ="desc">Description</span>
+                <span class="me-1 mb-3 me-5 ms- mb-4 " for ="desc">Description <img src="../img/star.png" width="10" height="10" alt=""></span>
 								<div class="input-group mb-2 mt-3">
 									<textarea class="form-control form-label-width ms- me-4" aria-label="Leave a comment here" placeholder ="Description" id="desc" name ="desc" style="  resize: none;"required></textarea>
 									 <div class="invalid-feedback">
@@ -571,7 +571,7 @@ ul.nav li a, ul.nav li a:visited {
 									</div>
 									 <div class="">
 										<div class="input-group mb-3 row">
-										  <label class="form-label mt-4 mb-3"  id="selectPickerLbl" for="inputGroupSelect01">Computer Number</label>
+										  <label class="form-label mt-4 mb-3"  id="selectPickerLbl" for="inputGroupSelect01">Computer Number <img src="../img/star.png" width="10" height="10" alt=""></label>
 										  <select class="form-select me-2 selectpicker" id="mySelectpicker" multiple   name="pcnum"   onchange="changeFun();">
 											<option>pc1</option>
 											<option>pc2</option>
