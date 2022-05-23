@@ -19,8 +19,8 @@ session_start();
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
     <script type='text/javascript' src=''></script>
 
-
     <title>Make Complaint</title>
+    <link rel="icon" type="image/x-icon" href="../img/muqu2.png">
 
   </head>
   <style>
@@ -265,7 +265,9 @@ ul.nav li a, ul.nav li a:visited {
                           display: block;
                         }
 
-                        .dropdown-content a:hover {background-color: #6F92A0}
+                        .dropdown-content a:hover
+                        {      background-color: rgba(227, 231, 234, 0.61)
+}
 
                         .dropdown:hover .dropdown-content {
                           display: block;
@@ -400,7 +402,7 @@ ul.nav li a, ul.nav li a:visited {
                 </p>
               </button>
               <div class="dropdown-content banner">
-                <a href="../logout.php">Sign out</a>
+                <a href="../../logout.php">Sign out</a>
                 <a href="#">About us</a>
 
               </div>
