@@ -476,7 +476,7 @@ margin-top: 5px;
                               </p>
                             </button>
                             <div class="dropdown-content banner">
-                              <a href="../logout.php">Sign out</a>
+                              <a href="../../logout.php">Sign out</a>
                               <a href="#">About us</a>
                             </div>
                           </div>
