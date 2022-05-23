@@ -491,7 +491,7 @@ echo(mysqli_error($con));
               <form method="post" id="form" action="completerUncomplete.php" class="">
                 <input type="hidden" name="comment" id="comment2">
                 <div class="col col-md-12">
-                <h3 class="tableTitle mt-5 p-1 ms-4"style="font-family:Roboto Condensed ;  font-size: 33px ; font-weight: bold; color: #2F5972; ">Check Assigend tasks</h3>
+                <h3 class="tableTitle mt-5 p-1 ms-4"style="font-family:Roboto Condensed ;  font-size: 33px ; font-weight: bold; color: #2F5972; ">Check Assigend Tasks</h3>
 
                   <!--Search for complaint id-->
                   <input type="text" id="myInput" onkeyup="myFunction()" class="search-bar form-control mt-5" placeholder="Search for complaint id..">
