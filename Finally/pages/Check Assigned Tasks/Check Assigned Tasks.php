@@ -438,7 +438,7 @@ echo(mysqli_error($con));
 
               <li><a href="../WorkerHome.php" class="nav-link px-2 ps-5 hedermaargin hmarg link-secondary">Home</a></li>
 
-              <li><a href="Check Assigned Tasks.php" class="nav-link px-2 ps-5 hmarg hedermaargin link-dark">Check Assign Tasks</a></li>
+              <li><a href="Check Assigned Tasks.php" class="nav-link px-2 ps-5 hmarg hedermaargin link-dark">Check Assigned Tasks</a></li>
               <li><a href="#" class="nav-link px-2 ps-5 hedermaargin hmarg link-dark">Statistics</a></li>
 
             </ul>
