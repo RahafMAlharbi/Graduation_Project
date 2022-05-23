@@ -513,7 +513,7 @@ margin-top: 5px;
                           </th>
                           <th scope="col">ID</th>
                           <th scope="col">Date</th>
-                          <th scope="col">catogry</th>
+                          <th scope="col">category</th>
                           <th scope="col">worker</th>
                         </tr>
                       </thead>
