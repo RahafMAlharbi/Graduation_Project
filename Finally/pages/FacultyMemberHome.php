@@ -26,6 +26,8 @@ session_start();
        <!--Website Style Sheet Reference-->
        <link href="css/style.css" rel="stylesheet" />
        <title>Main Page</title>
+       <link rel="icon" type="image/x-icon" href="img/muqu2.png">
+
     </head>
 
   </head>
@@ -172,8 +174,8 @@ session_start();
       }
 
       #s2 {
-        width: 126px;
-        height: 119px;
+        width: 150px;
+        height: 150px;
       }
 
       #s3 {
@@ -380,10 +382,7 @@ session_start();
       margin-top: 5px;
 
       }
-.imgS{
-  width: 1530px;
-  height: 1350px;
-}
+
     </style>
 
     <div class="b-example-divider pt-3">
@@ -497,7 +496,7 @@ session_start();
         <div class="cardS-disc col ">
           <div class=" cardS feature ">
             <div class=" row-3 position-absolute top-50 start-50 translate-middle">
-              <img id="s2" width="100" height="80"  src="img/Number_of_complaints_resolved-removebg-preview.png" class="imgS me-3">
+              <img id="s2" width="100" height="80"  src="img/Number_of_complaints_resolved-removebg-preview.png" class=" me-3">
 
             </div>
 
@@ -520,7 +519,7 @@ session_start();
         </div>
         <div class="cardS-disc col">
           <div class=" cardS feature ">
-            <div class=" row-3  position-absolute top-50 start-50 translate-middle">
+            <div class="imge-size row-3  position-absolute top-50 start-50 translate-middle">
               <img id="s2" src="img/_Number_of_complaints_filed-removebg-preview.png" class="me-1">
 
             </div>
@@ -533,7 +532,6 @@ session_start();
     </div>
 
 
-    <!-- ////////// -->
     <div class="container ps-5 pe-5 ps-5 mb-5 " id="abuotus">
       <div class="  d-flex justify-content-between position-relative row  pt-5 ">
         <div class=" carddice   feature col-2 mt-4 ps-4">
@@ -553,7 +551,7 @@ session_start();
 
         <div class="  d-flex flex-column feature carddice mt-4 ">
           <div class=" row-3 position-absolute top-0 start-50 mt-5 translate-middle-x">
-            <img id="s3" src="img/howtouse.png" class="ms-2">
+            <img id="s3" src="img/How to use.png" class="">
 
           </div>
           <div class="position-absolute top-50 ms-2 me-2">
