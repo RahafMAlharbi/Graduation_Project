@@ -12,7 +12,7 @@
   <link rel="icon" type="image/x-icon" href="pages/img/muqu2.png">
 </head>
 
-<!--css-->
+<!--CSS-->
 <style media="screen">
   html,
   body {
