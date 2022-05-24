@@ -1,11 +1,12 @@
+
+
+<!--Faculty Member Home page-->
+
 <?php
 session_start();
 ?>
   <!DOCTYPE html>
   <html lang="en" dir="ltr">
-
-  <head>
-
     <head>
       <!-- map tile layer link  -->
        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
@@ -27,13 +28,10 @@ session_start();
        <link href="css/style.css" rel="stylesheet" />
        <title>Main Page</title>
        <link rel="icon" type="image/x-icon" href="img/muqu2.png">
-
-    </head>
-
   </head>
 
   <body>
-
+    <!--CSS-->
     <style media="screen">
       #complaintTable {}
 
@@ -413,8 +411,7 @@ session_start();
                   <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
                 </svg>
                 <p>
-                  <?php
-                                              echo $_SESSION['userName']; ?>
+                  <?php  echo $_SESSION['userName']; ?>
                 </p>
               </button>
               <div class="dropdown-content banner">
@@ -427,6 +424,7 @@ session_start();
         </div>
       </header>
     </div>
+
     <div class="container mt-5">
       <div class="row position-relative">
         <!-- map -->
@@ -484,7 +482,6 @@ session_start();
           <div class=" cardS feature ">
             <div class=" row-3 position-absolute top-50 start-50 translate-middle">
               <img id="s2" src="img/Site_visitors-removebg-preview.png" class="me-3">
-
             </div>
 
 
@@ -627,7 +624,7 @@ session_start();
           <!-- Copyright -->
         </footer>
 
-
+        <!--JS-->
     <script>
     // Open slid menue
       function openNavR() {
