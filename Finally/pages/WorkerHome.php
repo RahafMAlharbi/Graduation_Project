@@ -1,3 +1,6 @@
+<!--Worker Home page  -->
+
+
 <?php
 session_start();
 ?>
@@ -8,7 +11,6 @@ session_start();
      <!-- map tile layer link  -->
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-
       <!-- Make sure you put this AFTER Leaflet's CSS -->
       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -28,7 +30,7 @@ session_start();
 
     </head>
   <body>
-
+    <!--CSS -->
     <style media="screen">
       #complaintTable {}
 
@@ -385,7 +387,6 @@ session_start();
 
 
     </style>
-
     <div class="b-example-divider mb-5 pb- pe-">
       <header class=" p- ms-3 mb- border-bottom pb-3">
         <div class="container">
@@ -396,7 +397,7 @@ session_start();
 
             <ul class="nav col-12 col-lg-auto me-lg-auto  justify-content-center mb-md-0">
               <li><a href="WorkerHome.php" class="nav-link px-2 ps-5 hedermaargin link-secondary hmarg">Home</a></li>
-              <li><a href="Check Assigned Tasks/Check Assigned Tasks.php" class="nav-link px-2 ps-5 hedermaargin link-dark hmarg">Check Assign Tasks</a></li>
+              <li><a href="Check Assigned Tasks/Check Assigned Tasks.php" class="nav-link px-2 ps-5 hedermaargin link-dark hmarg">Check Assigned Tasks</a></li>
               <li><a href="#" class="nav-link px-2 ps-5 hedermaargin link-dark hmarg">Statistics</a></li>
             </ul>
 
@@ -413,7 +414,7 @@ session_start();
                   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                 </svg>
-                <!-- Arow icon -->
+                <!-- arrow icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
                   <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
                 </svg>
@@ -623,8 +624,9 @@ session_start();
       <!-- Copyright -->
     </footer>
 
-    <script>
 
+    <!--JS -->
+    <script>
     // Open slid menue
       function openNavR() {
         document.getElementById("mySidenavR").style.width = "400px";
