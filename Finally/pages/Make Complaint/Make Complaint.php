@@ -1,5 +1,5 @@
 
-
+<!--Make Complaint page -->
 <?php
 session_start();
 ?>
@@ -15,14 +15,14 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
     <script src="html5-qrcode.min.js"></script>
     <script src="../css/bootstrap5/dist/js/i18n/defaults-en_US.min.js"></script>
-
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
     <script type='text/javascript' src=''></script>
-
     <title>Make Complaint</title>
     <link rel="icon" type="image/x-icon" href="../img/muqu2.png">
 
   </head>
+
+  <!--CSS -->
   <style>
 
   .result{
@@ -347,6 +347,7 @@ ul.nav li a, ul.nav li a:visited {
 
   <body>
 
+    <!--PHP -->
     <?php
     $servername = "localhost";
     $username = "root";
@@ -368,6 +369,7 @@ ul.nav li a, ul.nav li a:visited {
      $rowcount1=mysqli_num_rows($result1);
      $rowcount2=mysqli_num_rows($result2);
     ?>
+
     <div class="b-example-divider pt-3">
       <!-- header -->
       <header class="p-3 ms-3 mb-3 border-bottom">
@@ -676,8 +678,7 @@ ul.nav li a, ul.nav li a:visited {
               <!-- Copyright -->
       </footer>
 
-
-
+      <!--JS -->
 <script>
 //jquery for button upload
 function chooseFile() {
@@ -916,5 +917,5 @@ Array.prototype.slice.call(forms)
 })();
 </script>
 
-  </body>
+</body>
 </html>
