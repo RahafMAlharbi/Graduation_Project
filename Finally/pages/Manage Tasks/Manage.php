@@ -532,7 +532,7 @@ while($row=$result->fetch_assoc()){
   <td name=name_"'.$row["complaintId"].'">
   <button id="YourID" type="button" name='.$row["complaintId"].' value='.$row["complaintId"].'
     class="xc" data-toggle="modal" data-target="#exampleModal"
-    onclick="selectRoomNum(this)">
+    onclick="ComplaintDetails(this)">
     '.$row["complaintId"].'</button></td>';
     echo"<td>".$row["date"]."</td>";
     echo"<td>".$row["userName"]."</td>";
@@ -720,7 +720,7 @@ $(document).ready(function () {
 
 
 //ajax for get complaint details
-function selectRoomNum (strq) {
+function ComplaintDetails (strq) {
   var str= strq.value;
 
     if (str=="") {
