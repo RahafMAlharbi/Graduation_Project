@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <body>
-<style media="screen">
+<body>
 
-</style>
-
-
+<!--PHP-->
 <?php
-
 
 $servername = "localhost";
 $username = "root";
@@ -31,11 +25,12 @@ $result = mysqli_query($conn,$sql);
 $result1 = mysqli_query($conn,$sql1);
 ?>
 <?php
-$i = 0;
-while($rows = mysqli_fetch_array($result)) {
+  $i = 0;
+  while($rows = mysqli_fetch_array($result)) {
   $i++;
+?>
 
-  ?>
+  <!--CSS-->
 <style>
 
 labe.mytitelscss{
@@ -118,7 +113,7 @@ font-size: 20px;
   $ii++;
   if( !empty($row1["images"])){
     ?>
-    images
+      <label for="inputPassword6" class="mtop col-form-label">Image :</label>
    <p><img src="<?php echo $row1["images"]; ?>" width="100" height="100" /> </p>
 
   <?php }
@@ -126,8 +121,7 @@ font-size: 20px;
     <p></p>
     <?php }?>
     <?php }?>
- <?php
-  }
+    <?php }
   if ($i <1) {
   ?>
 <tr><td colspan="11">There are no complaint</td></tr>
