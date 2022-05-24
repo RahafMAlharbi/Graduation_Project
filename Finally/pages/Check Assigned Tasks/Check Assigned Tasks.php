@@ -527,7 +527,7 @@ echo(mysqli_error($con));
                                                          <td name=name_"' . $row["complaintId"] . '">
                                                          <button id="YourID" type="button" name=' . $row["complaintId"] . ' value=' . $row["complaintId"] . '
                                                           class="xc" data-toggle="modal" data-target="#exampleModal"
-                                                           onclick="selectRoomNum(this)"><b>
+                                                           onclick="ComplaintDetails(this)"><b>
                                                          ' . $row["complaintId"] . '</b></button></td>'; ?>
 
 
@@ -774,7 +774,7 @@ echo(mysqli_error($con));
 ?>
        <!--JS-->
       <script>
-        function selectRoomNum(strq) {
+        function ComplaintDetails(strq) {
           var str = strq.value;
 
           if (str == "") {
