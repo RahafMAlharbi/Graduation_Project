@@ -1,3 +1,6 @@
+
+<!-- Manager Home page-->
+
 <?php
 session_start();
 ?>
@@ -5,8 +8,6 @@ session_start();
   <html lang="en" dir="ltr">
 
   <head>
-
-    <head>
       <!-- map tile layer link  -->
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
@@ -28,12 +29,10 @@ session_start();
       <title>Main Page</title>
       <link rel="icon" type="image/x-icon" href="img/muqu2.png">
 
-    </head>
-
   </head>
 
   <body>
-
+    <!--CSS-->
     <style media="screen">
       #dev-table {
         border: 1px #345e73 solid;
@@ -391,7 +390,6 @@ session_start();
 
 
     <div class="b-example-divider pt-3 pb- pe- me-">
-
       <header class="p-3 ms- mb- border-bottom ">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -400,13 +398,9 @@ session_start();
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-
-
-              <!--  <img src="img/MUQU.png" width="80" height="80" alt="">-->
               <li><a href="ManagerHome.php" class="hmarg nav-link px-2 nav ps-5 hedermaargin link-secondary">Home</a></li>
-
               <li><a href="Assign Tasks\Assign.php" class="hmarg nav-link px-2 ms-4 hedermaargin link-dark">Assign Tasks</a></li>
-              <li><a href="Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hmarg hedermaargin link-dark">Manage Assign Tasks</a></li>
+              <li><a href="Manage Tasks\Manage.php" class="nav-link px-2 ms-4  hmarg hedermaargin link-dark">Manage Assigned Tasks</a></li>
 
               <li><a href="#" class="nav-link px-2 ms-4 hedermaargin hmarg link-dark">Statistics</a></li>
             </ul>
@@ -419,14 +413,12 @@ session_start();
             <!-- dropdown -->
             <div class="dropdown me5 pe-">
               <button class="dropbtn col-sm-auto  col-1 col-lg-auto me-lg-auto mb-2  mb-md-0">
-
-
                                 <!-- person icon  -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class=" hmarg3 bi bi-person-circle" viewBox="0 0 16 16">
                                   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                                 </svg>
-                                <!-- Arow icon -->
+                                <!-- arrow icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
                                   <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
                                 </svg>
@@ -463,12 +455,10 @@ session_start();
               </div>
 
               <div id="complaintTable" class="">
-
                 <div class="form-group" id="pbd">
                   <div class="panel-heading mb-5">
                     <div class="pull-right ">
-                      <span class="clickable filter " data-toggle="tooltip" title="Toggle table filter" data-container="body">
-                                                           </span>
+                      <span class="clickable filter " data-toggle="tooltip" title="Toggle table filter" data-container="body"> </span>
                     </div>
                   </div>
 
@@ -516,7 +506,6 @@ session_start();
           <div class=" cardS feature ">
             <div class=" row-3 position-absolute top-50 start-50 translate-middle">
               <img id="s2" width="100" height="80"  src="img/Number_of_complaints_resolved-removebg-preview.png" class=" me-3">
-
             </div>
 
           </div>
@@ -644,6 +633,7 @@ session_start();
       <!-- Copyright -->
     </footer>
 
+    <!--JS -->
     <script>
       // Open slid menue
       function openNavR() {
