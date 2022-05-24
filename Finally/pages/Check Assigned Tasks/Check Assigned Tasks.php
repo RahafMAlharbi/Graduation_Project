@@ -1,3 +1,6 @@
+<!--Check Assigned Tasks page-->
+
+<!--PHP-->
 <?php
 // mysql connection
 $servername = "localhost";
@@ -17,16 +20,16 @@ echo(mysqli_error($con));
 ?>
   <!doctype html>
   <html>
-
   <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<link rel="icon" type="image/x-icon" href="../img/muqu2.png">
+    <link rel="icon" type="image/x-icon" href="../img/muqu2.png">
     <title>Check Assign tasks</title>
-
   </head>
+
+  <!--CSS-->
   <style>
     body {
       background: #eee
@@ -433,13 +436,10 @@ echo(mysqli_error($con));
             <a href="../WorkerHome.php" class="d-flex align-items-center mb- mb-lg-0 text-dark text-decoration-none">
               <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"> <img class="card-img-top imglogo" src="../img/muqu2.png" width="100" height="80" alt=""></svg>
             </a>
-
-            <ul class="nav col-12 col-lg-auto me-lg-auto  justify-content-center mb-md-0">
-
+              <ul class="nav col-12 col-lg-auto me-lg-auto  justify-content-center mb-md-0">
               <li><a href="../WorkerHome.php" class="nav-link px-2 ps-5 hedermaargin hmarg link-secondary">Home</a></li>
               <li><a href="Check Assigned Tasks.php" class="nav-link px-2 ps-5 hmarg hedermaargin link-dark">Check Assigned Tasks</a></li>
               <li><a href="#" class="nav-link px-2 ps-5 hedermaargin hmarg link-dark">Statistics</a></li>
-
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 heder-search hmarg2 pe-5">
@@ -456,7 +456,7 @@ echo(mysqli_error($con));
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                 </svg>
 
-                <!-- Arow icon -->
+                <!-- arrow icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
                   <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
                 </svg>
@@ -512,6 +512,8 @@ echo(mysqli_error($con));
                       </tr>
                     </thead>
                     <tbody>
+
+                      <!--PHP-->
                       <?php while ($row = $result->fetch_assoc()) { ?>
                         <tr>
                           <td scope="row">
@@ -556,10 +558,8 @@ echo(mysqli_error($con));
                   </table>
                   <input type="submit" value="completed" name="submit" class="btn btn-primary choose_file" disabled="disabled" id="Assign">
                   <input type="button" value="uncompleted" class="btn btn-primary choose_file" disabled id="" data-toggle="modal" disabled data-target="#exampleModal2" onclick="idcomp();idcomp1()">
-
                 </div>
               </form>
-
             </div>
           </div>
         </div>
@@ -573,7 +573,7 @@ echo(mysqli_error($con));
             <div class="modal-content csstext">
               <div class="modal-header modelhedercss float-right">
 
-                <h5 class="mytiteldetails">complaint detail</h5>
+                <h5 class="mytiteldetails">Complaint Details</h5>
                 <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
               </div>
               <div class="modal-body">
@@ -581,7 +581,6 @@ echo(mysqli_error($con));
                   <table class="table ">
 
                     <tbody id="Ctable">
-
                     </tbody>
                   </table>
                 </div>
@@ -597,12 +596,11 @@ echo(mysqli_error($con));
           <div class="modal-dialog">
             <div class="modal-content  csstext ">
               <div class="modal-header modelhedercss ">
-
                 <h5 class=" mytitelreson">Uccompleted<h5>
                 <div class="text-right"><i data-dismiss="modal" aria-label="Close" class="  fa fa-close"></i></div>
 
               </div>
-              <!-- Reason model -->
+              <!-- reason model -->
                 <div class="modal-body">
                 <h6 class= "modal-title mytitelscss ">Please enter the reason</h6>
 
@@ -680,6 +678,7 @@ echo(mysqli_error($con));
         </div>
       </div>
     </div>
+
     <footer id="footer" class=" fotter text-center text-white p-0 mt-5" style="background-color: #2F5972 ;">
       <!-- Grid container -->
       <div class="container pt-2">
@@ -738,7 +737,7 @@ echo(mysqli_error($con));
 
 
 
-
+    <!--PHP-->
     <?php
     	$servername = "localhost";
       $username = "root";
@@ -773,6 +772,7 @@ echo(mysqli_error($con));
   	}
 
 ?>
+       <!--JS-->
       <script>
         function selectRoomNum(strq) {
           var str = strq.value;
