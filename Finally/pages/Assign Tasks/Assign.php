@@ -527,7 +527,7 @@ margin-top: 5px;
                                             <td name=name_"'.$row["complaintid"].'">
                                             <button id="YourID" type="button" name='.$row["complaintid"].' value='.$row["complaintid"].'
                                              class="xc" data-toggle="modal" data-target="#exampleModal"
-                                              // onclick="ComaplaintDetails(this)"><b>
+                                              // onclick="ComplaintDetails(this)"><b>
                                             '.$row["complaintid"].'</b></button></td>';
                                            echo"<td>".$row["date"]."</td>";
                                            echo"<td>".$row["category"]."</td>";
@@ -678,7 +678,7 @@ margin-top: 5px;
       <!--JS-->
       <script>
 
-        function ComaplaintDetails(strq) {
+        function ComplaintDetails(strq) {
           var str = strq.value;
 
           if (str == "") {
