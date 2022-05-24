@@ -524,7 +524,7 @@ ul.nav li a, ul.nav li a:visited {
 								  <div class="form-check">
 									<input type="checkbox" name="cat1Air" id="cat1Air" value="Air conditiong"  class="form-check-input" >
 									<label class="form-check-label" for="cat1Air">
-									  Air conditiong
+									  Air conditioning
 									</label>
 								  </div>
 								  <div class="form-check disabled">
