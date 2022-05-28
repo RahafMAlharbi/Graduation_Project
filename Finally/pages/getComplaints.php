@@ -7,6 +7,7 @@
 
 </style>
 
+<!--PHP-->
 
 <?php
 
@@ -36,6 +37,9 @@ while($rows = mysqli_fetch_array($result)) {
   $i++;
 
   ?>
+    
+      <!--CSS-->
+
 <style>
 
 labe.mytitelscss{
@@ -113,7 +117,7 @@ border: none;
   $ii++;
   if( !empty($row1["images"])){
     ?>
-    images
+          <label for="inputPassword6" class="mtop col-form-label">Image :</label>
    <p><img src="<?php echo $row1["images"]; ?>" width="100" height="100" /> </p>
 
   <?php }
