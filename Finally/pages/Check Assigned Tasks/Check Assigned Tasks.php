@@ -569,7 +569,7 @@ echo(mysqli_error($con));
         <!-- Modal -->
         <!-- complaint detail -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
+          <div class="modal-dialog modal-lg">
             <div class="modal-content csstext">
               <div class="modal-header modelhedercss float-right">
 
