@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
-<body>
+  <head>
+  </head>
+  <body>
+<style media="screen">
 
-<!--PHP-->
+</style>
+
+
 <?php
+
 
 $servername = "localhost";
 $username = "root";
@@ -25,12 +31,11 @@ $result = mysqli_query($conn,$sql);
 $result1 = mysqli_query($conn,$sql1);
 ?>
 <?php
-  $i = 0;
-  while($rows = mysqli_fetch_array($result)) {
+$i = 0;
+while($rows = mysqli_fetch_array($result)) {
   $i++;
-?>
 
-  <!--CSS-->
+  ?>
 <style>
 
 labe.mytitelscss{
@@ -48,6 +53,7 @@ h5.mytitelscs0{
 
 color:rgb(18, 57, 98);
 font-size: 20px;
+border: none;
 
  }
 .input-info{
@@ -63,7 +69,7 @@ font-size: 20px;
 </style>
 
 <form>
-<div class="row g-3 align-items-center">
+<div class="row ms-2 row g-3 align-items-center">
   <div class="col-auto">
     <label for="inputPassword6" class="mtop col-form-label">Complaint ID :</label>
   </div>
@@ -72,7 +78,7 @@ font-size: 20px;
   </div>
 </div>
 
-<div class="row g-3 align-items-center mt-">
+<div class="row ms-2 g-3 align-items-center mt-">
   <div class="col-auto">
     <label for="inputPassword6" class="mtop col-form-label">Room Number :</label>
   </div>
@@ -80,17 +86,15 @@ font-size: 20px;
     <input class="input-info form-control-plaintext" type="text"  value="<?php echo $rows["roomNum"]; ?>" aria-label="Disabled input example" disabled readonly>
   </div>
 </div>
-<div class="row g-3 align-items-center">
-  <div class="col-auto">
-    <label for="inputPassword6" class="mtop col-form-label">Category :</label>
-  </div>
-  <div class="col-auto">
-    <input class="input-info form-control-plaintext" type="text"  value="<?php echo $rows["category"]; ?>"aria-label="Disabled input example" disabled readonly>
-  </div>
-</div>
+
+
+<div class="input-group input-group-lg">
+  <span class="mtop input-group-text" id="inputGroup-sizing-lg">Category:</span>
+
+  <input type="text" class="form-control  input-info form-control-plaintext" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" value="<?php echo $rows["category"]; ?>">
 </div>
 
-<div class="row g-3 align-items-center">
+<div class="ms-2 row g-3 align-items-center">
   <div class="col-auto">
     <label for="inputPassword6" class="mtop col-form-label">Date :</label>
   </div>
@@ -99,13 +103,9 @@ font-size: 20px;
   </div>
 </div>
 
-<div class="row g-3 align-items-center">
-  <div class="col-auto">
-    <label for="inputPassword6" class="mtop col-form-label">Description :</label>
-  </div>
-  <div class="col-auto">
-    <input class="input-info form-control-plaintext" type="text"  value="<?php echo $rows["description"]; ?>" aria-label="Disabled input example" disabled readonly>
-  </div>
+<div class="input-group input-group-lg">
+  <span class="mtop input-group-text" id="inputGroup-sizing-lg">Description:</span>
+  <input type="text" class="form-control  input-info form-control-plaintext" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" value="<?php echo $rows["description"]; ?>">
 </div>
   <?php
   $ii = 0;
@@ -113,7 +113,7 @@ font-size: 20px;
   $ii++;
   if( !empty($row1["images"])){
     ?>
-      <label for="inputPassword6" class="mtop col-form-label">Image :</label>
+    images
    <p><img src="<?php echo $row1["images"]; ?>" width="100" height="100" /> </p>
 
   <?php }
@@ -121,7 +121,8 @@ font-size: 20px;
     <p></p>
     <?php }?>
     <?php }?>
-    <?php }
+ <?php
+  }
   if ($i <1) {
   ?>
 <tr><td colspan="11">There are no complaint</td></tr>
