@@ -201,7 +201,7 @@ $check = mysqli_fetch_array($result);
                     <br>
                   </div>
                   <div class="form-group col-sm-1-12 strat-100 mt-5 position-relative">
-                    <input type="submit" name="submit" class="btn btn-primary  btn-md" value="submit">
+                    <input type="submit" name="submit" class="btn btn-primary  btn-md" value="Login">
                     <button type="button" class="Forget position-absolute bottom-0 end-0" name="button">Forget password? </button>
                   </div>
                   <div class="form-group row mt-5"></div>
